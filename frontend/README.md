@@ -1,16 +1,16 @@
-<p align="center">
+<!-- <p align="center">
     <img alt="Logo" title="Logo" src="public/svg/logo.svg" width="150px" style="display: block; margin: auto" />
     <h1 align="center" style="margin: 0;">
         <span style="display: block;">
         Next INTL
         </span>
     </h1>
-</p>
+</p> -->
 
-<p align="center">
+<!-- <p align="center">
     <img src="https://img.shields.io/github/languages/count/elvessousa/next-intl"> 
 <img src="https://img.shields.io/github/repo-size/elvessousa/next-intl">
-</p>
+</p> -->
 
 ## About
 
