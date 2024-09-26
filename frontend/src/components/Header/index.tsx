@@ -31,43 +31,7 @@ export default function Header({ className, children }: Props) {
 
   return (
     // <header className={headerClass}>
-    //   <nav className={styles.navbar}>
-    //     <div className="logo"><span>J</span>ohn <span>O</span>'<span>D</span>ev</div>
-		// 		<ul className={styles.navbar_list}>
-
-		// 			<li className="navbar-item">
-		// 				<button className={styles.navbar_link} data-nav-link>Página Inicial</button>
-		// 			</li>
-
-		// 			<li className="navbar-item">
-		// 				<button className={styles.navbar_link} data-nav-link>Sobre</button>
-		// 			</li>
-
-		// 			<li className="navbar-item">
-		// 				<button className={styles.navbar_link} data-nav-link>Resumo</button>
-		// 			</li>
-
-		// 			<li className="navbar-item">
-		// 				<button className={styles.navbar_link} data-nav-link>Portfólio</button>
-		// 			</li>
-
-		// 			<li className="navbar-item">
-		// 				<button className={styles.navbar_link} data-nav-link>Blog</button>
-		// 			</li>
-
-		// 			<li className="navbar-item">
-		// 				<button className={styles.navbar_link} data-nav-link>Entre em Contato</button>
-		// 			</li>
-		// 		</ul>
-    //     <div id="menu-icon" className="bx bx-menu"></div>
-		// 	</nav>
-    //   <div className="lang">
-    //     {locales.map((locale) => (
-    //       <button key={locale} onClick={() => handleLocaleChange(locale)}>
-    //         {locale}
-    //       </button>
-    //     ))}
-    //   </div>
+  
     // </header>
     <header className={headerClass}>
       {/* <Logo link={`/`} /> */}

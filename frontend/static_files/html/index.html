@@ -1,0 +1,1240 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>John O'Dev || Portfólio</title>
+
+	<!-- favicon -->
+	<link rel="shortcut icon" href="./assets/images/logo.ico" type="image/x-icon">
+
+	<!-- custom css link -->
+	<link rel="stylesheet" href="./assets/css/style.css">
+	<link rel="stylesheet" type='text/css' href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" />
+	<link rel="stylesheet" href="./assets/css/skills.css">
+	<link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+          
+</head>
+
+<body>
+
+	<!-- loader -->
+	<script src="./assets/js/loader.js"></script>
+
+  	<!-- MAIN -->
+	<main>
+
+		<!-- <header class="header-mobile">
+			<div class="logo"><span>J</span>ohn <span>O</span>'<span>D</span>ev</div>
+			<ul class="navlist-mobile">
+				<li><a href="#" style="--i:1;">Home</a></li>
+				<li><a href="#" style="--i:3;">About</a></li>
+				<li><a href="#" style="--i:4;">Services</a></li>
+				<li><a href="#" style="--i:5;">Skills</a></li>
+				<li><a href="#" style="--i:6;">Portofolio</a></li>
+			</ul>
+			<div id="menu-icon" class="bx bx-menu"></div>
+		</header> -->
+
+		<!-- SIDEBAR -->
+		<aside class="sidebar" data-sidebar>
+			<div class="sidebar-info">
+				<figure class="avatar-box">
+					<img src="./assets/images/my-avatar.png" alt="Avatar John O'Dev">
+				</figure>
+
+				<div class="info-content">
+					<h1 class="name">Antonio Rodrigues<br/>Lima Filho</h1>
+					<p>Desenvolvedor Web</p>
+					<p class="title">Criador de Conteúdo como <span>John'Odev</span></p>
+				</div>
+				<!-- mobile -->
+				<button class="info_more-btn" data-sidebar-btn>
+					<span>Mostrar Contatos</span>
+					<ion-icon name="chevron-down"></ion-icon>
+				</button>
+			</div>
+
+			<div class="separator"></div>
+
+			<div class="sidebar-info_more">
+				<ul class="contacts-list">
+
+					<li class="contact-item">
+						<a href="#" class="contact-link">
+							<div class="item-container">
+								<div class="icon-box">
+									<ion-icon name="mail-outline"></ion-icon>
+								</div>
+								<p class="contact-title">Email</p>
+							</div>
+							john_o_dev@gmail.com
+						</a>
+					</li>
+
+					<li class="contact-item">
+						<a href="#" class="contact-link">
+							<div class="item-container">
+								<div class="icon-box">
+									<ion-icon name="phone-portrait-outline"></ion-icon>
+								</div>
+								<p class="contact-title">Telefone</p>
+							</div>
+							+55 (11) 91062-2590
+						</a>
+					</li>
+
+					<li class="contact-item">
+						<div class="item-container">
+							<div class="icon-box">
+								<ion-icon name="location-outline"></ion-icon>
+							</div>
+							<p class="contact-title">Localidade</p>
+						</div>
+						<address>SP - São Paulo, BR</address>
+					</li>
+				</ul>
+
+				<ul class="social-list">
+					<li class="social-item">
+						<a href="https://www.facebook.com/people/John-ODev/100071663284338/" class="social-link">
+							<ion-icon class = "socials-icons " name="logo-facebook"></ion-icon>
+							<div class="tooltip">Facebook</div>
+						</a>
+					</li>
+
+					<li class="social-item">
+						<a href="https://twitter.com/JohnODev4" class="social-link">
+							<ion-icon class = "socials-icons" name="logo-twitter"></ion-icon>
+							<div class="tooltip">Twitter</div>
+						</a>
+					</li>
+
+					<li class="social-item">
+						<a href="https://www.instagram.com/john_o_dev/" class="social-link">
+							<ion-icon class = "socials-icons" name="logo-instagram"></ion-icon>
+							<div class="tooltip">Instagram</div>
+						</a>
+					</li>
+
+					<li class="social-item">
+						<a href="github.com/John-o-dev" class="social-link">
+							<ion-icon class = "socials-icons" name="logo-github"></ion-icon>
+							<div class="tooltip">Github</div>
+						</a>
+					</li>
+				</ul>
+			</div>
+		</aside>
+
+		<!-- main-content -->
+		<div class="main-content">
+
+			<!-- NAVBAR -->
+			<nav class="navbar">
+				<ul class="navbar-list">
+
+					<li class="navbar-item">
+						<button class="navbar-link  active" data-nav-link>Página Inicial</button>
+					</li>
+
+					<li class="navbar-item">
+						<button class="navbar-link" data-nav-link>Sobre</button>
+					</li>
+
+					<li class="navbar-item">
+						<button class="navbar-link" data-nav-link>Resumo</button>
+					</li>
+
+					<li class="navbar-item">
+						<button class="navbar-link" data-nav-link>Portfólio</button>
+					</li>
+
+					<li class="navbar-item">
+						<button class="navbar-link" data-nav-link>Blog</button>
+					</li>
+
+					<!-- <li class="navbar-item">
+						<button class="navbar-link" data-nav-link>Entre em Contato</button>
+					</li> -->
+				</ul>
+			</nav>
+
+			<!-- HOME -->
+			<article class="home active" data-page="página inicial">
+
+				<section id="home" class="home-container">
+					<div class="home-content scroll-scale">
+
+						<h1 class="article-title">Antonio Rodrigues Lima Filho</h1>
+
+						<h2>Desenvolvedor Web | Web Designer | Criador de Conteúdo</h2>
+
+						<p>
+							Olá! Eu sou Antonio Rodrigues, um Desenvolvedor Web apaixonado por criar experiências digitais incríveis.<br/> No entanto, você pode me conhecer também como John'Odev, o pseudônimo que uso para meu trabalho no YouTube e em vários projetos criativos.</br>
+
+							Com a missão de tornar problemas complexos em simples, bonitos e com design intuitivo.</br>
+
+							Explore meu portfólio para ver alguns dos meus trabalhos mais recentes e descobrir como posso ajudar a transformar suas ideias em realidade.
+						</p>
+
+						<h3>&lt;j&gt; John O'Dev &lt;/j&gt; </h3>
+						<div class="change-text">
+							<h4>
+								<span class="word">Web&nbsp;Designer</span>
+								<span class="word">Web&nbsp;Developer</span>
+								<span class="word">Motion&nbsp;Designer</span>
+								<span class="word">Youtuber</span>
+							</h4>
+						</div>
+					</div>
+			
+					<div class="home-image scroll-scale">
+						<figure class="img-box">
+							<img src="./assets/images/img-home-bg.jpg" alt="home" />
+						</figure>
+					</div>
+			
+				</section>
+			</article>
+
+			<!-- ABOUT -->
+			<article class="about" data-page="sobre">
+
+				<section id="about-container" class="about-container">
+					
+					<div class="img-about scroll-scale">
+						<figure>
+							<img src="./assets/images/img-about-bg.png" alt="Picture about me section">
+						</figure>
+					</div>
+			
+					<div class="about-content scroll-scale">
+						<span>Deixe eu me apresentar</span>
+						<h2>Quem Sou Eu</h2>
+						<p>
+							Sou Antonio Rodrigues, trabalho como Desenvolvedor Web, Web Design e Motion Design sempre buscando aprender e evoluir. No meu trabalho profissional, eu uso meu nome real, mas também sou conhecido como John'Odev no meu canal do YouTube onde compartilho minhas ideias e projetos e em projetos paralelos. John'Odev é o pseudônimo que uso para explorar e compartilhar minha criatividade em Web Design, e você pode conferir mais sobre isso (Clicando aqui).
+						</p>
+						<p>
+							Meu trabalho é construir websites funcionais, atrativos e amigáveis. Adicionando um toque pessoal e garantindo que seja atraente e fácil de usar.
+						</p>	
+						<p>
+							Meu objetivo é transmitir a mensagem e identidade da sua marca ou produto da maneira mais criativa.
+						</p>
+			
+						<div class="btn-box">
+							<a href="#" class="btn">
+								<ion-icon name="download-outline"></ion-icon>
+								Download Currículo
+							</a>
+							<!-- 
+							
+							Botão que leva para o currículo
+
+							Currículo:
+							No currículo, você pode optar por uma abordagem mais formal. Se você estiver enviando seu currículo para um empregador ou cliente, é importante deixar claro qual nome é o principal para contatos profissionais e como o pseudônimo se relaciona com seu trabalho:
+
+							Exemplo:
+
+							Nome: [Seu Nome Real]
+							Pseudônimo: John'Odev (usado para criação de conteúdo e projetos no YouTube)
+
+							Resumo Profissional:
+
+							Sou um desenvolvedor web com experiência em [tecnologias, linguagens de programação, etc.]. Também sou conhecido como John'Odev, um pseudônimo sob o qual desenvolvo projetos criativos e produzo conteúdo para meu canal do YouTube.
+
+							-->
+						</div>
+					</div>
+
+				</section>
+
+				<div class="separator"></div>
+
+				<!-- service -->
+				<section class="service">
+
+					<h3 class="h3 service-title">Serviços Profissionais</h3>
+
+					<ul class="service-list">
+
+						<li class="service-item">
+							<figure class="service-icon-box lazy-img">
+								<img data-url="./assets/images/icon-design.svg" alt="design icon" width="40">
+							</figure>
+
+							<div class="service-content-box">
+								<h4 class="h4 service-item-title">Web Design</h4>
+
+								<p class="service-item-text">
+									O Web Designer foca na criação de layouts e interfaces para sites e aplicações web. Além de habilidades em design gráfico, um web designer precisa ter conhecimentos em linguagens de programação e marcação, como HTML, CSS e JavaScript, além de outros aspectos como a seleção de cores, tipografia, imagens e outros elementos gráficos para transformar seus designs em páginas atraentes e funcionais para os usuários.</br>
+
+									Eles também precisam considerar a usabilidade, acessibilidade e a experiência do usuário (UX) ao projetar interfaces que sejam não apenas esteticamente agradáveis, mas também intuitivas e fáceis de navegar.</br>
+
+									Outra parte importante do trabalho do web designer é garantir que o site seja responsivo, ou seja, que se adapte bem a diferentes dispositivos, como computadores, tablets e smartphones. 
+								</p>
+							</div>
+						</li>
+
+						<li class="service-item">
+							<figure class="service-icon-box lazy-img">
+								<img data-url="./assets/images/icon-dev.svg" alt="Web development icon" width="40">
+							</figure>
+
+							<div class="service-content-box">
+								<h4 class="h4 service-item-title">Desenvolvedor Web</h4>
+
+								<p class="service-item-text">
+									O Desenvolvedor web realiza o desenvolvimento de websites na internet. Ou seja, planeja, constrói e dá manutenção em toda a estrutura de um determinado site garantindo que tudo funcione de acordo com o esperado.</br>
+
+									Podendo utilizar diferentes linguagens de programação e ferramentas de desenvolvimento para traduzir requisitos e ideias em código executável.</br>
+
+									O processo de desenvolvimento envolve várias etapas, Isso inclui o entendimento dos requisitos do cliente ou usuário final, a codificação, e a realização de testes para identificar e corrigir erros.</br>
+
+									Também chamado de web developer ou programador, podendo atuar no front-end e back-end.
+								</p>
+							</div>
+						</li>
+
+						<li class="service-item">
+							<figure class="service-icon-box lazy-img">
+								<img data-url="./assets/images/icon-app.svg" alt="mobile app icon" width="40">
+							</figure>
+
+							<div class="service-content-box">
+								<h4 class="h4 service-item-title">Motion Designer</h4>
+
+								<p class="service-item-text">
+									Projetos de animação que dão vida às imagens estáticas por meio dos elementos gráficos em movimento que criam usando animação em 2D e 3D para diversas plataformas e fins, como aberturas e encerramentos de filmes, youtube, propagandas entre outros.
+								</p>
+							</div>
+						</li>
+					</ul>
+				</section>
+
+				<!-- testimonials -->
+				<section class="testimonials">
+
+					<h3 class="h3 testimonials-title">Comentários</h3>
+
+					<ul class="testimonials-list has-scrollbar">
+
+						<li class="testimonials-item">
+							<div class="content-card" data-testimonials-item>
+
+								<figure class="testimonials-avatar-box lazy-img">
+									<img data-url="./assets/images/youtube-icon.png" alt="Testimonial" width="60" data-testimonials-avatar>
+								</figure>
+
+								<h4 class="h4 testimonials-item-title" data-testimonials-title>@viniciuscg12ba <span>(Youtube)</span></h4>
+
+								<div class="testimonials-text" data-testimonials-text>
+									<p>
+										Thanks! Me ajudou a escrever meu código
+									</p>
+								</div>
+
+							</div>
+						</li>
+
+						<li class="testimonials-item">
+							<div class="content-card" data-testimonials-item>
+
+								<figure class="testimonials-avatar-box lazy-img">
+									<img data-url="./assets/images/youtube-icon.png" alt="Testimonial" width="60" data-testimonials-avatar>
+								</figure>
+
+								<h4 class="h4 testimonials-item-title" data-testimonials-title>@deniskravchuk707 <span>(Youtube)</span></h4>
+
+								<div class="testimonials-text" data-testimonials-text>
+									<p>
+										Great thanks! Really amazing and simple tutorial. It’s that what I need!
+									</p>
+								</div>
+
+							</div>
+						</li>
+
+						<li class="testimonials-item">
+							<div class="content-card" data-testimonials-item>
+
+								<figure class="testimonials-avatar-box lazy-img">
+									<img data-url="./assets/images/youtube-icon.png" alt="Emily evans Testimonial" width="60" data-testimonials-avatar>
+								</figure>
+
+								<h4 class="h4 testimonials-item-title" data-testimonials-title>@jonathanel-aziz7708 <span>(Youtube)</span></h4>
+
+								<div class="testimonials-text" data-testimonials-text>
+									<p>
+										Wow incredible
+									</p>
+								</div>
+
+							</div>
+						</li>
+					</ul>
+				</section>
+
+				<!-- testimonials modal -->
+				<div class="modal-container" data-modal-container>
+
+					<div class="overlay" data-overlay></div>
+
+					<section class="testimonials-modal">
+
+						<button class="modal-close-btn" data-modal-close-btn>
+							<ion-icon name="close-outline"></ion-icon>
+						</button>
+
+						<div class="modal-img-wrapper">
+							<figure class="modal-avatar-box lazy-img">
+								<img data-url="./assets/images/avatar-1.png" alt="Daniel lewis" width="80" data-modal-img>
+							</figure>
+
+							<img src="./assets/images/icon-quote.svg" alt="quote icon">
+						</div>
+
+						<div class="modal-content">
+							<h4 class="h3 modal-title" data-modal-title>User</h4>
+
+							<time datetime="2021-06-14">01 Janeiro, 2024</time>
+
+							<div data-modal-text>
+								<p>
+									Lorem ipsum dolor sit amet, ullamcous cididt
+									consectetur adipiscing
+									elit, seds do et eiusmod tempor incididunt ut laborels dolore magnarels alia.
+								</p>
+							</div>
+						</div>
+					</section>
+				</div>
+			</article>
+
+			<!-- RESUME-->
+			<article class="resume" data-page="resumo">
+
+				<header>
+					<h2 class="h2 article-title">Certificados</h2>
+				</header>
+				
+
+					<!-- 
+
+					CERTIFICADOS
+					
+					Aqui pode colocar os certificados da DIO, porém como a DIO não tem uma API que forneça tais informações de certificados voçe terá que dar um jeito de coloca-los manualmente. Coloque os mais relevntes...
+
+					Certificado de SEO também...
+
+					Outros certificados voltados para a area...
+
+					Certificado de Word e Excel avançado pode colocar em, por exemplo, uma subsessão de banco de dados e análise de dados...
+
+					--------------//--------------
+					-->
+				<section class="timeline">
+					<div class="title-wrapper">
+						<div class="icon-box">
+							<ion-icon name="book-outline"></ion-icon>
+						</div>
+
+						<h3 class="h3">Ferramentas e tecnologias</h3>
+					</div>
+
+					<ol class="timeline-list">
+						<li class="timeline-item">
+							<div class="skills-icons">
+								<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original-wordmark.svg" alt="Html5 Icon">
+								<div class="tooltip">HTML5</div>
+							</div>
+							<div class="skills-icons">
+								<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original-wordmark.svg" alt="CSS3 Icon">
+								<div class="tooltip">CSS3</div>
+							</div>
+							<div class="skills-icons">
+								<img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/bootstrap/bootstrap-original.svg" alt="bootstrap Icon" >
+								<div class="tooltip">Bootstrap</div>
+							</div>
+							<div class="skills-icons">
+								<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="JavaScript Icon">
+								<div class="tooltip">JavaScript</div>
+							</div>
+							<div class="skills-icons">
+								<img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original-wordmark.svg" alt="ReactJS Icon" >
+								<div class="tooltip">ReactJS</div>
+							</div>
+							<div class="skills-icons">
+								<img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nextjs/nextjs-original.svg" alt="NextJS Icon">
+								<div class="tooltip">NextJS</div>
+							</div>
+							<div class="skills-icons">
+								<img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nodejs/nodejs-original-wordmark.svg" alt="NodeJs Icon">
+								<div class="tooltip">NodeJs</div>
+							</div>
+							<div class="skills-icons">
+								<img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original-wordmark.svg" alt="Python Icon">
+								<div class="tooltip">Python</div>
+							</div>
+							<div class="skills-icons">
+								<img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/git/git-plain-wordmark.svg" alt="Git Icon">
+								<div class="tooltip">Git</div>
+							</div>
+							<div class="skills-icons">
+								<i class="devicon-github-original-wordmark"></i>
+								<div class="tooltip">Github</div>
+							</div>
+							<div class="skills-icons">
+								<img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/npm/npm-original-wordmark.svg" alt="NPM Icon">
+								<div class="tooltip">NPM</div>
+							</div>							
+						</li>
+					</ol>
+				</section>
+
+				<div class="separator"></div>
+
+				<section class="timeline">
+					<div class="title-wrapper">
+						<div class="icon-box">
+							<ion-icon name="book-outline"></ion-icon>
+						</div>
+
+						<h3 class="h3">Estou aprendendo</h3>
+					</div>
+
+					<ol class="timeline-list">
+						<li class="timeline-item">
+							<div class="skills-icons">
+								<img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/angular/angular-original.svg" alt="Angular Icon">
+								<div class="tooltip">Angular</div>
+							</div>
+							<div class="skills-icons">
+								<img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/php/php-original.svg" alt="PHP Icon">
+								<div class="tooltip">PHP</div>
+							</div>
+							<div class="skills-icons">
+								<img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/sass/sass-original.svg" alt="Sass Icon">
+								<div class="tooltip">Sass</div>
+							</div>
+							<div class="skills-icons">
+								<img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/redis/redis-original-wordmark.svg" alt="Redis Icon">
+								<div class="tooltip">Redis</div>
+							</div>
+							<div class="skills-icons">
+								<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original-wordmark.svg" alt="MySql Icon">
+								<div class="tooltip">MySql</div>
+							</div>
+							<div class="skills-icons">
+								<img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/azuresqldatabase/azuresqldatabase-original.svg" alt="SQL Icon">
+								<div class="tooltip">SQL</div>
+							</div>
+							<div class="skills-icons">
+								<i class="devicon-mongoose-original-wordmark"></i>
+								<div class="tooltip">Mongoose</div>
+							</div>
+							<div class="skills-icons">
+								<img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mongodb/mongodb-original-wordmark.svg" alt="MongoDB Icon">
+								<div class="tooltip">MongoDB</div>
+							</div>
+							<div class="skills-icons">
+								<img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/postgresql/postgresql-original-wordmark.svg" alt="Postgresql Icon">
+								<div class="tooltip">Postgresql</div>
+							</div>
+						</li>
+					</ol>
+				</section>
+
+				<div class="separator"></div>
+
+				<section class="timeline">
+					<div class="title-wrapper">
+						<div class="icon-box">
+							<ion-icon name="book-outline"></ion-icon>
+						</div>
+
+						<h3 class="h3">Programas</h3>
+					</div>
+
+					<ol class="timeline-list">
+						<li class="timeline-item">
+							<div class="skills-icons">
+								<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original-wordmark.svg" alt="VSCode Icon">
+								<div class="tooltip">VSCode</div>
+							</div>
+							<div class="skills-icons">
+								<img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/pycharm/pycharm-original.svg" alt="PyCharm Icon">
+								<div class="tooltip">PyCharm</div>
+							</div>
+							<div class="skills-icons">
+								<img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/premierepro/premierepro-original.svg" alt="Premiere Icon">
+								<div class="tooltip">Adobe Premiere</div>
+							</div>
+							<div class="skills-icons">
+								<img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/aftereffects/aftereffects-original.svg" alt="After Icon">
+								<div class="tooltip">Adobe After Effects</div>
+							</div>
+							<div class="skills-icons">
+								<img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/photoshop/photoshop-original.svg" alt="Photoshop Icon"/>
+								<div class="tooltip">Adobe Photoshop</div>
+							</div>
+						</li>
+					</ol>
+				</section>
+
+			</article>
+
+			<!-- PORTFOLIO-->
+			<article class="portfolio" data-page="portfólio">
+
+				<header>
+					<h2 class="h2 article-title">Portfólio</h2>
+				</header>
+
+				<div class="github-perfil">
+					<span>Perfil Github</span>
+					<div class="github-user">
+						<img src="assets/images/github-perfil.jpeg" />
+						<div>
+							<h1>
+								<a class="github-username" href="#">
+									Johnny Developer
+								</a>
+							</h1>
+
+							<ul className='repos-info'>
+								<li>Repositórios: 5</li>
+								<li>Seguidores: 7</li>
+								<li>Seguindo: 3</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			
+				<!-- 
+				
+				Ver como posso integrar o projeto de repositórios do github feito no curso de React
+
+				LEMBRE-SE
+
+				Dividir o portfólio em categorias..
+
+				Colocar os videos do youtube também
+				
+				-->
+
+				<div class="last-projects scroll-scale">
+
+					<h2>Últimos Projetos</h2>
+					<!-- 
+						Aqui vai um carrocel com as últimas atualizações, postagens e projetos.
+						Apenas um linha com 3 colunas para web, e umas 4 ou 5 para mobile.
+
+						Depois seguido de um separador pode vim as guias para web design, 
+						web developement ambos com filtros para front end e back end ou tecnologia, 
+						motion design e youtube.
+					-->
+				</div>
+
+				<div class="separator"></div>
+
+				<section class="projects">
+
+					<div class="projects-filter">
+
+						<span>Filtros</span>
+
+						<div class="frontend-projects">
+							<h3 class="title-list">Frontend</h3>
+							<ul class="filter-list">
+								<li class="filter-item">
+									<button class="active" data-filter-btn>Tudo</button>
+								</li>
+
+								<li class="filter-item">
+									<button data-filter-btn>Web Design</button>
+								</li>
+
+								<li class="filter-item">
+									<button data-filter-btn>Desenvolvimento Web</button>
+								</li>
+							</ul>
+						</div>
+
+						<div class="backend-projects">
+							<h3 class="title-list">Backend</h3>
+							<ul class="filter-list">
+								<li class="filter-item">
+									<button class="active" data-filter-btn>Tudo</button>
+								</li>
+
+								<li class="filter-item">
+									<button data-filter-btn>Banco de Dados</button>
+								</li>
+
+								<li class="filter-item">
+									<button data-filter-btn>Desenvolvimento Web</button>
+								</li>
+							</ul>
+						</div>
+					</div>
+
+					<!-- Mobile -->
+					<div class="filter-select-box">
+
+						<button class="filter-select" data-select>
+
+							<div class="select-value" data-selecct-value>Frontend</div>
+
+							<div class="select-icon">
+								<ion-icon name="chevron-down"></ion-icon>
+							</div>
+
+						</button>
+
+						<ul class="select-list">
+
+							<li class="select-item">
+								<button data-select-item>Tudo</button>
+							</li>
+
+							<li class="select-item">
+								<button data-select-item>Web design</button>
+							</li>
+
+							<li class="select-item">
+								<button data-select-item>Desenvolvimento Web</button>
+							</li>
+						</ul>
+					</div>
+
+					<div class="filter-select-box">
+
+						<button class="filter-select" data-select>
+
+							<div class="select-value" data-selecct-value>Backend</div>
+
+							<div class="select-icon">
+								<ion-icon name="chevron-down"></ion-icon>
+							</div>
+
+						</button>
+
+						<ul class="select-list">
+
+							<li class="select-item">
+								<button data-select-item>Tudo</button>
+							</li>
+
+							<li class="select-item">
+								<button data-select-item>Banco de dados</button>
+							</li>
+
+							<li class="select-item">
+								<button data-select-item>Desenvolvimento Web</button>
+							</li>
+						</ul>
+					</div>
+					
+					<div class="starred">
+						<h2>Repositórios: </h2>
+						<ul class="project-list">
+
+							<li class="project-item active" data-filter-item data-category="web development">
+								<div>
+									<div class="project-name-img">
+										<a href="#">
+											<h3 class="projects-item-title">Uma simples Webpage multi-idiomas feito utilizando apenas HTML CSS e jQuery</h3>
+											<figure class="project-img">
+												<!-- img hover - olho icone -->
+												<div class="project-item-icon-box">
+													<ion-icon name="eye-outline"></ion-icon>
+												</div>
+												<img src="./assets/images/project-1.jpg" alt="thumbnail rep" loading="lazy">
+											</figure>
+										</a>
+									</div>
+									<div class="projects-item-infos">
+										<div class="date-container">
+											<span class="createAt">Criado em:<br/> 02/09/2021</span>
+											<span class="updateAt">Última atualização:<br/> 07/08/2024</span>
+										</div>
+										<div class="languages-container">
+											<div class="language-content">
+												<img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg" />
+												<span>Javascrip</span>
+											</div>
+											<div class="language-content">
+												<img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/css3/css3-original.svg" />
+												<span>CSS</span>
+											</div>
+											<div class="language-content">
+												<img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/html5/html5-original.svg" />
+												<span>HTML</span>
+											</div>
+										</div>	
+									</div>
+									<div class="projects-item-actions">
+										<div class="projects-item-btn-box">	
+											<a class="projects-item-btn" href="#">
+												<ion-icon name="arrow-forward-circle-outline"></ion-icon>
+												Ver repositório no Github
+											</a>
+										</div>
+										<div class="projects-item-btn-box">	
+											<a class="projects-item-btn" href="#">
+												<ion-icon name="arrow-forward-circle-outline"></ion-icon>
+												Ver no Github page
+											</a>
+										</div>
+									</div>
+								</div>
+							</li>
+
+							<li class="project-item active" data-filter-item data-category="web development">
+								<div>
+									<div class="project-name-img">
+										<a href="#">
+											<h3 class="projects-item-title">Projeto Painel Administrativo</h3>
+											<figure class="project-img">
+												<!-- img hover - olho icone -->
+												<div class="project-item-icon-box">
+													<ion-icon name="eye-outline"></ion-icon>
+												</div>
+												<img src="./assets/images/project-2.png" alt="orizon" loading="lazy">
+											</figure>
+										</a>
+									</div>
+									<div class="projects-item-infos">
+										<div class="date-container">
+											<span class="createAt">Criado em:<br/> 02/09/2021</span>
+											<span class="updateAt">Última atualização:<br/> 07/08/2024</span>
+										</div>
+										<div class="languages-container">
+											<div class="language-content">
+												<img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg" />
+												<span>Javascrip</span>
+											</div>
+											<div class="language-content">
+												<img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/css3/css3-original.svg" />
+												<span>CSS</span>
+											</div>
+											<div class="language-content">
+												<img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/html5/html5-original.svg" />
+												<span>HTML</span>
+											</div>
+										</div>	
+									</div>
+									<div class="projects-item-actions">
+										<div class="projects-item-btn-box">	
+											<a class="projects-item-btn" href="#">
+												<ion-icon name="arrow-forward-circle-outline"></ion-icon>
+												Ver repositório no Github
+											</a>
+										</div>
+										<div class="projects-item-btn-box">	
+											<a class="projects-item-btn" href="#">
+												<ion-icon name="arrow-forward-circle-outline"></ion-icon>
+												Ver no Github page
+											</a>
+										</div>
+									</div>
+								</div>
+							</li>
+
+							<li class="project-item active" data-filter-item data-category="web development">
+								<div>
+									<div class="project-name-img">
+										<a href="#">
+											<h3 class="projects-item-title">Um website de aluguel de casas</h3>
+											<figure class="project-img">
+												<!-- img hover - olho icone -->
+												<div class="project-item-icon-box">
+													<ion-icon name="eye-outline"></ion-icon>
+												</div>
+												<img src="./assets/images/project-3.jpg" alt="fundo" loading="lazy">
+											</figure>
+										</a>
+									</div>
+									<div class="projects-item-infos">
+										<div class="date-container">
+											<span class="createAt">Criado em:<br/> 02/09/2021</span>
+											<span class="updateAt">Última atualização:<br/> 07/08/2024</span>
+										</div>
+										<div class="languages-container">
+											<div class="language-content">
+												<img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg" />
+												<span>Javascrip</span>
+											</div>
+											<div class="language-content">
+												<img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/css3/css3-original.svg" />
+												<span>CSS</span>
+											</div>
+											<div class="language-content">
+												<img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/html5/html5-original.svg" />
+												<span>HTML</span>
+											</div>
+										</div>	
+									</div>
+									<div class="projects-item-actions">
+										<div class="projects-item-btn-box">	
+											<a class="projects-item-btn" href="#">
+												<ion-icon name="arrow-forward-circle-outline"></ion-icon>
+												Ver repositório no Github
+											</a>
+										</div>
+										<div class="projects-item-btn-box">	
+											<a class="projects-item-btn" href="#">
+												<ion-icon name="arrow-forward-circle-outline"></ion-icon>
+												Ver no Github page
+											</a>
+										</div>
+									</div>
+								</div>
+							</li>
+
+							<li class="project-item active" data-filter-item data-category="web development">
+								<div>
+									<div class="project-name-img">
+										<a href="#">
+											<h3 class="projects-item-title">Projeto de site Responsivo</h3>
+											<figure class="project-img">
+												<!-- img hover - olho icone -->
+												<div class="project-item-icon-box">
+													<ion-icon name="eye-outline"></ion-icon>
+												</div>
+												<img src="./assets/images/project-4.png" alt="brawlhalla" loading="lazy">
+											</figure>
+										</a>
+									</div>
+									<div class="projects-item-infos">
+										<div class="date-container">
+											<span class="createAt">Criado em:<br/> 02/09/2021</span>
+											<span class="updateAt">Última atualização:<br/> 07/08/2024</span>
+										</div>
+										<div class="languages-container">
+											<div class="language-content">
+												<img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg" />
+												<span>Javascrip</span>
+											</div>
+											<div class="language-content">
+												<img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/css3/css3-original.svg" />
+												<span>CSS</span>
+											</div>
+											<div class="language-content">
+												<img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/html5/html5-original.svg" />
+												<span>HTML</span>
+											</div>
+										</div>	
+									</div>
+									<div class="projects-item-actions">
+										<div class="projects-item-btn-box">	
+											<a class="projects-item-btn" href="#">
+												<ion-icon name="arrow-forward-circle-outline"></ion-icon>
+												Ver repositório no Github
+											</a>
+										</div>
+										<div class="projects-item-btn-box">	
+											<a class="projects-item-btn" href="#">
+												<ion-icon name="arrow-forward-circle-outline"></ion-icon>
+												Ver no Github page
+											</a>
+										</div>
+									</div>
+								</div>
+							</li>
+
+						</ul>
+					</div>
+				</section>
+			</article>
+
+			<!--BLOG-->
+			<article class="blog" data-page="blog">
+
+				<header>
+					<h2 class="h2 article-title">Blog</h2>
+				</header>
+
+				<div class="blog-bg">
+					<p>
+						Em Breve...
+						Postagens sobre web design, programação e tecnologia.
+					</p>
+					<div class="gif-container">
+						<img src="./assets/images/dino.gif" alt="GIF animado">
+					</div>
+				</div>
+
+				<!-- 
+					Aqui você vai pegar informações de alguma API bem legal, para trazer noticias novidades referente a web design e o mundo da programação, além de alguma possivel informação que você queira colocar.
+				-->
+
+				<!-- <section class="blog-posts">
+					<ul class="blog-posts-list">
+						<li class="blog-post-item">
+							<a href="#">
+								<figure class="blog-banner-box">
+									<img src="./assets/images/blog-1.jpg" alt="Design conferences in 2022" loading="lazy">
+								</figure>
+				
+								<div class="blog-content">
+									<div class="blog-meta">
+										<p class="blog-category">Design</p>
+										<span class="dot"></span>
+										<time datetime="2022-02-23">23 Ago, 2024</time>
+									</div>
+									<h3 class="h3 blog-item-title">Postagem do Blog</h3>
+									<p class="blog-text">
+										Postagens sobre design, programação e tecnologia.
+									</p>
+								</div>
+							</a>
+						</li>
+		  
+						<li class="blog-post-item">
+							<a href="#">
+								<figure class="blog-banner-box">
+									<img src="./assets/images/blog-2.jpg" alt="Best fonts every designer" loading="lazy">
+								</figure>
+				
+								<div class="blog-content">
+									<div class="blog-meta">
+										<p class="blog-category">Design</p>
+										<span class="dot"></span>
+										<time datetime="2022-02-23">23 Ago, 2024</time>
+									</div>
+									<h3 class="h3 blog-item-title">Postagem do Blog</h3>
+									<p class="blog-text">
+										Postagens sobre design, programação e tecnologia.
+									</p>
+								</div>
+							</a>
+						</li>
+			
+						<li class="blog-post-item">
+							<a href="#">
+								<figure class="blog-banner-box">
+									<img src="./assets/images/blog-3.jpg" alt="Design digest #80" loading="lazy">
+								</figure>
+				
+								<div class="blog-content">
+									<div class="blog-meta">
+										<p class="blog-category">Design</p>
+										<span class="dot"></span>
+										<time datetime="2022-02-23">23 Ago, 2024</time>
+									</div>
+									<h3 class="h3 blog-item-title">Postagem do Blog</h3>
+									<p class="blog-text">
+										Postagens sobre design, programação e tecnologia.
+									</p>
+								</div>
+							</a>
+						</li>
+			
+						<li class="blog-post-item">
+							<a href="#">
+								<figure class="blog-banner-box">
+									<img src="./assets/images/blog-4.jpg" alt="UI interactions of the week" loading="lazy">
+								</figure>
+				
+								<div class="blog-content">
+									<div class="blog-meta">
+										<p class="blog-category">Design</p>
+										<span class="dot"></span>
+										<time datetime="2022-02-23">23 Ago, 2024</time>
+									</div>
+									<h3 class="h3 blog-item-title">Postagem do Blog</h3>
+									<p class="blog-text">
+										Postagens sobre design, programação e tecnologia.
+									</p>
+								</div>
+							</a>
+						</li>
+			
+						<li class="blog-post-item">
+							<a href="#">
+								<figure class="blog-banner-box">
+									<img src="./assets/images/blog-5.jpg" alt="The forgotten art of spacing" loading="lazy">
+								</figure>
+								<div class="blog-content">
+									<div class="blog-meta">
+										<p class="blog-category">Design</p>
+										<span class="dot"></span>
+										<time datetime="2022-02-23">23 Ago, 2024</time>
+									</div>
+									<h3 class="h3 blog-item-title">Postagem do Blog</h3>
+									<p class="blog-text">
+										Postagens sobre design, programação e tecnologia.
+									</p>
+								</div>
+							</a>
+						</li>
+			
+						<li class="blog-post-item">
+							<a href="#">
+								<figure class="blog-banner-box">
+									<img src="./assets/images/blog-6.jpg" alt="Design digest #79" loading="lazy">
+								</figure>
+				
+								<div class="blog-content">
+									<div class="blog-meta">
+										<p class="blog-category">Design</p>
+										<span class="dot"></span>
+										<time datetime="2022-02-23">23 Ago, 2024</time>
+									</div>
+									<h3 class="h3 blog-item-title">Postagem do Blog</h3>
+									<p class="blog-text">
+										Postagens sobre design, programação e tecnologia.
+									</p>
+								</div>
+							</a>
+						</li>
+					</ul>
+				</section> -->
+			</article>
+
+			<!-- CONTACT -->
+			<!-- <article class="contact" data-page="entre em contato">
+
+				<header>
+					<h2 class="h2 article-title">Entre em Contato</h2>
+				</header>
+
+				<section class="contact-container" id="contact">
+
+					<div class="contact-content section-content">
+
+						<h2 class="h3 section-title">Have You Any Project? Please Drop a Message</h2>
+
+						<p class="section-text">
+							Get in touch and let me know how i can help. Fill out the form and i’ll be in touch as soon as possible.
+						</p>
+
+						<ul class="contact-list">
+								
+							<li class="contact-list-item">
+								<div class="contact-item-icon">
+									<ion-icon name="location-outline"></ion-icon>
+								</div>
+
+								<div class="wrapper">
+									<h3 class="h4 contact-item-title">Address:</h3>
+
+									<address class="contact-info">
+										941 Saqrqorish Road, alandalos, grnata, wa 47122-4194
+									</address>
+								</div>
+							</li> 
+
+							<li class="contact-list-item">
+								<div class="contact-item-icon">
+									<ion-icon name="call-outline"></ion-icon>
+								</div>
+
+								<div class="wrapper">
+									<h3 class="h4 contact-item-title">Phone Whatsapp:</h3>
+
+									<a href="tel:01234567789" class="contact-info">Coming soon..</a>
+									<a href="tel:01234567789" class="contact-info">+55 (011) 90000-0000</a>
+								</div>
+							</li>
+
+							<li class="contact-list-item">
+								<div class="contact-item-icon">
+									<ion-icon name="mail-outline"></ion-icon>
+								</div>
+
+								<div class="wrapper">
+									<h3 class="h4 contact-item-title">Email:</h3>
+
+									<a href="mailto:info@jack.com" class="contact-info">info@john.com</a>
+
+									<a href="mailto:support@jack.com" class="contact-info">support@jonh.com</a>
+								</div>
+							</li>
+
+						</ul>
+
+					</div>
+			
+					<form action="" class="contact-form">
+			
+						<div class="form-wrapper">
+							<label for="name" class="form-label">Name</label>
+				
+							<div class="input-wrapper">
+								<input type="text" name="name" id="name" required placeholder="Your name" class="input-field">
+								<ion-icon name="person-circle"></ion-icon>
+							</div>
+						</div>
+			
+						<div class="form-wrapper">
+							<label for="email" class="form-label">Email</label>
+				
+							<div class="input-wrapper">
+								<input type="email" name="email" id="email" required placeholder="Your email"
+								class="input-field">
+								<ion-icon name="mail"></ion-icon>
+							</div>
+						</div>
+			
+						<div class="form-wrapper">
+							<label for="phone" class="form-label">Phone</label>
+				
+							<div class="input-wrapper">
+								<input type="tel" name="phone" id="phone" required placeholder="Phone Number" class="input-field">
+								<ion-icon name="call"></ion-icon>
+							</div>
+						</div>
+			
+						<div class="form-wrapper">
+							<label for="message" class="form-label">Message</label>
+				
+							<div class="input-wrapper">
+								<textarea name="message" id="message" required placeholder="Write your message..."
+								class="input-field"></textarea>
+								<ion-icon name="chatbubbles"></ion-icon>
+
+								<input type="hidden" name="MAX_FILE_SIZE" value="4194304" />
+								<input type="file" />
+							</div>
+						</div>
+			
+						<div class="btn-box">
+							<a href="#" class="btn">Send</a>
+						</div>
+			
+					</form>
+				</section>
+			</article> -->
+
+		</div>
+	</main>
+
+	<!-- lazy loader -->
+	<script src="./assets/js/jquery-3.7.1.min.js"></script>
+	<script src="./assets/js/lazyLoading.js"></script>
+
+	<!-- custom js link -->
+	<script src="./assets/js/script.js"></script>
+	<script src="./assets/js/changeText.js"></script>
+
+	<!-- ionicon link -->
+	<script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+	<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+	
+	<!-- loader -->
+	<script>
+        window.onload = function() { // can also use window.addEventListener('load', (event) => {
+            let ScreenLoading = document.getElementById('loading-container');
+            ScreenLoading.style.display = "none";
+        // image is loaded at this time
+        console.log('Content loaded!');
+        };
+    </script>
+</body>
+
+</html>

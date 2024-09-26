@@ -1,7 +1,7 @@
 import { AppPropsType } from 'next/dist/shared/lib/utils';
 import { LanguageProvider } from '../contexts/LanguageContext';
 
-import '../styles/layout.css';
+import '../styles/global.css';
 
 export default function App({ Component, pageProps, router }: AppPropsType) {
   return (

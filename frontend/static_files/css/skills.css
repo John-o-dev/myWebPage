@@ -1,0 +1,17 @@
+li.timeline-item {
+    display: flex;
+}
+
+li.timeline-item img,
+li.timeline-item i{
+    font-size: 40px;
+    width: 50px;
+    height: 40px; 
+    transition: 0.25s ease;
+ }
+
+li.timeline-item img:is(:hover, :focus),
+li.timeline-item i:is(:hover, :focus){
+    transform: scale(1.2);
+}
+ 

@@ -9,7 +9,7 @@ export default function Home() {
   return (
     <Layout title={t('home')} className="home">
       <section className="hero">
-        <div className="message">
+        {/* <div className="message">
           <h1>Johnny</h1>
           <p>{t('slogan')}</p>
           <Link href={`/${locale}/${t('about').toLowerCase()}`}>
@@ -21,7 +21,7 @@ export default function Home() {
           <Link href={`/${locale}/${t('home').toLowerCase()}`}>
             <a className="button">{t('home')}</a>
           </Link>
-        </div>
+        </div> */}
       </section>
     </Layout>
   );
