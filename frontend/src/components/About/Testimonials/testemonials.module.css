@@ -1,0 +1,113 @@
+.testimonials { margin-bottom: 30px; }
+
+.testimonials_title {
+    color: var(--text-color);
+    font-weight: var(--fw-700);
+    font-size: var(--fs-2);
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+}
+
+.testimonials_list {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    overscroll-behavior-inline: contain;
+    scroll-snap-type: inline mandatory;
+}
+
+.testimonials_item {
+    min-width: 100%;
+    scroll-snap-align: center;
+}
+
+.testimonials_avatar_box {
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: translate(15px, -25px);
+    background: var(--bg-gradient-onyx);
+    border-radius: 14px;
+    box-shadow: var(--neon-box-shadow);
+}
+
+.testimonials_item_title { margin-bottom: 7px; }
+
+.testimonials_text {
+    color: var(--text-color);
+    font-size: var(--fs-6);
+    font-weight: var(--fw-300);
+    line-height: 1.6;
+    display: -webkit-box;
+    line-clamp: 4;
+    -webkit-line-clamp: 4;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.content_card {
+    position: relative;
+    background: var(--hover-color);
+    padding: 15px;
+    padding-top: 45px;
+    border-radius: 14px;
+    box-shadow: var(--neon-box-shadow);
+    cursor: pointer;
+    z-index: 1;
+}
+
+.content_card::before {
+    content: "";
+    position: absolute;
+    inset: 1px;
+    background: var(--secon-bg-color);
+    border-radius: inherit;
+    z-index: -1;
+}
+
+@media (min-width: 580px) {
+    .testimonials_title { margin-bottom: 25px; }
+
+    .testimonials_list {
+        gap: 30px;
+        margin: 0 -30px;
+        padding: 30px;
+        padding-bottom: 35px;
+    }
+
+    .testimonials_item { min-width: calc(80% - 25px); }
+
+    .testimonials_avatar_box {
+        transform: translate(25px, -25px);
+        border-radius: 20px;
+    }
+
+    .testimonials_avatar_box img { width: 70px; }
+
+    .testimonials_item_title {
+        margin-bottom: 10px;
+        margin-left: 80px;
+    }
+
+    .testimonials_text {
+        line-clamp: 2;
+        -webkit-line-clamp: 2;
+    }
+
+    .content_card {
+        padding: 30px;
+        padding-top: 25px;
+        min-height: 170px;
+    }
+}
+
+@media (min-width: 768px) {
+    .testimonials_item { min-width: calc(60% - 15px); }
+}
+
+@media (min-width: 1024px) {
+    .testimonials_item { min-width: calc(40% - 15px); }
+}

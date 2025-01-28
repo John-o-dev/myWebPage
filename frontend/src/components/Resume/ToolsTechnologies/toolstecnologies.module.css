@@ -1,0 +1,40 @@
+.timeline { margin-bottom: 30px; }
+
+.timeline .title_wrapper {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 25px;
+}
+
+.timeline_list {
+    font-size: var(--fs-6);
+    margin-left: 45px;
+}
+
+.degree_timeline_item { position: relative; }
+
+li.degree_timeline_item {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5em;
+}
+
+li.degree_timeline_item img,
+li.degree_timeline_item i {
+    font-size: 40px;
+    width: 50px;
+    height: 40px; 
+    transition: 0.25s ease;
+}
+
+li.degree_timeline_item img:is(:hover, :focus),
+li.degree_timeline_item i:is(:hover, :focus) { transform: scale(1.2); }
+
+@media (min-width: 450px) {
+    .skills_icons { padding: 5px; }
+}
+
+@media (min-width: 580px) {
+    .timeline_list { margin-left: 65px; }
+}
