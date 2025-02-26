@@ -1,15 +1,10 @@
 import Head from 'next/head';
-import { ActiveLink } from '../ActiveLink';
-import useTranslation from '../../hooks/useTranslation';
 
-import style from './layout.module.css'
-import navigationStyle from '../Navigation/navigation.module.css'
-
-// import Header from '../Header';
-// import Footer from '../Footer';
+import Sidebar from '../Sidebar'
+import Header from '../Header';
+import styles from './layout.module.css'
 
 type Props = {
-	className?: string;
 	children: React.ReactNode;
 	desc?: string;
 	title: string;
@@ -17,19 +12,17 @@ type Props = {
 };
 
 export default function Layout({
-	className,
 	children,
 	title,
 	desc,
 	thumb,
 }: Props) {
-	const { t, locale } = useTranslation();
 
 	const description = desc || "John O'Dev Portfolio";
 	const thumbnail = thumb || '/img/default-thumb.png';
 
 	return (
-		<main className={style.main_container}>
+		<main className={styles.main}>
 			<Head>
 				<meta charSet="utf-8" />
 				<title>{title}</title>
@@ -45,7 +38,16 @@ export default function Layout({
 				<meta property="twitter:description" content={description} />
 				<meta property="twitter:image" content={thumbnail} />
 			</Head>
-		
+
+			<div className={styles.box_container}>
+
+				<Sidebar />
+				<div className={styles.box_content}>
+					<Header />
+					{children}
+				</div>
+
+			</div>
 		</main>
-  	);
+	);
 }

@@ -8,7 +8,7 @@ export default function ToolsTecnologies () {
 
             <div className={styles.title_wrapper}>
                 < IconBox />
-                <h3>Ferramentas e tecnologias</h3>
+                <h3>Linguagem | Framework | Software</h3>
             </div>
 
             <ol className={styles.timeline_list}>

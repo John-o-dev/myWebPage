@@ -1,9 +1,7 @@
-import { useRouter } from 'next/router';
-import styles from './header.module.css'
 
-// import Navigation from '../Navigation';
-// import Logo from '../Logo';
-import useTranslation from '../../hooks/useTranslation';
+import Navbar from '../Navbar';
+
+import styles from './header.module.css'
 
 type Props = {
   className?: string;
@@ -11,39 +9,10 @@ type Props = {
 };
 
 export default function Header({ className, children }: Props) {
-  const headerClass = className || 'header';
-  const { setLocale, locales } = useTranslation();
-  const { asPath, pathname, push, route } = useRouter();
-
-  function handleLocaleChange(language: string) {
-    if (!window) {
-      return;
-    }
-
-    const regex = new RegExp(`^/(${locales.join('|')})`);
-    localStorage.setItem('lang', language);
-    setLocale(language);
-
-    if (!route.includes('post/')) {
-      push(pathname, asPath.replace(regex, `/${language}`));
-    }
-  }
-
   return (
-    // <header className={headerClass}>
-  
-    // </header>
-    <header className={headerClass}>
-      {/* <Logo link={`/`} /> */}
-      {/* <Navigation /> */}
+    <header className={styles.headerClass}>
+      <Navbar />
       {children}
-      <div className="lang">
-        {locales.map((locale) => (
-          <button key={locale} onClick={() => handleLocaleChange(locale)}>
-            {locale}
-          </button>
-        ))}
-      </div>
     </header>
   );
 }

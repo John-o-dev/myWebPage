@@ -1,0 +1,26 @@
+.blog_bg {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+  
+  .blog_bg p {
+    color: var(--text-color);
+    font-weight: var(--fw-200);
+    font-size: var(--fs-5);
+    letter-spacing: 1px;
+    text-transform: uppercase;
+  }
+  
+  .gif_container {
+    text-align: center;
+    margin-top: 50px;
+  }
+  
+  .gif_container img {
+    width: 300px;
+    height: auto;
+  }
+  

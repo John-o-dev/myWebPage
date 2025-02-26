@@ -7,7 +7,7 @@ export default function Education() {
 
             <div className={styles.title_wrapper}>
                 < IconBox />
-                <h3>Educação</h3>
+                <h3>Formação</h3>
             </div>
 
             <ol className={styles.timeline_list}>

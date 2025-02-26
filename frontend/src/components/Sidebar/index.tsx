@@ -3,11 +3,11 @@ import SidebarInfoMore from './SidebarInfoMore';
 
 export default function Sidebar() {
     return (
-        <aside className={styles.sidebar} data-sidebar>
+        <aside className={styles.sidebar}>
             <div className={styles.sidebar_info}>
                 <div className={styles.sidebar_container}>
                     <figure className={styles.avatar_box}>
-                        <img src="img/my-avatar.png" alt="Avatar de John O'Dev" />
+                        <img src="img/Photo.jpg" alt="Imegem de John O'Dev" />
                     </figure>
             
                     <div className={styles.info_content}>
@@ -23,7 +23,7 @@ export default function Sidebar() {
                 </button>
             </div>
 
-            <div className="separator"></div>
+            <div className={styles.separator}></div>
 
             <SidebarInfoMore />
         </aside>

@@ -1,9 +1,15 @@
 import styles from './iconbox.module.css'
 
-export default function IconBox() {
+interface IconBoxProps {
+    children: React.ReactNode;
+    IconName: string;
+}
+
+export default function IconBox({ children, IconName = "" }: IconBoxProps) {
     return (
         <div className={styles.iconBox}>
-            {/* <ion-icon name="book-outline"></ion-icon> */}
+            {/* <ion-icon name={IconName}></ion-icon> */}
+            {children}
         </div>
     )
 }

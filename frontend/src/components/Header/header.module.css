@@ -1,0 +1,5 @@
+.headerClass {
+    position: relative; /* Para evitar que o header sobreponha */
+    width: 100%;
+    z-index: 10;
+}

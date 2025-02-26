@@ -9,20 +9,20 @@ export default function Resume () {
         <article className="resume">
 
             <header>
-                <h2 className="article-title">Certificados</h2>
+                <h2 className="article-title">Competências</h2>
             </header>
 
-            < Education />
+            <Education />
             
             <ToolsTecnologies />
 
             <div className="separator"></div>
 
-            < Learning />
+            <Learning />
 
             <div className="separator"></div>
 
-            < Programs />
+            <Programs />
 
         </article>
     )

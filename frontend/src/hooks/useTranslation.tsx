@@ -1,22 +1,25 @@
 import { useContext } from 'react';
 
 import {
-  LanguageContext,
-  defaultLocale,
-  locales,
+	LanguageContext,
+	defaultLocale,
+	locales,
 } from '../contexts/LanguageContext';
-import { LangStrings } from '../lib/strings';
+import { en } from '../lib/locales/en';
+import { pt } from '../lib/locales/pt';
+
+const translations: Record<string, Record<string, Record<string, string>>> = { en, pt };
 
 export default function useTranslation() {
-  const [locale, setLocale] = useContext(LanguageContext);
+	const [locale, setLocale] = useContext(LanguageContext);
 
-  function t(key: string) {
-    if (!LangStrings[locale][key]) {
-      console.warn(`No string '${key}' for locale '${locale}'`);
-    }
-  // ex: LangStrings["en"]["about"]
-    return LangStrings[locale][key] || LangStrings[defaultLocale][key] || '';
-  }
+	function t(component: string, key: string) {
+		if (!translations[locale]?.[component]?.[key]) {
+			console.warn(`No string '${key}' for locale '${locale}'`);
+		}
+		return translations[locale]?.[component]?.[key] || translations[defaultLocale]?.[component]?.[key] || ''
 
-  return { t, locale, setLocale, locales };
+	}
+
+	return { t, locale, setLocale, locales };
 }
