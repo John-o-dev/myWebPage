@@ -7,7 +7,7 @@ export default function ToolsTecnologies () {
         <section className={styles.timeline}>
 
             <div className={styles.title_wrapper}>
-                < IconBox />
+                {/* < IconBox /> */}
                 <h3>Linguagem | Framework | Software</h3>
             </div>
 

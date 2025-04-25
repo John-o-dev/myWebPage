@@ -7,7 +7,7 @@ export default function Learning() {
         <section className={styles.timeline}>
 
             <div className={styles.title_wrapper}>
-                < IconBox />
+                {/* < IconBox /> */}
                 <h3>Estou aprendendo</h3>
             </div>
 

@@ -7,7 +7,7 @@ export default function Programs() {
         <section className={styles.timeline}>
 
             <div className={styles.title_wrapper}>
-                < IconBox />
+                {/* < IconBox /> */}
                 <h3>Programas</h3>
             </div>
 
