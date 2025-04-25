@@ -43,7 +43,7 @@ export default function Navbar() {
                     <ActiveLink
                         href={`/${locale}/about`}
                         activeClassName="active">
-                        <a className={styles.navbar_link}>{t(className, 'about')}</a>
+                        <a className={`${styles.navbar_link} ${styles.Nactive}`}>{t(className, 'about')}</a>
                     </ActiveLink>
                 </li>
 
@@ -51,7 +51,7 @@ export default function Navbar() {
                     <ActiveLink
                         href={`/${locale}/summary`}
                         activeClassName="active">
-                        <a className={styles.navbar_link}>{t(className, 'summary')}</a>
+                        <a className={`${styles.navbar_link} ${styles.Nactive}`}>{t(className, 'summary')}</a>
                     </ActiveLink>
                 </li>
 
@@ -59,7 +59,7 @@ export default function Navbar() {
                     <ActiveLink
                         href={`/${locale}/portfolio`}
                         activeClassName="active">
-                        <a className={styles.navbar_link}>{t(className, 'portfolio')}</a>
+                        <a className={`${styles.navbar_link} ${styles.Nactive}`}>{t(className, 'portfolio')}</a>
                     </ActiveLink>
                 </li>
 
@@ -67,7 +67,7 @@ export default function Navbar() {
                     <ActiveLink
                         href={`/${locale}/blog`}
                         activeClassName="active">
-                        <a className={styles.navbar_link}>{t(className, 'blog')}</a>
+                        <a className={`${styles.navbar_link} ${styles.Nactive}`}>{t(className, 'blog')}</a>
                     </ActiveLink>
                 </li>
 
@@ -75,7 +75,7 @@ export default function Navbar() {
                     <div className={styles.langButton}>
                         {locales.map((locale) => (
                             <button 
-                            className={styles.navbar_link} 
+                            className={`${styles.navbar_link} ${styles.Nactive}`} 
                             key={locale} 
                             onClick={() => handleLocaleChange(locale)}>
                                 {locale}

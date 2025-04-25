@@ -13,11 +13,7 @@ export default function Services() {
                     <div className={styles.service_content_box}>
                         <h4 className={styles.service_item_title}>Web Design</h4>
                         <p className={styles.service_item_text}>
-                        O Web Designer foca na criação de layouts e interfaces para sites e aplicações web. Além de habilidades em design gráfico, um web designer precisa ter conhecimentos em linguagens de programação e marcação, como HTML, CSS e JavaScript, além de outros aspectos como a seleção de cores, tipografia, imagens e outros elementos gráficos para transformar seus designs em páginas atraentes e funcionais para os usuários.<br/>
-
-                        Eles também precisam considerar a usabilidade, acessibilidade e a experiência do usuário (UX) ao projetar interfaces que sejam não apenas esteticamente agradáveis, mas também intuitivas e fáceis de navegar.<br/>
-
-                        Outra parte importante do trabalho do web designer é garantir que o site seja responsivo, ou seja, que se adapte bem a diferentes dispositivos, como computadores, tablets e smartphones. 
+                        O Web Designer foca na criação de layouts e interfaces para sites e aplicações web. Além de habilidades em design gráfico, um web designer precisa ter conhecimentos em linguagens de programação e marcação, como HTML, CSS e JavaScript, além de outros aspectos como a seleção de cores, tipografia, imagens e outros elementos gráficos para transformar seus designs em páginas atraentes e funcionais para os usuários. Eles também precisam considerar a usabilidade, acessibilidade e a experiência do usuário (UX) ao projetar interfaces que sejam não apenas esteticamente agradáveis, mas também intuitivas e fáceis de navegar. Outra parte importante do trabalho do web designer é garantir que o site seja responsivo, ou seja, que se adapte bem a diferentes dispositivos, como computadores, tablets e smartphones. 
                         </p>
                     </div>
                 </li>

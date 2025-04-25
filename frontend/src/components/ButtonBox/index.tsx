@@ -1,14 +1,14 @@
 import styles from './buttonBox.module.css'
 
-interface ButtonBoxProps {
+type ButtonBoxProps = React.AnchorHTMLAttributes<HTMLAnchorElement> & {
     children: React.ReactNode;
     href?: string;
 }
 
-export default function ButtonBox({ href = "#", children }: ButtonBoxProps) {
+export default function ButtonBox({ href, children, ...props }: ButtonBoxProps) {
     return (
         <div className={styles.btn_box}>
-            <a href={href} >
+            <a href={href} {...props} className={styles.btn}>
                 {children}
             </a>
         </div>

@@ -5,7 +5,7 @@ import useTranslation from '../../hooks/useTranslation'
 export default function AboutPage () {
     const { t } = useTranslation();
     return (
-        <Layout className="about" title={t('about')}>
+        <Layout title={t('about', 'title')}>
             <h1>Página About...</h1>
         </Layout>
     )

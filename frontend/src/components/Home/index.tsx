@@ -1,5 +1,6 @@
 import styles from './home.module.css'
 import useTranslation from '@/src/hooks/useTranslation';
+import ButtonBox from '../ButtonBox';
 
 export default function HomePage() {
 	const className = "homePage";
@@ -28,6 +29,14 @@ export default function HomePage() {
 							</h4>
 						</div>
 					</div>
+
+					<ButtonBox href="/pdf/Currículo_Profissional_Antonio.pdf" target="_blank" rel="noopener noreferrer"> 
+						Visualizar Currículo Online 
+					</ButtonBox>
+
+					<ButtonBox href="/pdf/Currículo_Profissional_Antonio.pdf" download> 
+						Download Currículo 
+					</ButtonBox>
 				</div>
 
 				<div className={styles.home_image}>

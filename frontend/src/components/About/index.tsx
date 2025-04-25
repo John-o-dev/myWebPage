@@ -5,7 +5,7 @@ import ModalContainer from './ModalContainer'
 
 export default function About() {
     return (
-        <article className="about" data-page="sobre">
+        <article>
             <AboutContainer />
 
             <div className="separator"></div>

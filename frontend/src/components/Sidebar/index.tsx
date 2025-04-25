@@ -1,7 +1,10 @@
+import useTranslation from '@/src/hooks/useTranslation';
 import styles from './sidebar.module.css';
 import SidebarInfoMore from './SidebarInfoMore';
 
 export default function Sidebar() {
+    const className = "sidebar";
+    const { t } = useTranslation();
     return (
         <aside className={styles.sidebar}>
             <div className={styles.sidebar_info}>
@@ -12,13 +15,13 @@ export default function Sidebar() {
             
                     <div className={styles.info_content}>
                         <h1 className={styles.name}>Antonio Rodrigues<br/>Lima Filho</h1>
-                        <p>Desenvolvedor Web</p>
-                        <p className={styles.title}>Criador de Conteúdo como <span>John'Odev</span></p>
+                        <p>{t(className, 'occupation')}</p>
+                        <p className={styles.title}>{t(className, 'youtube_presentation')} <span>John'Odev</span></p>
                     </div>
                 </div>
                 
                 <button className={styles.info_more_btn} data-sidebar-btn>
-                <span>Contatos</span>
+                <span>{t(className, 'contacts')}</span>
                 {/* <ion-icon name="chevron-down"></ion-icon> */}
                 </button>
             </div>

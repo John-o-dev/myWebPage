@@ -60,6 +60,12 @@
         color: var(--hover-color);
     }
 
+    .navbar_list .Nactive{
+        color: rgb(66, 66, 66);
+        pointer-events: none;
+        cursor: not-allowed;
+    }
+
     .langButton {
         display: flex;
     }

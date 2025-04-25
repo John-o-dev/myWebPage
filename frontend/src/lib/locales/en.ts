@@ -11,7 +11,9 @@ export const en = {
         contact: 'Contact',
     },
     sidebar: {
-        test: 'teste'
+        occupation: 'Web Developer',
+        youtube_presentation: 'Content creator as ',
+        contacts: 'Contacts',
     },
     homePage: {
         fullName: 'Antonio Rodrigues Lima Filho',
