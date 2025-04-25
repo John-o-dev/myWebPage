@@ -6,7 +6,7 @@ export default function Education() {
         <section className={styles.timeline}>
 
             <div className={styles.title_wrapper}>
-                < IconBox />
+                {/* < IconBox /> */}
                 <h3>Formação</h3>
             </div>
 
