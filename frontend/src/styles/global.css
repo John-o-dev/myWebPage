@@ -1,0 +1,318 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&family=Roboto:wght@400;700&display=swap');
+
+:root {
+
+  /* colors ------------------------------------------ */
+  
+  /* solid */
+  --hover-color: #12f7ff;
+
+  /* background colors */
+  --bg-color: #250821;
+  --second-bg-color: #292e33;
+  --jet: hsl(0, 0%, 22%);
+  --orange-yellow-crayola: hsl(45, 100%, 72%);
+
+  /* typography ------------------------------------------ */
+
+  /* font-family */
+  --ff-poppins: 'Poppins', sans-serif;
+
+  /* font-size */
+  --fs-1: 2.2rem;
+  --fs-2: 2rem;
+  --fs-3: 1.2rem;
+  --fs-4: 1.1rem;
+  --fs-5: 1rem;
+  --fs-6: 0.8rem;
+  --fs-7: 0.75rem;
+  --fs-8: 0.60rem;
+
+  /* font-weight */
+  --fw-100: 100;
+  --fw-200: 200;
+  --fw-300: 300;
+  --fw-400: 400;
+  --fw-500: 500;
+  --fw-600: 600;
+  --fw-700: 700;
+  --fw-800: 800;
+  --fw-900: 900;
+
+  /* font-color */
+  --text-color: #f5f5f5;
+  --light-gray-70: hsla(0, 0%, 84%, 0.7);
+
+  /* shadow ------------------------------------------ */
+  --neon-box-shadow: 0 0 .5rem #12f7ff;
+  --font-neon-text-shadow:
+  0 0 10px rgba(18,247,255,0.3),
+  0 0 20px rgba(18,247,255,0.3),
+  0 0 30px rgba(18,247,255,0.3),
+  0 0 40px rgba(18,247,255,0.3),
+  0 0 70px rgba(18,247,255,0.3),
+  0 0 80px rgba(18,247,255,0.3),
+  0 0 100px rgba(18,247,255,0.3),
+  0 0 150px rgba(18,247,255,0.3);
+
+  /* transition ------------------------------------------ */
+  --transition-1: 0.25s ease;
+  --transition-2: 0.5s ease-in-out;
+
+  /* radius */
+  --radius-4: 4px;
+  --radius-12: 12px;
+}
+
+/*-----------------------------------*\
+  #RESET
+\*-----------------------------------*/
+
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+a { text-decoration: none; }
+
+li { list-style: none; }
+
+img, ion-icon, a, button, time, span { display: block; }
+
+ion-icon { color: white; }
+
+button {
+  font: inherit;
+  background: none;
+  border: none;
+  text-align: left;
+  cursor: pointer;
+}
+
+input, textarea {
+  display: block;
+  width: 100%;
+  background: none;
+  font: inherit;
+}
+
+::selection {
+  background: var(--secon-bg-color);
+  color: var(--hover-color);
+}
+
+:focus { outline-color: var(--hover-color); }
+
+/* Firefox */
+::placeholder {
+  color: var(--light-gray-70);
+  opacity: 1;
+}
+
+/* Edge 12 -18 */
+::-ms-input-placeholder {  color: var(--light-gray-70); }
+
+::-webkit-scrollbar {
+  height: 0;
+  width: .5rem;
+}
+
+::-webkit-scrollbar-track { background: var(--secon-bg-color); }
+
+::-webkit-scrollbar-thumb {
+  background: var(--hover-color);
+  border-radius: 5rem;
+}
+
+/*-----------------------------------*\
+  #RESET //
+\*-----------------------------------*/
+
+body {
+  font-family: "Poppins", sans-serif;
+  background-color: var(--second-bg-color);
+  color: var(--text-color);
+}
+
+/* main {
+  margin: 100px 12px 12px 12px;
+  min-width: 259px;
+  overflow-x: hidden;
+  box-sizing: border-box;
+} */
+
+article {
+  background: var(--bg-color);
+  /* z-index: 1; */
+  padding: 15px 20px;
+  overflow: hidden;
+}
+
+.article_title {
+  position: relative;
+  margin: 15px 0;
+  padding-bottom: 7px;
+  color: var(--text-color);
+  font-weight: var(--fw-700);
+  font-size: var(--fs-2);
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.article_title::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 30px;
+  height: 3px;
+  background: var(--hover-color);
+  border-radius: 3px;
+}
+
+.separator {
+  width: 100%;
+  height: 1px;
+  background: var(--hover-color);
+  margin: 16px 0;
+}
+
+/* social-media icons */
+
+.socials-icons{ color: var(--hover-color); }
+
+/*
+----------------------------------------------------------------
+----------------------------------------------------------------
+------------------------ break points --------------------------
+----------------------------------------------------------------
+----------------------------------------------------------------
+*/
+
+@media (min-width: 580px) {
+
+  /* CUSTOM PROPERTY */
+
+  :root {
+    /* typography */
+    --fs-1: 32px;
+    --fs-2: 24px;
+    --fs-3: 26px;
+    --fs-6: 15px;
+    --fs-7: 15px;
+    --fs-8: 12px;
+  }
+
+  /* main { margin: 15px 12px 20px 12px; } */
+
+  article {
+    width: 520px;
+    margin-inline: auto;
+    border-radius: 20px;
+    border: 1px solid var(--hover-color);
+    box-shadow: var(--neon-box-shadow);
+  }
+
+  .sticky {
+    position: fixed;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    border-radius: 0;
+    z-index: 100;
+    transition: border-radius 0.5s ease;
+  }
+
+  .sticky-article {
+    margin-top: 100px;
+    transition: color var(--transition-2);
+  }
+
+  /* #ARTICLE */
+  .article_title {
+    font-weight: var(--fw-600);
+    padding-bottom: 15px;
+  }
+
+  .article_title::after {
+    width: 40px;
+    height: 5px;
+  }
+
+}
+
+@media (min-width: 768px) {
+
+  /* REUSED STYLE */
+
+  article { width: 700px; }
+
+  .article_title { padding-bottom: 10px; }
+}
+
+@media (min-width: 1024px) {
+
+  /* CUSTOM PROPERTY */
+
+  :root {
+
+    /* shadow */
+    --shadow-1: -4px 8px 24px hsla(0, 0%, 0%, 0.125);
+    --shadow-2: 0 16px 30px hsla(0, 0%, 0%, 0.125);
+    --shadow-3: 0 16px 40px hsla(0, 0%, 0%, 0.125);
+  }
+
+  /* REUSED STYLE */
+
+  article {
+    width: 950px;
+    box-shadow: var(--neon-box-shadow);
+  }
+
+  /* MAIN */
+
+  /* main { margin-bottom: 60px; } */
+
+}
+
+@media (min-width: 1250px) {
+
+  /* REUSED STYLE */
+
+  article { width: auto; }
+
+  /* MAIN */
+
+  /* main {
+    max-width: 1200px;
+    margin-inline: auto;
+    display: flex;
+    justify-content: right;
+    align-items: stretch;
+  } */
+
+
+  /* NAVBAR */
+
+  .sticky {
+    position: static;
+    transform: translateX(0);
+  }
+
+  .sticky-article { margin-top: 20px; }
+
+  nav.sticky-desktop {
+    position: fixed;
+    top: 0;
+    width: 900px;
+    z-index: 1000;
+    border-radius: 0;
+    left: 50%;
+    transform: translateX(-33.5%);
+  }
+
+  .sticky-article-desktop { margin-top: 80px; }
+
+}

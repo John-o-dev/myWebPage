@@ -12,10 +12,8 @@ class MyDocument extends Document {
         <Head>
           <link rel="shortcut icon" href="favicon.png" type="image/png" />
           <link rel="preconnect" href="https://fonts.gstatic.com" />
-          <link
-            rel="stylesheet"
-            href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap"
-          />
+          <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" />
+          <link rel="stylesheet" type='text/css' href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" />
         </Head>
         <body>
           <Main />

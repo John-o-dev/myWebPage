@@ -1,12 +1,17 @@
 import { AppPropsType } from 'next/dist/shared/lib/utils';
 import { LanguageProvider } from '../contexts/LanguageContext';
+// import Loader from '../components/Loader';
 
-import '../styles/layout.css';
+import '../styles/global.css';
+import '../styles/globalicons.css'
 
 export default function App({ Component, pageProps, router }: AppPropsType) {
   return (
-    <LanguageProvider>
-      <Component {...pageProps} key={router.route} />
-    </LanguageProvider>
+    <>
+      {/* {Loader()} */}
+      <LanguageProvider>
+        <Component {...pageProps} key={router.route} />
+      </LanguageProvider>
+    </>
   );
 }

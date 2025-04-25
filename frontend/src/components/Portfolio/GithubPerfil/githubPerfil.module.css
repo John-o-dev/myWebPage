@@ -1,0 +1,45 @@
+.github_perfil {
+    display: flex;
+    flex-direction: column;
+}
+
+.github_perfil span {
+    color: var(--text-color);
+    font-weight: var(--fw-300);
+    font-size: var(--fs-6);
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+.github_user {
+    display: flex;
+    padding: 20px;
+}
+
+.github_user img {
+    width: 150px;
+    height: auto;
+    border-radius: 50%;
+    padding-right: 10px;
+}
+
+.github_user .github_username {
+    color: var(--hover-color);
+    font-weight: var(--fw-700);
+    font-size: var(--fs-2);
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+.github_user .repos_info {
+    color: var(--text-color);
+    font-size: var(--fs-5);
+    font-weight: var(--fw-300);
+    line-height: 1.6;
+}
+
+@media (min-width: 450px) {
+    .github_user {
+        gap: 30px;
+    }
+}

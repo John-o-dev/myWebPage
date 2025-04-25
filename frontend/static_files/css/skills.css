@@ -1,0 +1,17 @@
+li.degree-timeline-item {
+    display: flex;
+}
+
+li.degree-timeline-item img,
+li.degree-timeline-item i{
+    font-size: 40px;
+    width: 50px;
+    height: 40px; 
+    transition: 0.25s ease;
+ }
+
+li.degree-timeline-item img:is(:hover, :focus),
+li.degree-timeline-item i:is(:hover, :focus){
+    transform: scale(1.2);
+}
+ 
