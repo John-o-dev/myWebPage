@@ -7,7 +7,7 @@ export default function Services() {
             <ul className={styles.service_list}>
                 <li className={styles.service_item}>
                     <figure className={styles.service_icon_box}>
-                        <img data-url="img/icon-design.svg" alt="design icon" width="40" />
+                        <img src="/img/icon-design.svg" alt="design icon" width="40" />
                     </figure>
 
                     <div className={styles.service_content_box}>
@@ -20,7 +20,7 @@ export default function Services() {
 
                 <li className={styles.service_item}>
                     <figure className={styles.service_icon_box}>
-                        <img data-url="img/icon-dev.svg" alt="Web development icon" width="40" />
+                        <img src="/img/icon-dev.svg" alt="Web development icon" width="40" />
                     </figure>
 
                     <div className={styles.service_content_box}>
@@ -39,7 +39,7 @@ export default function Services() {
 
                 <li className={styles.service_item}>
                     <figure className={styles.service_icon_box}>
-                        <img data-url="img/icon-app.svg" alt="mobile app icon" width="40" />
+                        <img src="/img/icon-app.svg" alt="mobile app icon" width="40" />
                     </figure>
 
                     <div className={styles.service_content_box}>

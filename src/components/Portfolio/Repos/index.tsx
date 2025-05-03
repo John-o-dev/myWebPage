@@ -6,7 +6,7 @@ export default function Repos() {
             <h2 className={styles.subtitle}>Repositórios: </h2>
             <ul className={styles.project_list}>
 
-                <li className={styles.project_item} data-filter-item data-category="web development">
+                <li className={`${styles.project_item} ${styles.active}`} data-filter-item data-category="web development">
                     <div>
                         <div className={styles.project_name_img}>
                             <a href="#">
@@ -15,7 +15,7 @@ export default function Repos() {
                                     <div className={styles.project_item_icon_box}>
                                         {/* <ion-icon name="eye-outline"></ion-icon> */}
                                     </div>
-                                    <img src="img/project-1.jpg" alt="thumbnail rep" loading="lazy" />
+                                    <img src="/img/project-1.jpg" alt="thumbnail rep" loading="lazy" />
                                 </figure>
                             </a>
                         </div>
@@ -43,13 +43,13 @@ export default function Repos() {
                         <div className={styles.projects_item_actions}>
                             <div className={styles.projects_item_btn_box}>
                                 <a className={styles.projects_item_btn} href="#">
-                                    {/* <ion-icon name="arrow-forward-circle-outline"></ion-icon> */}
+                                    <span className="material-symbols-outlined">open_in_new</span>
                                     Ver repositório no Github
                                 </a>
                             </div>
                             <div className={styles.projects_item_btn_box}>
                                 <a className={styles.projects_item_btn} href="#">
-                                    {/* <ion-icon name="arrow-forward-circle-outline"></ion-icon> */}
+                                    <span className="material-symbols-outlined">open_in_new</span>
                                     Ver no Github page
                                 </a>
                             </div>

@@ -43,7 +43,7 @@ export default function Navbar() {
                     <ActiveLink
                         href={`/${locale}/about`}
                         activeClassName="active">
-                        <a className={`${styles.navbar_link} ${styles.Nactive}`}>{t(className, 'about')}</a>
+                        <a className={styles.navbar_link}>{t(className, 'about')}</a>
                     </ActiveLink>
                 </li>
 
@@ -59,7 +59,7 @@ export default function Navbar() {
                     <ActiveLink
                         href={`/${locale}/portfolio`}
                         activeClassName="active">
-                        <a className={`${styles.navbar_link} ${styles.Nactive}`}>{t(className, 'portfolio')}</a>
+                        <a className={styles.navbar_link}>{t(className, 'portfolio')}</a>
                     </ActiveLink>
                 </li>
 

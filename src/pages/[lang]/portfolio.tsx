@@ -1,14 +1,14 @@
 import Layout from '../../components/Layout'
-import About from '../../components/About'
+import Portfolio from '@/src/components/Portfolio';
 
 import useTranslation from '../../hooks/useTranslation'
 
-export default function AboutPage () {
+export default function PortfolioPage () {
     const { t } = useTranslation();
     
     return (
-        <Layout title={t('about', 'title')}>
-            <About />
+        <Layout title={t('portfolio', 'title')}>
+            <Portfolio />
         </Layout>
     )
 }

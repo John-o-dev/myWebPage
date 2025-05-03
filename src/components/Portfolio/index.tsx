@@ -6,7 +6,7 @@ import LastProjects from './LastProjects'
 
 export default function Portfolio() {
   return (
-    <article className="portfolio" data-page="portfólio">
+    <article className="portfolio">
 
             <header>
                 <h2 className="article_title">Portfólio</h2>

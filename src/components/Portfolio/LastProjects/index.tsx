@@ -1,4 +1,4 @@
-import styles from './last-projects.module.css'
+import styles from './lastProjects.module.css'
 
 export default function LastProjects() {
   return (
