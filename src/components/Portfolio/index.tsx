@@ -12,10 +12,18 @@ export default function Portfolio() {
   const [user, setUser] = useState<UserProps | null>(null);
   const [repos, setRepos] = useState<ReposProps[]>([]);
   const [loading, setLoading] = useState(true);
-  // const [repos, setRepos] = useState<ReposProps[]>([]);
 
   const loadUser = async () => {
-    const res = await fetch(`https://api.github.com/users/John-o-dev`);
+    const res = await fetch(`https://api.github.com/users/John-o-dev`, {
+      headers: {
+        Authorization: `Bearer ${process.env.GITHUB_TOKEN}`,
+        'User-Agent': 'Next.js app' // opcional, mas recomendado
+      }
+    });
+
+    if (!res.ok) console.log("Erro ao buscar repositórios do GitHub. res:", res);
+    // if (!res.ok) throw new Error("Erro ao buscar usuário do GitHub");
+
     const data = await res.json();
 
     const { avatar_url, login, location, html_url, followers, following, public_repos } = data;
@@ -34,7 +42,16 @@ export default function Portfolio() {
   loadUser();
 
   const loadRepos = async () => {
-    const res = await fetch(`https://api.github.com/users/John-o-dev/starred`);
+    const res = await fetch(`https://api.github.com/users/John-o-dev/starred`, {
+      headers: {
+        Authorization: `Bearer ${process.env.GITHUB_TOKEN}`,
+        'User-Agent': 'Next.js app' // opcional, mas recomendado
+      }
+    });
+
+    if (!res.ok) console.log("Erro ao buscar repositórios do GitHub. res:", res);
+    // if (!res.ok) throw new Error("Erro ao buscar repositórios do GitHub");
+
     const data = await res.json();
 
     const reposData: ReposProps[] = data.map((repo: any) => {
@@ -47,14 +64,16 @@ export default function Portfolio() {
         pushed_at,
         languages_url,
         description,
-        html_url
+        html_url,
+        //revalidate: 3600, // ISR: atualiza a cada hora
       };
+      console.log("OWNER: ", owner.login);
     });
     setRepos(reposData);
   }
 
   loadRepos();
-  console.log("REPOSITÓRIOS", repos);
+
   return (
     <article className="portfolio">
 
