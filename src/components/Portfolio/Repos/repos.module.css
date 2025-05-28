@@ -168,10 +168,6 @@
     transition: var(--transition-1);
 }
 
-.project_name_img > a:hover .project_img::before {
-    background: hsla(0, 0%, 0%, 0.5);
-}
-
 .project_item_icon_box {
     --scale: 0.8;
     background: var(--jet);

@@ -1,7 +1,7 @@
 import { UserProps } from "@/src/types/user";
 import { ReposProps } from "@/src/types/repos";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 import GithubPerfil from './GithubPerfil'
 import Repos from './Repos'
@@ -13,66 +13,92 @@ export default function Portfolio() {
   const [repos, setRepos] = useState<ReposProps[]>([]);
   const [loading, setLoading] = useState(true);
 
-  const loadUser = async () => {
-    const res = await fetch(`https://api.github.com/users/John-o-dev`, {
-      headers: {
-        Authorization: `Bearer ${process.env.GITHUB_TOKEN}`,
-        'User-Agent': 'Next.js app' // opcional, mas recomendado
+  useEffect(() => {
+    const loadUser = async () => {
+      try {
+        const res = await fetch(`https://api.github.com/users/John-o-dev`);
+
+        if (!res.ok) {
+          console.log("Erro ao buscar usuário do GitHub:", res);
+          return;
+        }
+
+        const data = await res.json();
+
+        const { avatar_url, login, name, location, html_url, followers, following, public_repos } = data;
+        const userData: UserProps = {
+          avatar_url,
+          login,
+          name,
+          location,
+          html_url,
+          followers,
+          following,
+          public_repos
+        };
+        setUser(userData);
+      } catch (error) {
+        console.log("Erro ao buscar usuário do GitHub. error:", error);
       }
-    });
+    }
 
-    if (!res.ok) console.log("Erro ao buscar repositórios do GitHub. res:", res);
-    // if (!res.ok) throw new Error("Erro ao buscar usuário do GitHub");
+    loadUser();
+  }, []);
 
-    const data = await res.json();
+  useEffect(() => {
+    const loadRepos = async () => {
+      try {
+        const res = await fetch(`https://api.github.com/users/John-o-dev/starred`);
 
-    const { avatar_url, login, location, html_url, followers, following, public_repos } = data;
-    const userData: UserProps = {
-      avatar_url,
-      login,
-      location,
-      html_url,
-      followers,
-      following,
-      public_repos
+        if (!res.ok) {
+          console.log("Erro ao buscar repositórios do GitHub:", res);
+          return;
+        }
+
+        const data = await res.json();
+
+        const filteredData = data.filter((repo: any) => {
+          return repo.owner.login === 'John-o-dev';
+        });
+
+        console.log("filteredData: ", filteredData)
+        // if (filteredData.length === 0) {
+
+        const reposData: ReposProps[] = filteredData.map((repo: any) => {
+          const {
+            name,
+            created_at,
+            updated_at,
+            pushed_at,
+            languages_url,
+            description,
+            html_url
+          } = repo;
+
+          return {
+            name,
+            created_at,
+            updated_at,
+            pushed_at,
+            languages_url,
+            description,
+            html_url,
+          };
+
+        });
+
+        const sortedRepos = reposData.sort((a, b) => {
+          return new Date(b.updated_at).getTime() - new Date(a.updated_at).getTime();
+        });
+
+        setRepos(sortedRepos);
+      } catch (error) {
+        console.log("Erro ao buscar repositório do GitHub. error:", error);
+      }
     };
-    setUser(userData);
-  }
 
-  loadUser();
-
-  const loadRepos = async () => {
-    const res = await fetch(`https://api.github.com/users/John-o-dev/starred`, {
-      headers: {
-        Authorization: `Bearer ${process.env.GITHUB_TOKEN}`,
-        'User-Agent': 'Next.js app' // opcional, mas recomendado
-      }
-    });
-
-    if (!res.ok) console.log("Erro ao buscar repositórios do GitHub. res:", res);
-    // if (!res.ok) throw new Error("Erro ao buscar repositórios do GitHub");
-
-    const data = await res.json();
-
-    const reposData: ReposProps[] = data.map((repo: any) => {
-      const { owner, name, created_at, updated_at, pushed_at, languages_url, description, html_url } = repo;
-      return {
-        owner,
-        name,
-        created_at,
-        updated_at,
-        pushed_at,
-        languages_url,
-        description,
-        html_url,
-        //revalidate: 3600, // ISR: atualiza a cada hora
-      };
-      console.log("OWNER: ", owner.login);
-    });
-    setRepos(reposData);
-  }
-
-  loadRepos();
+    loadRepos();
+  }, []);
 
   return (
     <article className="portfolio">
@@ -83,13 +109,13 @@ export default function Portfolio() {
 
       {user && <GithubPerfil {...user} />}
 
-      <LastProjects />
+      {repos.length > 0 && <LastProjects repos={repos.slice(0, 5)} />}
 
       <div className="separator"></div>
 
       <section className="projects">
         <Filters />
-        <Repos />
+        {repos.length > 0 && <Repos repos={repos} />}
       </section>
     </article>
   )

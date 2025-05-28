@@ -1,7 +1,4 @@
 export type ReposProps = {
-    owner: {
-        login: string;
-    };
     name: string;
     created_at: string;
     updated_at: string;
@@ -12,9 +9,7 @@ export type ReposProps = {
 }
 
 /*
-"owner": {
-      "login": "John-o-dev",
-};
+
 "name": "webpage-Multi-Language";
 "created_at": "2024-04-17T23:53:36Z";
 "updated_at": "2024-04-17T23:53:36Z";
@@ -23,7 +18,7 @@ export type ReposProps = {
 "description": "Uma simples Webpage multi-idiomas feito utilizando apenas HTML CSS e jQuery";
 "html_url": "https://github.com/John-o-dev/webpage-Multi-Language";
 
-dono
+
 titulo
 criado_em
 atualizado_em
@@ -58,6 +53,7 @@ Como formar o link para o github page:
 "https://john-o-dev.github.io/"
 +
 "name": "webpage-Multi-Language"
-
++
+/
 
 */

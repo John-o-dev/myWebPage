@@ -5,8 +5,8 @@ import { UserProps } from '@/src/types/user';
 export default function GithubPerfil({
     avatar_url,
     login,
+    name,
     location,
-    html_url,
     followers,
     following,
     public_repos
@@ -20,7 +20,7 @@ export default function GithubPerfil({
                 <div>
                     <h1>
                         <a className={styles.github_username} href="#">
-                            Johnny Developer
+                            {name}
                         </a>
                     </h1>
 
@@ -31,7 +31,6 @@ export default function GithubPerfil({
                         <li>Repositórios: {public_repos}</li>
                         <li>Seguidores: {followers}</li>
                         <li>Seguindo: {following}</li>
-                        <li>html_url: {html_url}</li>
                     </ul>
                 </div>
             </div>
