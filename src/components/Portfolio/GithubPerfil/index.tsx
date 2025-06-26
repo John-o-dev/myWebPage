@@ -14,7 +14,7 @@ export default function GithubPerfil({
 
     return (
         <div className={styles.github_perfil}>
-            <span>Perfil Github</span>
+            
             <div className={styles.github_user}>
                 <img src={avatar_url} alt={login} />
                 <div>

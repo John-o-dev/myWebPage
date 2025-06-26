@@ -1,28 +1,29 @@
 import styles from './resume.module.css'
+
+import AboutMe from './AboutMe'
 import Education from './Education'
-import ToolsTecnologies from './ToolsTechnologies'
-import Learning from './Learning'
-import Programs from './Programs'
 
-export default function Resume () {
+import programsIcons from '@/src/lib/programsIcons'
+import learningIcons from '@/src/lib/learningIcons'
+import toolsTecnologiesIcons from '@/src/lib/toolsTecnologiesIcons'
+import Stacks from './Stacks'
+
+export default function Resume() {
     return (
-        <article className="resume">
+        <article>
 
-            <header>
-                <h2 className="article-title">Competências</h2>
-            </header>
+            <div className={styles.container}>
+                <div className={styles.left_column}>
+                    <AboutMe />
+                </div>
+                <div className={styles.right_column}>
+                    <Education />
 
-            <Education />
-            
-            <ToolsTecnologies />
-
-            <div className="separator"></div>
-
-            <Learning />
-
-            <div className="separator"></div>
-
-            <Programs />
+                    <Stacks icons={toolsTecnologiesIcons} symbol="code" title="Stacks e Tecnologias" />
+                    <Stacks icons={programsIcons} symbol="apps" title="Ferramentas Criativas" />
+                    <Stacks icons={learningIcons} symbol="auto_stories" title="Aprendizados em Andamento"/>
+                </div>
+            </div>
 
         </article>
     )

@@ -101,10 +101,10 @@ export default function Portfolio() {
   }, []);
 
   return (
-    <article className="portfolio">
+    <article>
 
       <header>
-        <h2 className="article_title">Portfólio</h2>
+        <h2 className="article_title">Perfil Github</h2>
       </header>
 
       {user && <GithubPerfil {...user} />}

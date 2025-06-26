@@ -1,0 +1,11 @@
+.container {
+    display: flex;
+    gap: 1rem;
+    justify-content: space-between;
+    margin: auto;
+}
+
+.left_column,
+.right_column {
+    flex: 1;
+}

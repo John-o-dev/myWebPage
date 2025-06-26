@@ -43,6 +43,13 @@ export default function SidebarInfoMore() {
 
             <ul className={styles.social_list}>
                 <li className={styles.social_item}>
+                    <a href="https://www.linkedin.com/in/antonio-rodrigues-lima-filho/" className={styles.social_link}>
+                        <img src="/img/linkedin.png" className='social-icons' alt="linkedin icon"/>
+                        <div className={styles.tooltip}>LinkedIn</div>
+                    </a>
+                </li>
+
+                <li className={styles.social_item}>
                     <a href="https://www.facebook.com/people/John-ODev/100071663284338/" className={styles.social_link}>
                         <img src="/img/facebook-icon.png" className='social-icons' alt="facebook icon"/>
                         <div className={styles.tooltip}>Facebook</div>

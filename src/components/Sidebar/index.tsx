@@ -22,7 +22,7 @@ export default function Sidebar() {
                 
                 <button className={styles.info_more_btn} data-sidebar-btn>
                 <span>{t(className, 'contacts')}</span>
-                {/* <ion-icon name="chevron-down"></ion-icon> */}
+                    <span className="material-symbols-outlined">arrow_downward</span>
                 </button>
             </div>
 

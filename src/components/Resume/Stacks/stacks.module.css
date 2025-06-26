@@ -1,0 +1,38 @@
+.timeline { margin-bottom: 30px; }
+
+.timeline .title_wrapper {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 1rem;
+}
+
+.title_wrapper h3 {
+    font-size: var(--fs-4);
+    font-weight: var(--fw-400);
+    color: var(--hover-color);
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+.timeline_list {
+    font-size: var(--fs-6);
+    margin-left: 45px;
+}
+
+.degree_timeline_item { position: relative; }
+
+li.degree_timeline_item {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5em;
+}
+
+@media (min-width: 580px) {
+    .timeline_list { 
+        margin-left: 65px; 
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1em;
+    }
+}
