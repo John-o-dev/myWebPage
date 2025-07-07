@@ -1,46 +1,50 @@
+import useTranslation from '@/src/hooks/useTranslation';
 import styles from './education.module.css'
 
 export default function Education() {
+    const className = "resume";
+    const classComponent = "education";
+    const { t } = useTranslation();
     return (
         <section className={styles.timeline}>
 
             <div className={styles.title_wrapper}>
                 <span className="material-symbols-outlined">school</span>
-                <h3>Formação Acadêmica</h3>
+                <h3>{t(className, `${classComponent}_title`)}</h3>
             </div>
 
             <ol className={styles.timeline_list}>
 
                 <li className={styles.timeline_item}>
-                    <h4 className={styles.timeline_item_title}>Faculdade de Análise e Desenvolvimento de Sistemas</h4>
-                    <span>Cursando: 2º periodo</span>
-                    <span>Previsão de formatura: Abril de 2027</span>
+                    <h4 className={styles.timeline_item_title}>{t(className, `${classComponent}_faculty`)}</h4>
+                    <span>{t(className, `${classComponent}_current_period`)}</span>
+                    <span>{t(className, `${classComponent}_graduation_forecast`)}</span>
                     <p className={styles.timeline_text}>
-                        Universidade Anhambi Morumbi
+                        {t(className, `${classComponent}_university`)}
                     </p>
                 </li>
 
                 <li className={styles.timeline_item}>
-                    <h4 className={styles.timeline_item_title}>Técnico em Mecatrônica</h4>
-                    <span>{'Janeiro de 2017 – Janeiro de 2019 (Trancado)'}</span>
+                    <h4 className={styles.timeline_item_title}>{t(className, `${classComponent}_technology`)}</h4>
+                    <span>{t(className, `${classComponent}_technology_description`)}</span>
                     <p className={styles.timeline_text}>
-                        Etec Lauro Gomes em São Paulo
+                        {t(className, `${classComponent}_technology_institution`)}
                     </p>
                 </li>
 
                 <li className={styles.timeline_item}>
-                    <h4 className={styles.timeline_item_title}>Auxiliar Técnico de Mecatrônica</h4>
-                    <span>Outubro de 2013 a Junho de 2015</span>
+                    <h4 className={styles.timeline_item_title}>{t(className, `${classComponent}_technology_2`)}</h4>
+                    <span>{t(className, `${classComponent}_technology_2_description`)}</span>
                     <p className={styles.timeline_text}>
-                        Instituto de Educação ABC
+                        {t(className, `${classComponent}_technology_2_institution`)}
                     </p>
                 </li>
 
                 <li className={styles.timeline_item}>
-                    <h4 className={styles.timeline_item_title}>Informática Basica</h4>
-                    <span>Outubro de 2010 a Outubro de 2011</span>
+                    <h4 className={styles.timeline_item_title}>{t(className, `${classComponent}_technology_3`)}</h4>
+                    <span>{t(className, `${classComponent}_technology_3_description`)}</span>
                     <p className={styles.timeline_text}>
-                        Compuway Formação Profissional
+                        {t(className, `${classComponent}_technology_3_institution`)}
                     </p>
                 </li>
 

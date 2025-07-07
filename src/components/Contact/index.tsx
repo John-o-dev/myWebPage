@@ -1,19 +1,23 @@
+import useTranslation from '@/src/hooks/useTranslation';
 import ButtonBox from '../ButtonBox'
 import styles from './contact.module.css'
 
 export default function Contact() {
+    const className = "contact";
+    const classComponent = "contactForm";
+    const { t } = useTranslation();
     return (
         <article>
             <section className={styles.contact} id="contact">
 
                 <div className={`${styles.contact_content} ${styles.section_content}`}>
 
-                    <p className={styles.section_subtitle}>Contact</p>
+                    <p className={styles.section_subtitle}>{t(className, 'section_subtitle')}</p>
 
-                    <h2 className={`${styles.h3} ${styles.section_title}`}>Have You Any Project?<br /> Please Drop a Message</h2>
+                    <h2 className={`${styles.h3} ${styles.section_title}`}>{t(className, 'section_title')}</h2>
 
                     <p className={styles.section_text}>
-                        Get in touch and let me know how i can help. Fill out the form and i’ll be in touch as soon as possible.
+                        {t(className, 'section_description')}
                     </p>
 
                     <ul className={styles.contact_list}>
@@ -25,10 +29,10 @@ export default function Contact() {
                             </div>
 
                             <div className={styles.wrapper}>
-                                <h3 className={`${styles.h4} ${styles.contact_item_title}`}>Address:</h3>
+                                <h3 className={`${styles.h4} ${styles.contact_item_title}`}>{t(className, 'address_title')}:</h3>
 
                                 <address className={styles.contact_info}>
-                                    941 Saqrqorish Road, alandalos, grnata, wa 47122-4194
+                                    {t(className, 'address_info')}
                                 </address>
                             </div>
 
@@ -41,11 +45,10 @@ export default function Contact() {
                             </div>
 
                             <div className={styles.wrapper}>
-                                <h3 className={`${styles.h4} ${styles.contact_item_title}`}>Phone:</h3>
+                                <h3 className={`${styles.h4} ${styles.contact_item_title}`}>{t(className, 'phone_title')}:</h3>
 
-                                <a href="tel:01234567789" className={styles.contact_info}>(01) 234 567 789</a>
+                                <a href="tel:01234567789" className={styles.contact_info}>{t(className, 'phone_info')}</a>
 
-                                <a href="tel:09765432200" className={styles.contact_info}>(09) 765 432 200</a>
                             </div>
 
                         </li>
@@ -57,11 +60,10 @@ export default function Contact() {
                             </div>
 
                             <div className={styles.wrapper}>
-                                <h3 className={`${styles.h4} ${styles.contact_item_title}`}>Email:</h3>
+                                <h3 className={`${styles.h4} ${styles.contact_item_title}`}>{t(className, 'email_title')}:</h3>
 
-                                <a href="mailto:info@jack.com" className={styles.contact_info}>info@jack.com</a>
+                                <a href="mailto:info@jack.com" className={styles.contact_info}>{t(className, 'email_info')}</a>
 
-                                <a href="mailto:support@jack.com" className={styles.contact_info}>support@jack.com</a>
                             </div>
 
                         </li>
@@ -125,12 +127,12 @@ export default function Contact() {
 
                     <div className={styles.form_wrapper}>
 
-                        <label htmlFor="name" className={styles.form_label}>Nome</label>
+                        <label htmlFor="name" className={styles.form_label}>{t(className, `${classComponent}_input_name`)}:</label>
 
                         <div className={styles.input_wrapper}>
 
                             {/* <span className="material-symbols-outlined">mail</span> */}
-                            <input type="text" name="name" id="name" required placeholder="Seu Nome" className={styles.input_field} />
+                            <input type="text" name="name" id="name" required placeholder={t(className, `${classComponent}_placeholder_name`)} className={styles.input_field} />
 
                         </div>
 
@@ -138,12 +140,12 @@ export default function Contact() {
 
                     <div className={styles.form_wrapper}>
 
-                        <label htmlFor="email" className={styles.form_label}>Email</label>
+                        <label htmlFor="email" className={styles.form_label}>{t(className, `${classComponent}_input_email`)}:</label>
 
                         <div className={styles.input_wrapper}>
 
                             {/* <span className="material-symbols-outlined">mail</span> */}
-                            <input type="email" name="email" id="email" required placeholder="seu_email@mail.com"
+                            <input type="email" name="email" id="email" required placeholder={t(className, `${classComponent}_placeholder_email`)}
                                 className={styles.input_field} />
 
                         </div>
@@ -152,11 +154,11 @@ export default function Contact() {
 
                     <div className={styles.form_wrapper}>
 
-                        <label htmlFor="phone" className={styles.form_label}>Telefone</label>
+                        <label htmlFor="phone" className={styles.form_label}>{t(className, `${classComponent}_input_phone`)}</label>
 
                         <div className={styles.input_wrapper}>
 
-                            <input type="tel" name="phone" id="phone" required placeholder="Número de telefone" className={styles.input_field} />
+                            <input type="tel" name="phone" id="phone" required placeholder={t(className, `${classComponent}_placeholder_phone`)} className={styles.input_field} />
 
                         </div>
 
@@ -164,18 +166,18 @@ export default function Contact() {
 
                     <div className={styles.form_wrapper}>
 
-                        <label htmlFor="message" className={styles.form_label}>Mensagem...</label>
+                        <label htmlFor="message" className={styles.form_label}>{t(className, `${classComponent}_input_message`)}</label>
 
                         <div className={styles.input_wrapper}>
 
-                            <textarea name="message" id="message" required placeholder="Escreva sua mensagem..."
+                            <textarea name="message" id="message" required placeholder={t(className, `${classComponent}_placeholder_message`)}
                                 className={styles.input_field}></textarea>
 
                         </div>
 
                     </div>
 
-                    <ButtonBox className={styles.btn_primary}>Send</ButtonBox>
+                    <ButtonBox className={styles.btn_primary}>{t(className, `${classComponent}_btn_send`)}</ButtonBox>
 
                 </form>
 

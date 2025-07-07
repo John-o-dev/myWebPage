@@ -1,3 +1,4 @@
+import useTranslation from '@/src/hooks/useTranslation';
 import styles from './githubPerfil.module.css';
 
 import { UserProps } from '@/src/types/user';
@@ -11,7 +12,9 @@ export default function GithubPerfil({
     following,
     public_repos
 }: UserProps) {
-
+    const className = "portfolio";
+    const classComponent = "githubPerfil";
+    const { t } = useTranslation();
     return (
         <div className={styles.github_perfil}>
             
@@ -26,11 +29,11 @@ export default function GithubPerfil({
 
                     <ul className={styles.repos_info}>
                         {location && (
-                            <li>Location: {location}</li>
+                            <li>{t(className, `${classComponent}_location`)}: {location}</li>
                         )}
-                        <li>Repositórios: {public_repos}</li>
-                        <li>Seguidores: {followers}</li>
-                        <li>Seguindo: {following}</li>
+                        <li>{t(className, `${classComponent}_repositories`)}: {public_repos}</li>
+                        <li>{t(className, `${classComponent}_followers`)}: {followers}</li>
+                        <li>{t(className, `${classComponent}_following`)}: {following}</li>
                     </ul>
                 </div>
             </div>

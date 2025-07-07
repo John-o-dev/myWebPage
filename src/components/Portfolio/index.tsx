@@ -7,11 +7,14 @@ import GithubPerfil from './GithubPerfil'
 import Repos from './Repos'
 import Filters from './Filters'
 import LastProjects from './LastProjects'
+import useTranslation from "@/src/hooks/useTranslation";
 
 export default function Portfolio() {
   const [user, setUser] = useState<UserProps | null>(null);
   const [repos, setRepos] = useState<ReposProps[]>([]);
   const [loading, setLoading] = useState(true);
+  const className = "portfolio";
+  const { t } = useTranslation();
 
   useEffect(() => {
     const loadUser = async () => {
@@ -104,7 +107,7 @@ export default function Portfolio() {
     <article>
 
       <header>
-        <h2 className="article_title">Perfil Github</h2>
+        <h2 className="article_title">{t(className, 'title_header')}</h2>
       </header>
 
       {user && <GithubPerfil {...user} />}

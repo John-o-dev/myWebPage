@@ -1,3 +1,4 @@
+import useTranslation from '@/src/hooks/useTranslation';
 import styles from './repos.module.css'
 
 import { ReposProps } from '@/src/types/repos';
@@ -8,10 +9,12 @@ type Props = {
 }
 
 export default function Repos({ repos }: Props) {
-    
+    const className = "portfolio";
+    const classComponent = "repos";
+    const { t } = useTranslation();
     return (
         <div className={styles.repos}>
-            <h2 className={styles.subtitle}>Repositórios: </h2>
+            <h2 className={styles.subtitle}>{t(className, `${classComponent}_subtitle`)}: </h2>
             <ul className={styles.project_list}>
 
                 {repos.map(repo => (
@@ -31,8 +34,8 @@ export default function Repos({ repos }: Props) {
 
                             <div className={styles.projects_item_infos}>
                                 <div className={styles.date_container}>
-                                    <span className={styles.createAt}>Criado em: <br />{formatDate(repo.created_at)}</span>
-                                    <span className={styles.updateAt}>Última atualização: <br />{formatDate(repo.updated_at)}</span>
+                                    <span className={styles.createAt}>{t(className, `${classComponent}_createdAt`)}: <br />{formatDate(repo.created_at)}</span>
+                                    <span className={styles.updateAt}>{t(className, `${classComponent}_updatedAt`)}: <br />{formatDate(repo.updated_at)}</span>
                                 </div>
                                 <div className={styles.languages_container}>
                                     <div className={styles.language_content}>
@@ -53,13 +56,13 @@ export default function Repos({ repos }: Props) {
                                 <div className={styles.projects_item_btn_box}>
                                     <a className={styles.projects_item_btn} href={repo.html_url} target="_blank" rel="noopener noreferrer">
                                         <span className="material-symbols-outlined">open_in_new</span>
-                                        Ver repositório no Github
+                                        {t(className, `${classComponent}_btn_github_repo`)}
                                     </a>
                                 </div>
                                 <div className={styles.projects_item_btn_box}>
                                     <a className={styles.projects_item_btn} href={`https://john-o-dev.github.io/${repo.name}/`} target="_blank" rel="noopener noreferrer">
                                         <span className="material-symbols-outlined">open_in_new</span>
-                                        Ver no Github page
+                                        {t(className, `${classComponent}_btn_github_page`)}
                                     </a>
                                 </div>
                             </div>

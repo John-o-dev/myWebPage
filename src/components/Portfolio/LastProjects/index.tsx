@@ -1,3 +1,4 @@
+import useTranslation from '@/src/hooks/useTranslation';
 import styles from './lastProjects.module.css'
 
 import { ReposProps } from '@/src/types/repos';
@@ -8,9 +9,12 @@ type Props = {
 }
 
 export default function LastProjects({ repos }: Props) {
+  const className = "portfolio";
+  const classComponent = "lastProjects";
+  const { t } = useTranslation();
   return (
     <div className={styles.last_projects}>
-      <h2>Últimos Projetos</h2>
+      <h2>{t(className, `${classComponent}_title`)}</h2>
       <ul>
         {repos.map(repo => (
           <li key={repo.name} className={styles.project_name_img}>
@@ -25,7 +29,7 @@ export default function LastProjects({ repos }: Props) {
                 </figure>
               </a>
             </div>
-            <span className={styles.updateAt}>Última atualização: <br />{formatDate(repo.updated_at)}</span>
+            <span className={styles.updateAt}>{t(className, `${classComponent}_updated`)}: <br />{formatDate(repo.updated_at)}</span>
           </li>
         ))}
       </ul>

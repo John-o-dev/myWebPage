@@ -14,7 +14,7 @@ export default function HomePage() {
 
 					<h1 className="article-title">{t(className, 'fullName')}</h1>
 
-					<h2>{t(className, 'carrer')}</h2>
+					<h2>{t(className, 'carer')}</h2>
 
 					<p>{t(className, 'description')}</p>
 
@@ -31,11 +31,11 @@ export default function HomePage() {
 					</div>
 
 					<ButtonBox href="/pdf/Currículo_Profissional_Antonio.pdf" target="_blank" rel="noopener noreferrer"> 
-						Visualizar Currículo Online 
+						{t(className, 'btn_look_cv')} 
 					</ButtonBox>
 
-					<ButtonBox href="/pdf/Currículo_Profissional_Antonio.pdf" download> 
-						Download Currículo 
+					<ButtonBox href="/pdf/Currículo_Profissional_Antonio.pdf" download>
+						{t(className, 'btn_download_cv')}
 					</ButtonBox>
 				</div>
 

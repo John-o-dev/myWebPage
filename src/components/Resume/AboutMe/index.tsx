@@ -1,42 +1,47 @@
+import useTranslation from '@/src/hooks/useTranslation';
 import ButtonBox from '../../ButtonBox'
 import styles from './aboutMe.module.css'
 
 export default function About() {
+  const className = "resume";
+  const classComponent = "about_me";
+  const { t } = useTranslation();
   return (
     <section className={styles.about}>
-      <h1 className={styles.title}>Perfil Profissional</h1>
+      <h1 className={styles.title}>{t(className, `${classComponent}_title`)}</h1>
       <p className={styles.description}>{'<>Hello Dev\'s</>'}</p>
       <p className={styles.description}>
-        Sou o Antonio Rodrigues, Desenvolvedor Web com foco em tecnologias modernas como Angular, React, Next.js, JavaScript, HTML/CSS entre outras. Atualmente curso Análise e Desenvolvimento de Sistemas na Universidade Anhembi Morumbi e me especializo por meio de projetos práticos e cursos online (nanodegrees).
+        {/* {t(className, 'description_1')} */}
+        {t(className, `${classComponent}_description_1`)}
       </p>
 
       <p className={styles.description}>
-        Tenho experiência com desenvolvimento de interfaces responsivas e foco em performance, acessibilidade e boas práticas de código.
+        {t(className, `${classComponent}_description_2`)}
       </p>
 
       <p className={styles.description}>
-        Ao longo da minha trajetória, também tive contato com áreas técnicas como mecatrônica, o que fortaleceu minha lógica e pensamento analítico.
+        {t(className, `${classComponent}_description_3`)}
       </p>
 
       <p className={styles.description}>
-        Estou sempre buscando aprender e evoluir, com o objetivo de contribuir em projetos que unam tecnologia, criatividade e impacto real.
+        {t(className, `${classComponent}_description_4`)}
       </p>
 
       <p className={styles.description}>
-        Meu trabalho é construir websites funcionais, atrativos e amigáveis. Adicionando um toque pessoal e garantindo que seja atraente e fácil de usar.
+        {t(className, `${classComponent}_description_5`)}
       </p>
 
       <p className={styles.description}>
-        Meu objetivo é transmitir a mensagem e identidade da sua marca ou produto da maneira mais criativa.
+        {t(className, `${classComponent}_description_6`)}
       </p>
 
       <div className={styles.buttons}>
         <ButtonBox className={styles.btn_actions} href="/pdf/Currículo_Profissional_Antonio.pdf" target="_blank" rel="noopener noreferrer">
-          Visualizar Currículo Online
+          {t(className, `${classComponent}_btn_look_cv`)}
         </ButtonBox>
 
         <ButtonBox className={styles.btn_actions} href="/pdf/Currículo_Profissional_Antonio.pdf" download>
-          Download Currículo
+          {t(className, `${classComponent}_btn_download_cv`)}
         </ButtonBox>
       </div>
     </section>

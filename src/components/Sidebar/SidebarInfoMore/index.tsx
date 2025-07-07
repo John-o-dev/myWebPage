@@ -1,6 +1,9 @@
+import useTranslation from '@/src/hooks/useTranslation';
 import styles from './sidebarInfoMore.module.css'
 
 export default function SidebarInfoMore() {
+    const className = "sidebar";
+    const { t } = useTranslation();
     return (
         <div className={styles.sidebar_info_more}>
             <ul className={styles.contacts_list}>
@@ -22,7 +25,7 @@ export default function SidebarInfoMore() {
                         <span className="material-symbols-outlined">contact_phone</span>
                         </div>
                         <div>
-                            <p className={styles.contact_title}>Telefone</p>
+                            <p className={styles.contact_title}>{t(className, 'phone')}</p>
                             <span>+55 (11) 91062-2590</span>
                         </div>
                     </a>
@@ -34,7 +37,7 @@ export default function SidebarInfoMore() {
                         <span className="material-symbols-outlined">person_pin_circle</span>
                         </div>
                         <div>
-                            <p className={styles.contact_title}>Localidade</p>
+                            <p className={styles.contact_title}>{t(className, 'location')}</p>
                             <span><address>SP - São Paulo, BR</address></span>
                         </div>
                     </a>

@@ -7,8 +7,11 @@ import programsIcons from '@/src/lib/programsIcons'
 import learningIcons from '@/src/lib/learningIcons'
 import toolsTecnologiesIcons from '@/src/lib/toolsTecnologiesIcons'
 import Stacks from './Stacks'
+import useTranslation from '@/src/hooks/useTranslation'
 
 export default function Resume() {
+    const className = "resume";
+    const { t } = useTranslation();
     return (
         <article>
 
@@ -19,9 +22,9 @@ export default function Resume() {
                 <div className={styles.right_column}>
                     <Education />
 
-                    <Stacks icons={toolsTecnologiesIcons} symbol="code" title="Stacks e Tecnologias" />
-                    <Stacks icons={programsIcons} symbol="apps" title="Ferramentas Criativas" />
-                    <Stacks icons={learningIcons} symbol="auto_stories" title="Aprendizados em Andamento"/>
+                    <Stacks icons={toolsTecnologiesIcons} symbol="code" title={t(className, 'Stacks_1')} />
+                    <Stacks icons={programsIcons} symbol="apps" title={t(className, 'Stacks_2')} />
+                    <Stacks icons={learningIcons} symbol="auto_stories" title={t(className, 'Stacks_3')} />
                 </div>
             </div>
 

@@ -28,6 +28,3 @@ export default function Stacks({icons, symbol, title}: StacksProps) {
         </section>
     )
 }
-
-// icons.symbol = auto_stories
-// icons.h3 = Aprendizados em Andamento
