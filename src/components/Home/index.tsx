@@ -41,7 +41,7 @@ export default function HomePage() {
 
 				<div className={styles.home_image}>
 					<figure className={styles.img_box}>
-						<img src="img/img-home-bg.jpg" alt="home" />
+						<img src="img/img-home-bg.png" alt="homePage" />
 					</figure>
 				</div>
 

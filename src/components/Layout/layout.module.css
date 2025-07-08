@@ -10,6 +10,16 @@
     .main {
         margin: 15px 12px 20px 12px;
     }
+
+    .box_container {
+        margin-top: 80px;
+    }
+}
+
+@media (min-width: 992px) {
+    .box_container {
+        margin-top: 0;
+    }
 }
 
 @media (min-width: 1024px) {
