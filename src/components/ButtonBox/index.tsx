@@ -12,13 +12,16 @@ export default function ButtonBox({
     ...props 
 }: ButtonBoxProps) {
     return (
-        <div className={styles.btn_box}>
+        <button 
+        type="submit" 
+        value="Send"
+        className={styles.btn_box}>
             <a 
             href={href} 
             {...props} 
             className={`${styles.btn} ${className}`}>
                 {children}
             </a>
-        </div>
+        </button>
     )
 }

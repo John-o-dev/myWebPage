@@ -20,7 +20,7 @@ export default function Sidebar() {
                     </div>
                 </div>
                 
-                <button className={styles.info_more_btn} data-sidebar-btn>
+                <button className={styles.info_more_btn}>
                 <span>{t(className, 'contacts')}</span>
                     <span className="material-symbols-outlined">arrow_downward</span>
                 </button>

@@ -1,11 +1,39 @@
 import useTranslation from '@/src/hooks/useTranslation';
 import ButtonBox from '../ButtonBox'
 import styles from './contact.module.css'
+import { useRef, useState } from 'react';
+import emailjs from '@emailjs/browser';
 
 export default function Contact() {
     const className = "contact";
     const classComponent = "contactForm";
     const { t } = useTranslation();
+
+    const form = useRef<HTMLFormElement>(null);
+     const [successMessage, setSuccessMessage] = useState("");
+    
+    const sendEmail = (e) => {
+    e.preventDefault();
+
+    emailjs
+        .sendForm(
+            process.env.NEXT_PUBLIC_SERVICE_ID, 
+            process.env.NEXT_PUBLIC_TEMPLATE_ID, 
+            form.current, {
+        publicKey: process.env.NEXT_PUBLIC_PUBLIC_KEY,
+        })
+        .then(
+        () => {
+            alert(t(className, `${classComponent}_form_success`));
+            form.current?.reset();
+        },
+        (error) => {
+            console.error("FAILED...", error);
+            alert(t(className, `${classComponent}_form_error`));
+        },
+        );
+    };
+
     return (
         <article>
             <section className={styles.contact} id="contact">
@@ -123,16 +151,22 @@ export default function Contact() {
 
                 </div>
 
-                <form action="" className={styles.contact_form}>
+                <form ref={form} onSubmit={sendEmail} className={styles.contact_form}>
 
                     <div className={styles.form_wrapper}>
 
-                        <label htmlFor="name" className={styles.form_label}>{t(className, `${classComponent}_input_name`)}:</label>
+                        <label htmlFor="user_name" className={styles.form_label}>{t(className, `${classComponent}_input_name`)}:</label>
 
                         <div className={styles.input_wrapper}>
 
                             {/* <span className="material-symbols-outlined">mail</span> */}
-                            <input type="text" name="name" id="name" required placeholder={t(className, `${classComponent}_placeholder_name`)} className={styles.input_field} />
+                            <input 
+                            type="text" 
+                            id='user_name'
+                            name="user_name"
+                            className={styles.input_field} 
+                            placeholder={t(className, `${classComponent}_placeholder_name`)} 
+                            required />
 
                         </div>
 
@@ -140,13 +174,18 @@ export default function Contact() {
 
                     <div className={styles.form_wrapper}>
 
-                        <label htmlFor="email" className={styles.form_label}>{t(className, `${classComponent}_input_email`)}:</label>
+                        <label htmlFor="user_email" className={styles.form_label}>{t(className, `${classComponent}_input_email`)}:</label>
 
                         <div className={styles.input_wrapper}>
 
                             {/* <span className="material-symbols-outlined">mail</span> */}
-                            <input type="email" name="email" id="email" required placeholder={t(className, `${classComponent}_placeholder_email`)}
-                                className={styles.input_field} />
+                            <input 
+                            type="email" 
+                            id='user_email'
+                            name="user_email"
+                            className={styles.input_field} 
+                            placeholder={t(className, `${classComponent}_placeholder_email`) }
+                            required />
 
                         </div>
 
@@ -154,12 +193,17 @@ export default function Contact() {
 
                     <div className={styles.form_wrapper}>
 
-                        <label htmlFor="phone" className={styles.form_label}>{t(className, `${classComponent}_input_phone`)}</label>
+                        <label htmlFor="user_phone" className={styles.form_label}>{t(className, `${classComponent}_input_phone`)}</label>
 
                         <div className={styles.input_wrapper}>
 
-                            <input type="tel" name="phone" id="phone" required placeholder={t(className, `${classComponent}_placeholder_phone`)} className={styles.input_field} />
-
+                            <input 
+                            type="tel" 
+                            id='user_phone'
+                            name="user_phone" 
+                            className={styles.input_field} 
+                            placeholder={t(className, `${classComponent}_placeholder_phone`)} 
+                            required />
                         </div>
 
                     </div>
@@ -170,8 +214,13 @@ export default function Contact() {
 
                         <div className={styles.input_wrapper}>
 
-                            <textarea name="message" id="message" required placeholder={t(className, `${classComponent}_placeholder_message`)}
-                                className={styles.input_field}></textarea>
+                            <textarea 
+                            id='message'
+                            name="message" 
+                            className={styles.input_field}
+                            placeholder={t(className, `${classComponent}_placeholder_message`)}
+                            required >
+                            </textarea>
 
                         </div>
 
@@ -180,6 +229,8 @@ export default function Contact() {
                     <ButtonBox className={styles.btn_primary}>{t(className, `${classComponent}_btn_send`)}</ButtonBox>
 
                 </form>
+
+                {successMessage && <p>{successMessage}</p>}
 
             </section>
         </article>

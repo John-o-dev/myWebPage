@@ -12,14 +12,17 @@ export default function HomePage() {
 
 				<div className={styles.home_content}>
 
-					<h1 className="article-title">{t(className, 'fullName')}</h1>
+					<h1 className={styles.article_title} data-text={t(className, 'fullName')}>{t(className, 'fullName')}</h1>
 
-					<h2>{t(className, 'carer')}</h2>
+					<h2 className={styles.article_career}>{t(className, 'carer')}</h2>
 
-					<p>{t(className, 'description')}</p>
+					<p className={styles.article_description}>
+						{t(className, 'description_1')}
+						<a href="#" className={styles.link_description}> (Clique aqui)</a>
+					</p>
 
 					<div className={styles.center_name}>
-						<h3>&lt;j&gt; John O'Dev &lt;/j&gt; </h3>
+						<h3 className={styles.text_animation}>&lt;j&gt; John O'Dev &lt;/j&gt;</h3>
 						<div className={styles.change_text}>
 							<h4>
 								<span className={styles.word}>Web&nbsp;Designer</span>
@@ -30,20 +33,26 @@ export default function HomePage() {
 						</div>
 					</div>
 
-					<ButtonBox href="/pdf/Currículo_Profissional_Antonio.pdf" target="_blank" rel="noopener noreferrer"> 
-						{t(className, 'btn_look_cv')} 
-					</ButtonBox>
+					<div className={styles.article_limit_width}>
+						<p className={styles.article_description}>{t(className, 'description_2')}</p>
+					</div>
 
-					<ButtonBox href="/pdf/Currículo_Profissional_Antonio.pdf" download>
-						{t(className, 'btn_download_cv')}
-					</ButtonBox>
+					<div className={styles.btn_box}>
+						<ButtonBox href="/pdf/Currículo_Profissional_Antonio.pdf" target="_blank" rel="noopener noreferrer">
+							{t(className, 'btn_look_cv')}
+						</ButtonBox>
+
+						<ButtonBox href="/pdf/Currículo_Profissional_Antonio.pdf" download>
+							{t(className, 'btn_download_cv')}
+						</ButtonBox>
+					</div>
 				</div>
 
-				<div className={styles.home_image}>
+				{/* <div className={styles.home_image}>
 					<figure className={styles.img_box}>
 						<img src="img/img-home-bg.png" alt="homePage" />
 					</figure>
-				</div>
+				</div> */}
 
 			</section>
 

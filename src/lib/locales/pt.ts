@@ -20,8 +20,8 @@ export const pt = {
     homePage: {
         fullName: 'Antonio Rodrigues Lima Filho',
         carer: 'Desenvolvedor Web | Web Designer | Criador de Conteúdo',
-        description: 
-            "Olá! Eu sou Antonio Rodrigues e trabalho como Desenvolvedor Web, Web Design e Motion Design, apaixonado por criar experiências digitais incríveis. No entanto, você pode me conhecer também como John O'dev, o pseudônimo que uso para meu trabalho no YouTube onde compartilho minhas ideias e projetos e em projetos paralelos.\nJohn O'dev é o pseudônimo que uso para explorar e compartilhar minha criatividade em Web Design, e você pode conferir mais sobre isso (Clicando aqui).\nCom a missão de tornar problemas complexos em simples, bonitos e com design intuitivo. Explore meu portfólio para ver alguns dos meus trabalhos mais recentes e descobrir como posso ajudar a transformar suas ideias em realidade.",
+        description_1:  "Olá! Eu sou Antonio Rodrigues e trabalho como Desenvolvedor Web, Web Design e Motion Design, apaixonado por criar experiências digitais incríveis. No entanto, você pode me conhecer também como John O'dev, o pseudônimo que uso para meu trabalho no YouTube onde compartilho minhas ideias e projetos e em projetos paralelos.\nJohn O'dev é o pseudônimo que uso para explorar e compartilhar minha criatividade em Web Design, e você pode conferir mais sobre isso.",
+        description_2: "Com a missão de tornar problemas complexos em simples, bonitos e com design intuitivo. Explore meu portfólio para ver alguns dos meus trabalhos mais recentes e descobrir como posso ajudar a transformar suas ideias em realidade.",
         btn_look_cv: 'Visualizar Currículo Online',
         btn_download_cv: 'Download Currículo',
     },
@@ -89,6 +89,8 @@ export const pt = {
         contactForm_input_message: 'Mensagem',
         contactForm_placeholder_message: 'Sua mensagem...',
         contactForm_btn_send: 'Enviar',
+        contactForm_form_success: 'Mensagem enviada com sucesso!',
+        contactForm_form_error: 'Erro ao enviar mensagem. Tente novamente mais tarde.'
     },
     outros: {
         aboutText:

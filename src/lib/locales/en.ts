@@ -20,13 +20,13 @@ export const en = {
     homePage: {
         fullName: 'Antonio Rodrigues Lima Filho',
         carrer: 'Web Developer | Web Designer | Content Creator',
-        description: 
-            "Hello! I'm Antonio Rodrigues, a Web Developer passionate about creating incredible digital experiences. However, you may also know me as John'Odev, the pseudonym I use for my work on YouTube and various creative projects. With the mission of making complex problems simple, beautiful and with intuitive design. Explore my portfolio to see some of my latest work and discover how I can help turn your ideas into reality.",
+        description_1:  "Hello! I'm Antonio Rodrigues, a Web Developer passionate about creating incredible digital experiences. However, you may also know me as John'Odev, the pseudonym I use for my work on YouTube and various creative projects. John O'dev is my creative outlet for exploring and sharing my passion for Web Design, and you can check out more about it ",
+        description_2: "With the mission of making complex problems simple, beautiful and with intuitive design. Explore my portfolio to see some of my latest work and discover how I can help turn your ideas into reality.",
         btn_look_cv: 'View Resume Online',
         btn_download_cv: 'Download Resume',
     },
     resume: {
-        Stacks_1: 'Stacks e Tecnologies',
+        Stacks_1: 'Stacks and Technologies',
         Stacks_2: 'Creative Tools',
         Stacks_3: 'Learning in progress',
         about_me_title: 'Professional Profile',
@@ -89,6 +89,8 @@ export const en = {
         contactForm_input_message: 'Mesage',
         contactForm_placeholder_message: 'Your mesage...',
         contactForm_btn_send: 'Send',
+        contactForm_form_success: 'Message sent successfully!',
+        contactForm_form_error: 'Error sending message. Please try again later.'
     },
     outros: {
         aboutText: "John Developer's Portfolio. Projects, contacts, updates and more...",
