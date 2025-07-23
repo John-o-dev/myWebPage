@@ -1,48 +1,53 @@
+import { useState } from 'react';
 import styles from './filters.module.css'
 
 export default function Filters() {
+    const [menuOpen, setMenuOpen] = useState(false);
+    
+    const toggleMenu = () => {
+        setMenuOpen((prev) => !prev);
+    };
     return (
         <div className={styles.filter_select_box}>
 
-            <button className={styles.filter_select} data-select>
+            <button className={styles.filter_select} onClick={toggleMenu}>
                 <div data-select-value>Selecione...</div>
-
                 <div>
-                    {/* <ion-icon name="chevron-down"></ion-icon> */}
+                    <span className="material-symbols-outlined">mystery</span>
                 </div>
             </button>
 
-            <ul>
+            <ul className={`${styles.select_list} ${ menuOpen ? styles.active : "" }`}>
                 <li className={styles.select_item}>
-                    <button data-select-item>Tudo</button>
+                    <button type='button'>Tudo</button>
                 </li>
 
                 <li className={styles.select_item}>
-                    <button data-select-item>Frontend</button>
+                    <button type='button'>Frontend</button>
                 </li>
 
                 <li className={styles.select_item}>
-                    <button data-select-item>Backend</button>
+                    <button type='button'>Backend</button>
                 </li>
 
                 <li className={styles.select_item}>
-                    <button data-select-item>React/Next</button>
+                    <button type='button'>React/Next</button>
                 </li>
 
                 <li className={styles.select_item}>
-                    <button data-select-item>Angular</button>
+                    <button type='button'>Angular</button>
                 </li>
 
                 <li className={styles.select_item}>
-                    <button data-select-item>Web design</button>
+                    <button type='button'>Web design</button>
                 </li>
 
                 <li className={styles.select_item}>
-                    <button data-select-item>CSS</button>
+                    <button type='button'>CSS</button>
                 </li>
 
                 <li className={styles.select_item}>
-                    <button data-select-item>Python</button>
+                    <button type='button'>Python</button>
                 </li>
             </ul>
         </div>

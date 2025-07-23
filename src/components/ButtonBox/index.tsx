@@ -15,11 +15,11 @@ export default function ButtonBox({
         <button 
         type="submit" 
         value="Send"
-        className={styles.btn_box}>
+        className={`${styles.btn_box} ${className}`}>
             <a 
             href={href} 
             {...props} 
-            className={`${styles.btn} ${className}`}>
+            className={styles.btn}>
                 {children}
             </a>
         </button>

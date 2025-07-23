@@ -19,8 +19,8 @@ export default function GithubPerfil({
         <div className={styles.github_perfil}>
             
             <div className={styles.github_user}>
-                <img src={avatar_url} alt={login} />
-                <div>
+                <img className={styles.github_user_img} src={avatar_url} alt={login} />
+                <div className={styles.github_user_container}>
                     <h1>
                         <a className={styles.github_username} href="#">
                             {name}

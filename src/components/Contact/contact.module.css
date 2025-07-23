@@ -5,7 +5,7 @@
   overflow: hidden;
 }
 
-.contact_content { margin-bottom: 50px; }
+.contact_content { margin-bottom: 30px; }
 
 .section_content {
   position: relative;
@@ -31,6 +31,7 @@
 }
 
 .section_title {
+  font-size: var(--fs-4);
   max-width: 350px;
   margin-bottom: 30px;
 }
@@ -72,7 +73,7 @@
   justify-content: center;
   align-items: center;
   gap: 15px;
-  padding-inline: 40px;
+  padding-inline: 10px;
 }
 
 .contact_social_link {
@@ -117,10 +118,10 @@
 
 .contact_form {
   background: var(--second-bg-color);
-  padding: 20px;
+  padding: 10px;
   border-radius: 12px;
   box-shadow: var(--neon-box-shadow);
-  margin: 0px 20px;
+  margin: 0px 5px;
 }
 
 .form_wrapper { margin-bottom: 25px; }
@@ -134,25 +135,40 @@
   margin-left: 5px;
 }
 
-.input_wrapper { position: relative; }
+.input_wrapper { 
+  position: relative; 
+  width: 100%;
+}
 
 .input_field {
+  width: 100%;
   background: var(--bg-color);
   color: var(--text-color);
   padding: 10px;
   padding-left: 40px;
+  border: 1px solid var(--second-bg-color);
   border-radius: 12px;
   transition: 0.25s ease-in-out;
 }
 
-.input_wrapper ion-icon {
+.icon {
+  position: absolute;
+  left: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 20px;
+  color: #999;
+  pointer-events: none; /* não bloqueia clique no input */
+}
+
+/* .input_wrapper ion-icon {
   position: absolute;
   top: 10px;
   left: 10px;
   color: hsl(0, 0%, 62%);
   font-size: 20px;
   transition: 0.25s ease-in-out;
-}
+} */
 
 textarea.input_field {
   min-height: 60px;
@@ -196,6 +212,8 @@ textarea.input_field {
   .contact_form {
     max-width: 450px;
     margin-inline: auto;
+    padding: 20px;
+    margin: 0px 20px;
   }
 }
 

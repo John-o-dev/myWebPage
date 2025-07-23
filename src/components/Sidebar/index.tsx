@@ -19,11 +19,6 @@ export default function Sidebar() {
                         <p className={styles.title}>{t(className, 'youtube_presentation')} <span>John'Odev</span></p>
                     </div>
                 </div>
-                
-                <button className={styles.info_more_btn}>
-                <span>{t(className, 'contacts')}</span>
-                    <span className="material-symbols-outlined">arrow_downward</span>
-                </button>
             </div>
 
             <div className={styles.separator}></div>

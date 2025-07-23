@@ -159,7 +159,7 @@ export default function Contact() {
 
                         <div className={styles.input_wrapper}>
 
-                            {/* <span className="material-symbols-outlined">mail</span> */}
+                            <span className={`material-symbols-outlined ${styles.icon}`}>person</span>
                             <input 
                             type="text" 
                             id='user_name'
@@ -178,7 +178,7 @@ export default function Contact() {
 
                         <div className={styles.input_wrapper}>
 
-                            {/* <span className="material-symbols-outlined">mail</span> */}
+                            <span className={`material-symbols-outlined ${styles.icon}`}>mail</span>
                             <input 
                             type="email" 
                             id='user_email'
@@ -197,6 +197,7 @@ export default function Contact() {
 
                         <div className={styles.input_wrapper}>
 
+                            <span className={`material-symbols-outlined ${styles.icon}`}>phone_enabled</span>
                             <input 
                             type="tel" 
                             id='user_phone'
@@ -214,6 +215,7 @@ export default function Contact() {
 
                         <div className={styles.input_wrapper}>
 
+                            <span className={`material-symbols-outlined ${styles.icon}`}>text_snippet</span>
                             <textarea 
                             id='message'
                             name="message" 

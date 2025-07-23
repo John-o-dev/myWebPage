@@ -15,15 +15,15 @@ export default function LastProjects({ repos }: Props) {
   return (
     <div className={styles.last_projects}>
       <h2>{t(className, `${classComponent}_title`)}</h2>
-      <ul>
+      <ul className={styles.horizontal_list}>
         {repos.map(repo => (
-          <li key={repo.name} className={styles.project_name_img}>
-            <div>
+          <li key={repo.name} className={styles.project_item}>
+            <div className={styles.project_name_img}>
               <a href="#">
                 <h3 className={styles.projects_item_title}>{repo.description}</h3>
                 <figure className={styles.project_img}>
                   <div className={styles.project_item_icon_box}>
-                    {/* <ion-icon name="eye-outline"></ion-icon> */}
+                    <span className="material-symbols-outlined">mystery</span>
                   </div>
                   <img src="https://raw.githubusercontent.com/John-o-dev/webpage-Multi-Language/refs/heads/master/thumbnail.jpeg" alt="thumbnail rep" loading="lazy" />
                 </figure>

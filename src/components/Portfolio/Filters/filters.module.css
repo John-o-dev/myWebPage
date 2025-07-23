@@ -17,10 +17,6 @@
     font-weight: var(--fw-300);
 }
 
-.filter_select.active .select_icon {
-    transform: rotate(0.5turn);
-}
-
 .select_list {
     background: var(--second-bg-color);
     position: absolute;
@@ -36,14 +32,13 @@
     transition: 0.15s ease-in-out;
 }
 
-.filter_select.active + .select_list {
+.select_list.active {
     opacity: 1;
     visibility: visible;
     pointer-events: all;
 }
 
 .select_item button {
-    background: var(--second-bg-color);
     color: var(--text-color);
     font-size: var(--fs-6);
     font-weight: var(--fw-300);
@@ -54,11 +49,6 @@
 }
 
 .select_item button:hover {
+    background: var(--hover-bg-color);
     color: var(--hover-color);
-}
-
-@media (min-width: 768px) {
-    .filter_select_box {
-        display: none;
-    }
 }

@@ -1,12 +1,24 @@
 import useTranslation from '@/src/hooks/useTranslation';
 import styles from './sidebarInfoMore.module.css'
+import { useState } from 'react';
 
 export default function SidebarInfoMore() {
+    const [menuOpen, setMenuOpen] = useState(false);
+
+    const toggleMenu = () => {
+        setMenuOpen((prev) => !prev);
+    };
     const className = "sidebar";
     const { t } = useTranslation();
     return (
         <div className={styles.sidebar_info_more}>
-            <ul className={styles.contacts_list}>
+
+            <button className={styles.info_more_btn} onClick={toggleMenu}>
+                <span>{t(className, 'contacts')}</span>
+                <span className="material-symbols-outlined">arrow_downward</span>
+            </button>
+
+            <ul className={`${styles.contacts_list} ${menuOpen ? styles.active : ""}`}>
                 <li className={styles.contact_item}>
                     <a href="#" className={styles.contact_link}>
                         <div className={styles.sidebar_icon_box}>
@@ -22,7 +34,7 @@ export default function SidebarInfoMore() {
                 <li className={styles.contact_item}>
                     <a href="#" className={styles.contact_link}>
                         <div className={styles.sidebar_icon_box}>
-                        <span className="material-symbols-outlined">contact_phone</span>
+                            <span className="material-symbols-outlined">contact_phone</span>
                         </div>
                         <div>
                             <p className={styles.contact_title}>{t(className, 'phone')}</p>
@@ -34,7 +46,7 @@ export default function SidebarInfoMore() {
                 <li className={styles.contact_item}>
                     <a href="#" className={styles.contact_link}>
                         <div className={styles.sidebar_icon_box}>
-                        <span className="material-symbols-outlined">person_pin_circle</span>
+                            <span className="material-symbols-outlined">person_pin_circle</span>
                         </div>
                         <div>
                             <p className={styles.contact_title}>{t(className, 'location')}</p>
@@ -42,43 +54,43 @@ export default function SidebarInfoMore() {
                         </div>
                     </a>
                 </li>
-            </ul>
 
-            <ul className={styles.social_list}>
-                <li className={styles.social_item}>
-                    <a href="https://www.linkedin.com/in/antonio-rodrigues-lima-filho/" className={styles.social_link}>
-                        <img src="/img/linkedin.png" className='social-icons' alt="linkedin icon"/>
-                        <div className={styles.tooltip}>LinkedIn</div>
-                    </a>
-                </li>
+                <ul className={styles.social_list}>
+                    <li className={styles.social_item}>
+                        <a href="https://www.linkedin.com/in/antonio-rodrigues-lima-filho/" className={styles.social_link}>
+                            <img src="/img/linkedin.png" className='social-icons' alt="linkedin icon" />
+                            <div className={styles.tooltip}>LinkedIn</div>
+                        </a>
+                    </li>
 
-                <li className={styles.social_item}>
-                    <a href="https://www.facebook.com/people/John-ODev/100071663284338/" className={styles.social_link}>
-                        <img src="/img/facebook-icon.png" className='social-icons' alt="facebook icon"/>
-                        <div className={styles.tooltip}>Facebook</div>
-                    </a>
-                </li>
+                    <li className={styles.social_item}>
+                        <a href="https://www.facebook.com/people/John-ODev/100071663284338/" className={styles.social_link}>
+                            <img src="/img/facebook-icon.png" className='social-icons' alt="facebook icon" />
+                            <div className={styles.tooltip}>Facebook</div>
+                        </a>
+                    </li>
 
-                <li className={styles.social_item}>
-                    <a href="https://twitter.com/JohnODev4" className={styles.social_link}>
-                        <img src="/img/twitter-icon.png" className='social-icons' alt="twitter icon"/>
-                        <div className={styles.tooltip}>Twitter</div>
-                    </a>
-                </li>
+                    <li className={styles.social_item}>
+                        <a href="https://twitter.com/JohnODev4" className={styles.social_link}>
+                            <img src="/img/twitter-icon.png" className='social-icons' alt="twitter icon" />
+                            <div className={styles.tooltip}>Twitter</div>
+                        </a>
+                    </li>
 
-                <li className={styles.social_item}>
-                    <a href="https://www.instagram.com/john_o_dev/" className={styles.social_link}>
-                        <img src="/img/instagram-icon.png" className='social-icons' alt="instagram icon"/>
-                        <div className={styles.tooltip}>Instagram</div>
-                    </a>
-                </li>
+                    <li className={styles.social_item}>
+                        <a href="https://www.instagram.com/john_o_dev/" className={styles.social_link}>
+                            <img src="/img/instagram-icon.png" className='social-icons' alt="instagram icon" />
+                            <div className={styles.tooltip}>Instagram</div>
+                        </a>
+                    </li>
 
-                <li className={styles.social_item}>
-                    <a href="github.com/John-o-dev" className={styles.social_link}>
-                        <img src="/img/github-icon.png" className='social-icons' alt="github icon"/>
-                        <div className={styles.tooltip}>Github</div>
-                    </a>
-                </li>
+                    <li className={styles.social_item}>
+                        <a href="github.com/John-o-dev" className={styles.social_link}>
+                            <img src="/img/github-icon.png" className='social-icons' alt="github icon" />
+                            <div className={styles.tooltip}>Github</div>
+                        </a>
+                    </li>
+                </ul>
             </ul>
         </div>
     )

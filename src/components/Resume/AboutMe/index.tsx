@@ -35,7 +35,7 @@ export default function About() {
         {t(className, `${classComponent}_description_6`)}
       </p>
 
-      <div className={styles.buttons}>
+      <div className={styles.btn_box}>
         <ButtonBox className={styles.btn_actions} href="/pdf/Currículo_Profissional_Antonio.pdf" target="_blank" rel="noopener noreferrer">
           {t(className, `${classComponent}_btn_look_cv`)}
         </ButtonBox>

@@ -1,44 +1,54 @@
 .sidebar_info_more {
-    display: none;
+    position: relative;
 }
 
-.sidebar.active .sidebar_info_more {
-    display: block;
-    opacity: 1;
-    visibility: visible;
-    padding-top: 20px;
-}
-
-.contacts_list {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 5px;
-}
-
-.contact_item :is(.contact_link, address) {
+.info_more_btn {
+    padding: 10px 15px;
+    width: 100%;
     color: var(--text-color);
-    font-size: var(--fs-7);
+    background: var(--jet);
+    transition: var(--transition-1);
+    z-index: 1;
+    text-align: center;
 }
 
 .contacts_list {
-    gap: 10px;
-}
-
-.contacts_list,
-.contact_link {
     display: flex;
     flex-direction: column;
-    align-items: center;
+    gap: 1em;
+    background: var(--second-bg-color);
+    position: absolute;
+    top: calc(100% + 6px);
+    width: 100%;
+    padding: 1em;
+    border: 1px solid var(--hover-color);
+    border-radius: 14px;
+    z-index: 2;
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transition: 0.15s ease-in-out;
 }
 
-.contact_item:last-of-type {
-    padding-bottom: 10px;
+.contacts_list.active {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: all;
+}
+
+.contact_item {
+    /* display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center; */
 }
 
 .contact_link {
     display: flex;
     align-items: center;
-    /* padding-bottom: 5px; */
+    color: var(--text-color);
+    font-size: var(--fs-7);
+    padding-left: 2em;
 }
 
 .sidebar_icon_box {
