@@ -1,6 +1,6 @@
 {
   "name": "john-potfolio",
-  "version": "1.0.1",
+  "version": "1.0.0",
   "private": true,
   "scripts": {
     "dev": "next dev",
@@ -12,6 +12,7 @@
   "dependencies": {
     "@babel/preset-env": "^7.26.0",
     "@babel/preset-react": "^7.26.3",
+    "@emailjs/browser": "^4.4.1",
     "@pdftron/webviewer": "^11.4.0",
     "gray-matter": "^4.0.3",
     "next": "^12.1.0",

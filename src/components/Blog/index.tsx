@@ -1,8 +1,11 @@
+import useTranslation from '@/src/hooks/useTranslation';
 import styles from './blog.module.css'
 
 export default function Blog() {
+    const className = "blog";
+    const { t } = useTranslation();
     return (
-        <article className={styles.blog} data-page="blog">
+        <article className={styles.blog}>
 
             <header>
                 <h2 className="article_title">Blog</h2>
@@ -10,11 +13,10 @@ export default function Blog() {
 
             <div className={styles.blog_bg}>
                 <p>
-                    Em Breve...
-                    Postagens sobre web design, programação e tecnologia.
+                    {t(className, 'soon')}
                 </p>
                 <div className={styles.gif_container}>
-                    <img src="img/dino.gif" alt="GIF animado" />
+                    <img src="/img/dino.gif" alt="GIF animado" />
                 </div>
             </div>
 

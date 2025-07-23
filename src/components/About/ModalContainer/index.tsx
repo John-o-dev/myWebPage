@@ -1,38 +1,45 @@
 import styles from './modalContainer.module.css'
 
-export default function ModalContainer() {
+type ModalContainerProps = {
+    isOpen: boolean;
+    selected: any;
+    closeModal: () => void;
+}
+
+export default function ModalContainer({isOpen, selected, closeModal}: ModalContainerProps) {
     return (
-        <div className={styles.modal_container} data-modal-container>
-            <div className={styles.overlay} data-overlay></div>
-            <section className={styles.testimonials_modal}>
+        <>
+            {/* Modal */}
+            {isOpen && selected && (
+                <div className={`${styles.modal_container} ${styles.active}`}>
 
-                <button className={styles.modal_close_btn} data-modal-close-btn>
-                {/* <ion-icon name="close-outline"></ion-icon> */}
-                </button>
+                    <div className={`${styles.overlay} ${styles.active}`} onClick={closeModal}></div>
+                    <section className={styles.testimonials_modal}>
 
-                <div className={styles.modal_img_wrapper}>
-                    <figure className={styles.modal_avatar_box}>
-                        <img data-url="img/avatar-1.png" alt="Daniel lewis" width="80" data-modal-img />
-                    </figure>
+                        <button className={styles.modal_close_btn} onClick={closeModal}>
+                            <span className="material-symbols-outlined">close</span>
+                        </button>
 
-                    <img src="img/icon-quote.svg" alt="quote icon" />
+                        <div className={styles.modal_img_wrapper}>
+                            <figure className={styles.modal_avatar_box}>
+                                <img src="/img/youtube-icon.png" alt="Testimonial" width="80" />
+                            </figure>
+
+                            <img src="/img/icon-quote.svg" alt="quote icon" />
+                        </div>
+
+                        <div className={styles.modal_content}>
+                            <h4 className={styles.modal_title}>{selected.name}</h4>
+
+                            <div className={styles.modal_text}>
+                                <p>{selected.text}</p>
+                            </div>
+                        </div>
+
+                    </section>
                 </div>
 
-                <div className={styles.modal_content}>
-                    <h4 className={styles.modal_title} data-modal-title>User</h4>
-
-                    {/* <time datetime="2021-06-14">01 Janeiro, 2024</time> */}
-                    <time>01 Janeiro, 2024</time>
-
-                    <div data-modal-text>
-                        <p>
-                        Lorem ipsum dolor sit amet, ullamcous cididt
-                        consectetur adipiscing
-                        elit, seds do et eiusmod tempor incididunt ut laborels dolore magnarels alia.
-                        </p>
-                    </div>
-                </div>
-            </section>
-        </div>
+            )}
+        </>
     )
 }

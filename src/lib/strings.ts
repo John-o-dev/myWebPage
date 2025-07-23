@@ -1,7 +1,6 @@
 export const LangStrings = {
   en: {
     home: 'Home',
-    about: 'About',
     summary: 'Summary',
     portfolio: 'Portfolio',
     blog: 'Blog',
@@ -9,15 +8,14 @@ export const LangStrings = {
     aboutText:
       "John Developer's Portfolio. Projects, contacts, updates and more...",
     articles: 'Articles',
-    slogan: "John o'Dev Portfolio",
+    slogan: "John O'Dev Portfolio",
   },
   pt: {
     home: 'Página Inicial',
-    about: 'Sobre',
-    summary: 'Resumo',
+    summary: 'Perfil Profissional',
     portfolio: 'Portfólio',
     blog: 'Blog',
-    contact: 'Entre em Contato',
+    contact: 'Contato',
     aboutText:
       'Portfólio de John Developer. Projetos, contatos, atualizaçoes e muito mais...',
     articles: 'Artigos',

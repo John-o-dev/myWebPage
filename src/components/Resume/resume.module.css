@@ -1,0 +1,24 @@
+.container {
+    display: flex;
+    gap: 1rem;
+    flex-direction: column;
+}
+
+@media (min-width: 580px) {}
+
+@media (min-width: 768px) {
+    .container {
+        flex-direction: row;
+        justify-content: space-between;
+        margin: auto;
+    }
+
+    .left_column,
+    .right_column {
+        flex: 1;
+    }
+}
+
+@media (min-width: 992px) {}
+
+@media (min-width: 1250px) {}

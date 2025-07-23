@@ -72,7 +72,7 @@
 
 .about_container .about_content p:last-of-type { margin-bottom: 1rem; }
 
-.about_container .about_content .btn_box { align-self: center; }
+/* .about_container .about_content .btn_box { align-self: center; }
 
 .about_container .about_content .btn {
     font-size: var(--fs-6);
@@ -87,16 +87,16 @@
     font-weight: var(--fw-600);
     padding: 0 5px;
     text-align: center;
-}
+} */
 
 @media (min-width: 580px) {
     .about_container { padding: 0; }
 }
 
-@media (min-width: 768px) {
+/* @media (min-width: 768px) {
     .about_content .btn_box,
     .about_content .btn { width: 100%; }
-}
+} */
 
 @media (min-width: 1024px) {
     .img_box img {

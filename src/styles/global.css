@@ -10,8 +10,6 @@
   /* background colors */
   --bg-color: #250821;
   --second-bg-color: #292e33;
-  --jet: hsl(0, 0%, 22%);
-  --orange-yellow-crayola: hsl(45, 100%, 72%);
 
   /* typography ------------------------------------------ */
 
@@ -21,8 +19,8 @@
   /* font-size */
   --fs-1: 2.2rem;
   --fs-2: 2rem;
-  --fs-3: 1.2rem;
-  --fs-4: 1.1rem;
+  --fs-3: 1.5rem;
+  --fs-4: 1.2rem;
   --fs-5: 1rem;
   --fs-6: 0.8rem;
   --fs-7: 0.75rem;
@@ -41,7 +39,7 @@
 
   /* font-color */
   --text-color: #f5f5f5;
-  --light-gray-70: hsla(0, 0%, 84%, 0.7);
+  --light-gray-70: hsl(0, 0%, 62%);
 
   /* shadow ------------------------------------------ */
   --neon-box-shadow: 0 0 .5rem #12f7ff;

@@ -41,6 +41,7 @@
 
 .btn:hover {
     color: var(--hover-color);
+    cursor: pointer;
 }
 
 .btn:hover::before {

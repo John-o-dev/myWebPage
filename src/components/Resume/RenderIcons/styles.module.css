@@ -1,0 +1,12 @@
+.skills_icons {
+    padding: 5px;
+}
+
+.skills_icons img {
+    font-size: 30px;
+    width: 30px;
+    height: 40px; 
+    transition: 0.25s ease;
+}
+
+.skills_icons img:is(:hover, :focus) { transform: scale(1.2); }

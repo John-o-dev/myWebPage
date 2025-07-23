@@ -10,7 +10,7 @@ export default function Sidebar() {
             <div className={styles.sidebar_info}>
                 <div className={styles.sidebar_container}>
                     <figure className={styles.avatar_box}>
-                        <img src="img/Photo.jpg" alt="Imegem de John O'Dev" />
+                        <img src="/img/Photo.jpg" alt="Imegem de John O'Dev" />
                     </figure>
             
                     <div className={styles.info_content}>
@@ -19,11 +19,6 @@ export default function Sidebar() {
                         <p className={styles.title}>{t(className, 'youtube_presentation')} <span>John'Odev</span></p>
                     </div>
                 </div>
-                
-                <button className={styles.info_more_btn} data-sidebar-btn>
-                <span>{t(className, 'contacts')}</span>
-                {/* <ion-icon name="chevron-down"></ion-icon> */}
-                </button>
             </div>
 
             <div className={styles.separator}></div>

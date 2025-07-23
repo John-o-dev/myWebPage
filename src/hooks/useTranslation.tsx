@@ -10,6 +10,9 @@ import { pt } from '../lib/locales/pt';
 
 const translations: Record<string, Record<string, Record<string, string>>> = { en, pt };
 
+// Allow nested translation objects of arbitrary depth
+// const translations: Record<string, any> = { en, pt };
+
 export default function useTranslation() {
 	const [locale, setLocale] = useContext(LanguageContext);
 

@@ -28,7 +28,7 @@
     content: "";
     position: absolute;
     inset: 1px;
-    background: var(--secon-bg-color);
+    background: var(--second-bg-color);
     border-radius: inherit;
     z-index: -1;
 }

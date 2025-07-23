@@ -5,12 +5,23 @@ type ButtonBoxProps = React.AnchorHTMLAttributes<HTMLAnchorElement> & {
     href?: string;
 }
 
-export default function ButtonBox({ href, children, ...props }: ButtonBoxProps) {
+export default function ButtonBox({ 
+    href, 
+    className,
+    children,
+    ...props 
+}: ButtonBoxProps) {
     return (
-        <div className={styles.btn_box}>
-            <a href={href} {...props} className={styles.btn}>
+        <button 
+        type="submit" 
+        value="Send"
+        className={`${styles.btn_box} ${className}`}>
+            <a 
+            href={href} 
+            {...props} 
+            className={styles.btn}>
                 {children}
             </a>
-        </div>
+        </button>
     )
 }

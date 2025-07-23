@@ -3,6 +3,8 @@ import Head from 'next/head';
 import Sidebar from '../Sidebar'
 import Header from '../Header';
 import styles from './layout.module.css'
+import { useIsMobile } from '@/src/utils/isMobile';
+import { useIsFullDesktop } from '@/src/utils/isFullDesktop';
 
 type Props = {
 	children: React.ReactNode;
@@ -20,6 +22,10 @@ export default function Layout({
 
 	const description = desc || "John O'Dev Portfolio";
 	const thumbnail = thumb || '/img/default-thumb.png';
+	const isMobile = useIsMobile();
+	const isFullDesktop = useIsFullDesktop();
+
+	if (isMobile === null) return null; // ou um loader ou fallback
 
 	return (
 		<main className={styles.main}>
@@ -40,13 +46,12 @@ export default function Layout({
 			</Head>
 
 			<div className={styles.box_container}>
-
+				{isFullDesktop && <Header />}
 				<Sidebar />
 				<div className={styles.box_content}>
-					<Header />
+					{!isFullDesktop && <Header />}
 					{children}
 				</div>
-
 			</div>
 		</main>
 	);
