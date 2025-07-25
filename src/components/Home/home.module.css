@@ -1,6 +1,6 @@
 .homePage {
     height: max-content;
-    background: #833471 url('../../../public/img/img-home-bg.png');
+    background: var(--bg-color) url('../../../public/img/img-home-bg.png');
     background-size: cover;
     background-position: right -250px bottom;
 }

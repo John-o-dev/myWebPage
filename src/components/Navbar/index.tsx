@@ -39,7 +39,7 @@ export default function Navbar() {
     return (
         <header className={`${isMobile ? styles.header_mobile : ''}`}>
             {/* <nav className={`${isScrolled ? styles.navbar_scrolled : styles.navbar}`}> */}
-            {isMobile && <div className={styles.logo}><span>J</span>ohn <span>O</span>'<span>D</span>ev</div>}
+            {isMobile && <div className={styles.logo}><span>J</span>ohn<span>&nbsp;O</span>'<span>D</span>ev</div>}
             <nav className={`${isMobile ? '' : styles.navbar}`}>
                 <ul className={`${isMobile ? styles.nav_list_mobile : styles.navbar_list} ${ menuOpen ? styles.open : "" }`} >
                     <li>
