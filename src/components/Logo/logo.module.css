@@ -1,0 +1,9 @@
+.logo {
+    display: flex;
+    font-size: 26px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    color: var(--text-color);
+}
+
+.logo span { color: var(--hover-color); }

@@ -26,10 +26,10 @@ export const pt = {
         btn_download_cv: 'Download Currículo',
     },
     resume: {
+        title: 'Perfil Profissional',
         Stacks_1: 'Stacks e Tecnologias',
         Stacks_2: 'Ferramentas Criativas',
         Stacks_3: 'Aprendizados em Andamento',
-        about_me_title: 'Perfil Profissional',
         about_me_description_1: 'Sou o Antonio Rodrigues, Desenvolvedor Web com foco em tecnologias modernas como Angular, React, Next.js, JavaScript, HTML/CSS entre outras. Atualmente curso Análise e Desenvolvimento de Sistemas na Universidade Anhembi Morumbi e me especializo por meio de projetos práticos e cursos online (nanodegrees).',
         about_me_description_2: 'Tenho experiência com desenvolvimento de interfaces responsivas e foco em performance, acessibilidade e boas práticas de código.',
         about_me_description_3: 'Ao longo da minha trajetória, também tive contato com áreas técnicas como mecatrônica, o que fortaleceu minha lógica e pensamento analítico.',

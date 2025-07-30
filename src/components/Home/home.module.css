@@ -73,6 +73,7 @@
 
 .link_description {
     display: inline;
+    color: var(--hover-color);
 }
 
 .home_content .text_animation {

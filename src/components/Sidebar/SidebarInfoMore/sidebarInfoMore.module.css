@@ -23,24 +23,17 @@
     padding: 1em;
     border: 1px solid var(--hover-color);
     border-radius: 14px;
-    z-index: 2;
     opacity: 0;
     visibility: hidden;
     pointer-events: none;
     transition: 0.15s ease-in-out;
+    z-index: 1000;
 }
 
 .contacts_list.active {
     opacity: 1;
     visibility: visible;
     pointer-events: all;
-}
-
-.contact_item {
-    /* display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center; */
 }
 
 .contact_link {
@@ -78,8 +71,12 @@
 
 .contact_title {
     color: var(--hover-color);
-    font-size: var(--fs-6);
+    font-size: var(--fs-5);
     text-transform: uppercase;
+}
+
+.contact_description {
+    font-size: var(--fs-5);
 }
 
 .social_list {
@@ -162,10 +159,23 @@
 }
 
 @media (min-width: 1250px) {
-    .sidebar_info_more {
-        display: block;
+    .contacts_list {
+        display: flex;
+        flex-direction: column;
+        gap: 1em;
+        background: transparent;
+        position: relative;
+        padding: 0;
+        border: none;
         opacity: 1;
         visibility: visible;
+        pointer-events: initial;
+        transition: 0.15s ease-in-out;
+        z-index: 1000;
+    }
+
+    .sidebar_info_more {
+        display: block;
         padding-top: 20px;
         padding-left: 15px;
     }
@@ -179,8 +189,8 @@
     }
 
     .contact_link {
-        display: flex;
         flex-direction: row;
+        padding-left: 0;
     }
 
     .contact_link:is(:hover, :focus) {
@@ -191,5 +201,6 @@
     .social_list {
         justify-content: center;
         padding: 20px 0;
+        align-self: center;
     }
 }
