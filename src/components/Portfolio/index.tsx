@@ -112,7 +112,7 @@ export default function Portfolio() {
 
       {user && <GithubPerfil {...user} />}
 
-      {repos.length > 0 && <LastProjects repos={repos.slice(0, 5)} />}
+      {repos.length > 0 && <LastProjects repos={repos.slice(0, 10)} />}
 
       <div className="separator"></div>
 

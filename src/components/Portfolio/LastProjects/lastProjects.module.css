@@ -29,7 +29,7 @@
 }
 
 .project_item {
-  flex: 0 0 calc(100% / 2.5);
+  flex: 0 0 calc(100% / 1.3);
   padding: .5rem;
   border-radius: 8px;
   text-align: center;

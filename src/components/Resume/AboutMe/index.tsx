@@ -8,8 +8,8 @@ export default function About() {
   const { t } = useTranslation();
   return (
     <section className={styles.about}>
-      <h1 className={styles.title}>{t(className, `${classComponent}_title`)}</h1>
-      <p className={styles.description}>{'<>Hello Dev\'s</>'}</p>
+      
+      <p className={styles.description}>{'<> Hello Dev\'s </>'}</p>
       <p className={styles.description}>
         {/* {t(className, 'description_1')} */}
         {t(className, `${classComponent}_description_1`)}

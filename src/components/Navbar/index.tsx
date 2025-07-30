@@ -1,12 +1,13 @@
 "use client"
 
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { ActiveLink } from '../ActiveLink';
 import useTranslation from '../..//hooks/useTranslation';
 import useHandleLocaleChange from '@/src/utils/handleLocaleChange';
 
 import styles from './navbar.module.css'
 import { useIsMobile } from '@/src/utils/isMobile';
+import Logo from '../Logo';
 
 
 export default function Navbar() {
@@ -15,11 +16,23 @@ export default function Navbar() {
     const handleLocaleChange = useHandleLocaleChange();
     const isMobile = useIsMobile();
     
+    const menuRef = useRef(null);
     const [menuOpen, setMenuOpen] = useState(false);
 
     const toggleMenu = () => {
         setMenuOpen((prev) => !prev);
     };
+
+    useEffect(() => {
+        const handleClickOutside = (event: MouseEvent) => {
+        if (menuRef.current && !menuRef.current.contains(event.target as Node)) {
+            setMenuOpen(false);
+        }
+        };
+
+        document.addEventListener('mousedown', handleClickOutside);
+        return () => document.removeEventListener('mousedown', handleClickOutside);
+    }, []);
 
 
     // const [isScrolled, setIsScrolled] = useState(false);
@@ -37,9 +50,9 @@ export default function Navbar() {
     // }, []);
 
     return (
-        <header className={`${isMobile ? styles.header_mobile : ''}`}>
+        <header ref={menuRef} className={`${isMobile ? styles.header_mobile : ''}`}>
             {/* <nav className={`${isScrolled ? styles.navbar_scrolled : styles.navbar}`}> */}
-            {isMobile && <div className={styles.logo}><span>J</span>ohn<span>&nbsp;O</span>'<span>D</span>ev</div>}
+            {isMobile && <Logo />}
             <nav className={`${isMobile ? '' : styles.navbar}`}>
                 <ul className={`${isMobile ? styles.nav_list_mobile : styles.navbar_list} ${ menuOpen ? styles.open : "" }`} >
                     <li>

@@ -26,10 +26,10 @@ export const en = {
         btn_download_cv: 'Download Resume',
     },
     resume: {
+        title: 'Professional Profile',
         Stacks_1: 'Stacks and Technologies',
         Stacks_2: 'Creative Tools',
         Stacks_3: 'Learning in progress',
-        about_me_title: 'Professional Profile',
         about_me_description_1: "I'm Antonio Rodrigues, a Web Developer focused on modern technologies such as Angular, React, Next.js, JavaScript, HTML/CSS and others. I'm currently studying Systems Analysis and Development at Anhembi Morumbi University and specializing in practical projects and online courses (nanodegrees).",
         about_me_description_2: 'I have experience developing responsive interfaces and focus on performance, accessibility and good code practices.',
         about_me_description_3: 'Throughout my career, I also had contact with technical areas such as mechatronics, which strengthened my logic and analytical thinking.',

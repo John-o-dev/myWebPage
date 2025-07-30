@@ -4,7 +4,7 @@ import ButtonBox from '../ButtonBox';
 
 export default function HomePage() {
 	const className = "homePage";
-	const { t } = useTranslation();
+	const { t, locale } = useTranslation();
 	return (
 		<article className={styles.homePage}>
 
@@ -12,13 +12,13 @@ export default function HomePage() {
 
 				<div className={styles.home_content}>
 
-					<h1 className={styles.article_title} data-text={t(className, 'fullName')}>{t(className, 'fullName')}</h1>
+					{/* <h1 className={styles.article_title} data-text={t(className, 'fullName')}>{t(className, 'fullName')}</h1> */}
 
 					<h2 className={styles.article_career}>{t(className, 'carer')}</h2>
 
 					<p className={styles.article_description}>
 						{t(className, 'description_1')}
-						<a href="#" className={styles.link_description}> (Clique aqui)</a>
+						<a href={`/${locale}/portfolio`} className={styles.link_description}> (Clicando aqui)</a>
 					</p>
 
 					<div className={styles.center_name}>
@@ -47,12 +47,6 @@ export default function HomePage() {
 						</ButtonBox>
 					</div>
 				</div>
-
-				{/* <div className={styles.home_image}>
-					<figure className={styles.img_box}>
-						<img src="img/img-home-bg.png" alt="homePage" />
-					</figure>
-				</div> */}
 
 			</section>
 

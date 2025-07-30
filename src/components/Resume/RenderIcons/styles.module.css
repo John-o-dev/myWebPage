@@ -1,5 +1,8 @@
 .skills_icons {
-    padding: 5px;
+    padding: 5px 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .skills_icons img {

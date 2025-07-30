@@ -1,23 +1,40 @@
 import useTranslation from '@/src/hooks/useTranslation';
 import styles from './sidebarInfoMore.module.css'
-import { useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
+import { useIsFullDesktop } from '@/src/utils/isFullDesktop';
+
 
 export default function SidebarInfoMore() {
+    const menuRef = useRef(null);
     const [menuOpen, setMenuOpen] = useState(false);
+    const className = "sidebar";
+    const { t } = useTranslation();
 
     const toggleMenu = () => {
         setMenuOpen((prev) => !prev);
     };
-    const className = "sidebar";
-    const { t } = useTranslation();
-    return (
-        <div className={styles.sidebar_info_more}>
 
-            <button className={styles.info_more_btn} onClick={toggleMenu}>
-                <span>{t(className, 'contacts')}</span>
-                
-                <span className="material-symbols-outlined">arrow_downward</span>
-            </button>
+    useEffect(() => {
+        const handleClickOutside = (event: MouseEvent) => {
+        if (menuRef.current && !menuRef.current.contains(event.target as Node)) {
+            setMenuOpen(false);
+        }
+        };
+
+        document.addEventListener('mousedown', handleClickOutside);
+        return () => document.removeEventListener('mousedown', handleClickOutside);
+    }, []);
+    
+    return (
+        <div ref={menuRef} className={styles.sidebar_info_more}>
+
+            {useIsFullDesktop() && 
+                <button className={styles.info_more_btn} onClick={toggleMenu}>
+                    <span>{t(className, 'contacts')}</span>
+                    
+                    <span className="material-symbols-outlined">arrow_downward</span>
+                </button>
+            }
 
             <ul className={`${styles.contacts_list} ${menuOpen ? styles.active : ""}`}>
                 <li className={styles.contact_item}>
@@ -27,7 +44,7 @@ export default function SidebarInfoMore() {
                         </div>
                         <div>
                             <p className={styles.contact_title}>Email</p>
-                            <span>john_o_dev@gmail.com</span>
+                            <span className={styles.contact_description}>john_o_dev@gmail.com</span>
                         </div>
                     </a>
                 </li>
@@ -39,7 +56,7 @@ export default function SidebarInfoMore() {
                         </div>
                         <div>
                             <p className={styles.contact_title}>{t(className, 'phone')}</p>
-                            <span>+55 (11) 91062-2590</span>
+                            <span className={styles.contact_description}>+55 (11) 91062-2590</span>
                         </div>
                     </a>
                 </li>
@@ -51,7 +68,7 @@ export default function SidebarInfoMore() {
                         </div>
                         <div>
                             <p className={styles.contact_title}>{t(className, 'location')}</p>
-                            <span><address>SP - São Paulo, BR</address></span>
+                            <span className={styles.contact_description}><address>SP - São Paulo, BR</address></span>
                         </div>
                     </a>
                 </li>

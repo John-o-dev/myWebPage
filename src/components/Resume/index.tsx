@@ -15,6 +15,10 @@ export default function Resume() {
     return (
         <article>
 
+            <header>
+                <h2 className="article_title">{t(className, 'title')}</h2>
+            </header>
+
             <div className={styles.container}>
                 <div className={styles.left_column}>
                     <AboutMe />
