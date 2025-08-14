@@ -64,8 +64,8 @@ export const pt = {
         repos_subtitle: 'Repositórios',
         repos_createdAt: 'Criado em',
         repos_updatedAt: 'Última atualização',
-        repos_btn_github_repo: 'Ver repositório no Github',
-        repos_btn_github_page: 'Ver no Github page',
+        repos_btn_github_repo: 'Ver Repositório',
+        repos_btn_github_page: 'Ver Demo',
     },
     blog: {
         soon: 'Em Breve...\nPostagens sobre web design, programação e tecnologia.'

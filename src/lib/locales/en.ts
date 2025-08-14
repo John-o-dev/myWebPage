@@ -64,8 +64,8 @@ export const en = {
         repos_subtitle: 'Repositories',
         repos_createdAt: 'Created at',
         repos_updatedAt: 'Updated at',
-        repos_btn_github_repo: 'View repository on Github',
-        repos_btn_github_page: 'View repository on Github page',
+        repos_btn_github_repo: 'View Repository',
+        repos_btn_github_page: 'View Demo',
     },
     blog: {
         soon: 'Coming Soon...\nPosts about web design, programming and technology.'

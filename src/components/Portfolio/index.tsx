@@ -8,6 +8,7 @@ import Repos from './Repos'
 import Filters from './Filters'
 import LastProjects from './LastProjects'
 import useTranslation from "@/src/hooks/useTranslation";
+import { responseLinguist } from "@/src/utils/responseLinguist";
 
 export default function Portfolio() {
   const [user, setUser] = useState<UserProps | null>(null);
@@ -28,13 +29,13 @@ export default function Portfolio() {
 
         const data = await res.json();
 
-        const { avatar_url, login, name, location, html_url, followers, following, public_repos } = data;
+        const { html_url, avatar_url, login, name, location, followers, following, public_repos } = data;
         const userData: UserProps = {
+          html_url,
           avatar_url,
           login,
           name,
           location,
-          html_url,
           followers,
           following,
           public_repos
@@ -64,12 +65,10 @@ export default function Portfolio() {
           return repo.owner.login === 'John-o-dev';
         });
 
-        console.log("filteredData: ", filteredData)
-        // if (filteredData.length === 0) {
-
         const reposData: ReposProps[] = filteredData.map((repo: any) => {
           const {
             name,
+            full_name,
             created_at,
             updated_at,
             pushed_at,
@@ -80,6 +79,7 @@ export default function Portfolio() {
 
           return {
             name,
+            full_name,
             created_at,
             updated_at,
             pushed_at,
@@ -90,7 +90,14 @@ export default function Portfolio() {
 
         });
 
-        const sortedRepos = reposData.sort((a, b) => {
+        const reposComLinguagens = await Promise.all(
+          filteredData.map(async (repo: any) => {
+            const linguagens = await responseLinguist(repo.languages_url);
+            return { ...repo, linguagens }; // adiciona o campo linguagens
+          })
+        );
+
+        const sortedRepos = reposComLinguagens.sort((a, b) => {
           return new Date(b.updated_at).getTime() - new Date(a.updated_at).getTime();
         });
 

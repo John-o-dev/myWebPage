@@ -1,11 +1,21 @@
+export interface LanguageMeta {
+  name: string;
+  bytes: number;
+  percent: number;
+  color: string | null;
+  icon: string | null;
+}
+
 export type ReposProps = {
     name: string;
+    full_name: string;
     created_at: string;
     updated_at: string;
     pushed_at: string;
     languages_url: string;
     description: string;
     html_url: string;
+    linguagens?: LanguageMeta[];
 }
 
 /*
@@ -34,11 +44,16 @@ link_github_page
 IMAGEM:
 
 https://raw.githubusercontent.com/John-o-dev/webpage-Multi-Language/refs/heads/master/thumbnail.jpeg
+https://raw.githubusercontent.com/John-o-dev/Netflix-Clone/refs/heads/master/thumbnail.png xx
+
+https://raw.githubusercontent.com/John-o-dev/Netflix-Clone/refs/heads/master/thumbnail.jpg
+https://raw.githubusercontent.com/John-o-dev/Indexa-Agenda-de-Contatos/refs/heads/master/thumbnail.jpg
 
 Como formar o link para a imagem:
 "https://raw.githubusercontent.com/"
 +
 "full_name": "John-o-dev/webpage-Multi-Language"
+"full_name": "John-o-dev/Netflix-Clone"
 +
 "/refs/heads/master/thumbnail.jpeg"
 Obs.: Todas as imagens terão que ter o nome padrão thumbnail.jpeg
