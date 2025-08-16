@@ -15,6 +15,7 @@ export type ReposProps = {
     languages_url: string;
     description: string;
     html_url: string;
+    topics: string[];
     linguagens?: LanguageMeta[];
 }
 

@@ -74,7 +74,8 @@ export default function Portfolio() {
             pushed_at,
             languages_url,
             description,
-            html_url
+            html_url,
+            topics
           } = repo;
 
           return {
@@ -86,6 +87,7 @@ export default function Portfolio() {
             languages_url,
             description,
             html_url,
+            topics
           };
 
         });
@@ -124,7 +126,7 @@ export default function Portfolio() {
       <div className="separator"></div>
 
       <section className="projects">
-        <Filters />
+        {repos.length > 0 && <Filters repos={repos} />}
         {repos.length > 0 && <Repos repos={repos} />}
       </section>
     </article>

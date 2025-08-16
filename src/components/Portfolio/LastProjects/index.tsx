@@ -32,7 +32,7 @@ export default function LastProjects({ repos }: Props) {
                   <div className={styles.project_item_icon_box}>
                     <span className="material-symbols-outlined">mystery</span>
                   </div>
-                  <img src={formatRepoImg(repo.full_name)} alt={repo.full_name} loading="lazy" />
+                  <img className={styles.repo_logo} src={formatRepoImg(repo.full_name)} alt={repo.full_name} loading="lazy" />
                 </figure>
               </a>
             </div>

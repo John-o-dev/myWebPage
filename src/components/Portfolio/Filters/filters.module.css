@@ -1,20 +1,36 @@
 .filter_select_box {
+    display: flex;
+    flex-direction: column;
     position: relative;
     margin-bottom: 25px;
+    gap: 1rem;
 }
 
 .filter_select {
     background: var(--second-bg-color);
     color: var(--text-color);
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
     width: 100%;
     padding: 12px 16px;
     border: 1px solid var(--hover-color);
     border-radius: 14px;
     font-size: var(--fs-5);
     font-weight: var(--fw-300);
+}
+
+.filter_input {
+    flex: 2;
+}
+
+.filter_select_button_box {
+    position: relative;
+    flex: 1;
+}
+
+.filter_button {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 .select_list {
@@ -30,6 +46,7 @@
     visibility: hidden;
     pointer-events: none;
     transition: 0.15s ease-in-out;
+    box-sizing: border-box;
 }
 
 .select_list.active {
@@ -51,4 +68,10 @@
 .select_item button:hover {
     background: var(--hover-bg-color);
     color: var(--hover-color);
+}
+
+@media (min-width: 768px) {
+  .filter_select_box {
+    flex-direction: row;
+  }
 }
