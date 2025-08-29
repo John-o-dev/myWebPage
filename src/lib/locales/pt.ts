@@ -61,7 +61,7 @@ export const pt = {
         githubPerfil_following: 'Seguindo',
         lastProjects_title: 'Últimos Projetos',
         lastProjects_updated: 'Última atualização',
-        repos_subtitle: 'Repositórios',
+        repos_subtitle: 'Todos Repositórios',
         repos_createdAt: 'Criado em',
         repos_updatedAt: 'Última atualização',
         repos_btn_github_repo: 'Ver Repositório',

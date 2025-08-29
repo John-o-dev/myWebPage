@@ -44,6 +44,10 @@
     margin: 20px auto;
 }
 
+.repo_card_content {
+    position: relative;
+}
+
 .repo_logo {
     width: 100%;
     height: 250px;
@@ -55,6 +59,93 @@
     transform: scale(1.02);
     transition: transform 0.3s ease;
 }
+
+.btn_info_card {
+    position: absolute;
+    bottom: 30px;
+    right: 5px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 8px 15px;
+    background-color: rgba(109, 109, 110, 0.7);
+    border: none;
+    border-radius: 4px;
+    color: white;
+    font-weight: 500;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.btn_info_card:hover {
+    background-color: rgba(109, 109, 110, 0.9);
+}
+
+.btn_info_card svg {
+    width: 1.5rem;
+}
+
+/********************** Modal **********************/
+.repo_title_modal {
+    text-align: center;
+    font-weight: var(--fw-500);
+    font-size: var(--fs-6);
+}
+
+.repo_dates_modal {
+    display: flex;
+    justify-content: space-around;
+}
+.repo_dates_modal .createAt,
+.repo_dates_modal .updateAt{
+    display: flex;
+}
+.repo_dates_modal .createAt span,
+.repo_dates_modal .updateAt span {
+    color: var(--hover-color);
+}
+
+.language_legend_modal {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    color: var(--text-color);
+    font-size: 0.85em;
+    margin-bottom: 10px;
+}
+
+.language_legend_modal .language_container {
+    display: flex;
+    align-items: center;
+    padding: 0 5px 5px 0;
+}
+
+.language_legend_modal .dot {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    margin-right: 5px;
+}
+
+.language_legend_modal .language_icon {
+    width: 25px;
+    padding-right: 5px;
+}
+
+.language_legend_modal .language_text {
+    text-wrap-mode: nowrap;
+}
+
+.buttons_modal {
+    display: flex;
+    justify-content: space-evenly;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+/********************** Modal **********************/
 
 .repo_title {
     color: var(--text-color);
@@ -73,7 +164,8 @@
 
 /* estilo do parágrafo truncado (já existente) */
 .repo_description {
-    position: relative; /* para posicionar a tooltip relativamente a este bloco */
+    position: relative;
+    /* para posicionar a tooltip relativamente a este bloco */
     color: var(--text-color);
     font-size: var(--fs-6);
     margin: 10px 0;
@@ -93,70 +185,72 @@
 }
 
 /* botão de informação */
-.btn_info {
+.btn_info_description {
     background: none;
     cursor: pointer;
     width: 1.5rem;
 }
 
 /* foco visível para acessibilidade */
-.btn-info:focus {
-  outline: 2px solid #3b82f6;
-  outline-offset: 3px;
+.btn_info_description:focus {
+    outline: 2px solid #3b82f6;
+    outline-offset: 3px;
 }
 
 .tooltip {
-  position: absolute;
-  left: 0;                     /* ajuste para posicionar abaixo do texto */
-  top: calc(100% + 8px);       /* fica logo abaixo do parágrafo */
-  z-index: 50;
-  width: 280px;                /* limite de largura */
-  pointer-events: none;        /* bloqueia interações quando invisível */
-  visibility: hidden;
-  opacity: 0;
-  transform: translateY(-6px);
-  transition: opacity .18s ease, transform .18s ease, visibility .18s;
-  box-sizing: border-box;
+    position: absolute;
+    left: 0;
+    /* ajuste para posicionar abaixo do texto */
+    top: calc(100% + 8px);
+    /* fica logo abaixo do parágrafo */
+    z-index: 50;
+    width: 280px;
+    pointer-events: none;
+    visibility: hidden;
+    opacity: 0;
+    background: #141414;
+    transform: translateY(-6px);
+    transition: opacity .18s ease, transform .18s ease, visibility .18s;
+    box-sizing: border-box;
+    padding: 10px;
+    border-radius: var(--radius-12);
 }
 
-.tooltip-inner {
-  color: #111827;
-  font-size: 0.9rem;
-  top: 100%;
+.tooltip_inner {
+    color: var(--text-color);
+    font-size: 0.9rem;
+    top: 100%;
 }
 
 /* seta da tooltip */
-.tooltip::before {
-  content: "";
-  position: absolute;
-  top: -35px;
-  left: 0px;
-  width: 95%;
-  height: 50px;
-  background: #333;
-  border: 1px solid var(--hover-color);
-  border-radius: 4px;
-  z-index: -1;
-}
+/* .tooltip::before {
+    content: "";
+    position: absolute;
+    top: -35px;
+    left: 0px;
+    width: 95%;
+    height: 50px;
+    background: #333;
+    border: 1px solid var(--hover-color);
+    border-radius: 4px;
+    z-index: -1;
+} */
 
 /* pequeno quadrado transformado em seta — usar pseudo dentro do inner */
-.tooltip .tooltip-inner::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0px;
-  width: 95%;
-}
+/* .tooltip .tooltip_inner::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0px;
+    width: 95%;
+} */
 
-/* mostrar tooltip quando hover no botão, ou quando o container é hovered/focado */
-.repo_description:hover .tooltip,
-.repo_description:focus-within .tooltip,
-.btn-info:hover + .tooltip,
-.btn-info:focus + .tooltip {
-  visibility: visible;
-  opacity: 1;
-  transform: translateY(0);
-  pointer-events: auto; /* permitir interação com o conteúdo ao ficar visível */
+.btn_info_description:hover+.tooltip,
+.btn_info_description:focus+.tooltip {
+    visibility: visible;
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
 }
 
 .language_bar {
@@ -227,7 +321,7 @@
     margin-bottom: 15px;
 }
 
-.tags span {
+.tags .tag {
     background: #eef;
     color: #0366d6;
     padding: 4px 8px;
@@ -262,14 +356,28 @@
     color: white;
 }
 
-
-
+.separator {
+    width: 100%;
+    height: 1px;
+    background: var(--hover-color);
+    margin: 20px 0;
+}
 
 @media (min-width: 450px) {}
 
 @media (min-width: 580px) {}
 
 @media (min-width: 768px) {
+    .repo_card {
+        max-width: 340px;
+    }
+
+    .repo_logo {
+        height: 150px;
+    }
+}
+
+@media (min-width: 992px) {
     .project_list {
         column-gap: 30px;
         grid-template-columns: 1fr 1fr;
@@ -281,13 +389,12 @@
     }
 
     .repo_card {
-        max-width: 340px;
+        max-width: 450px;
     }
 
     .repo_logo {
-        height: 150px;
+        height: 260px;
     }
-
 }
 
 @media (min-width: 1024px) {

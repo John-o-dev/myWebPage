@@ -90,6 +90,10 @@
     object-fit: cover;
 }
 
+.updateAt {
+  color: var(--hover-color);
+}
+
 .project_item_icon_box {
   --scale: 0.8;
   background: var(--jet);

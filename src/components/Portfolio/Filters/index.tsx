@@ -4,10 +4,11 @@ import { ReposProps } from '@/src/types/repos';
 
 type Props = {
     repos: ReposProps[];
+    searchRepos: string;
+    setSearchRepos: (value: string) => void;
 }
 
-export default function Filters({ repos }: Props) {
-    const [searchTopics, setSearchTopics] = useState("");
+export default function Filters({ repos, searchRepos, setSearchRepos }: Props) {
     const [menuOpen, setMenuOpen] = useState(false);
 
     // Extrair todos os tópicos sem duplicar
@@ -15,20 +16,6 @@ export default function Filters({ repos }: Props) {
         const topics = repos.flatMap(repo => repo.topics);
         return Array.from(new Set(topics)); // Remove duplicados
     }, [repos]);
-
-    // Remove acentos
-    function removerAcentos(text: string): string {
-        return text.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
-    }
-
-    const filteredTopics = useMemo(() => {
-        const termoNormalizado = removerAcentos(searchTopics).toLowerCase();
-        // Quando nada for digitado (searchTopics) o filter() retorna true
-        // Então o .filter() mantém todos os elementos de allTopics.
-        return allTopics.filter(topic =>
-            removerAcentos(topic).toLowerCase().includes(termoNormalizado)
-        );
-    }, [searchTopics, allTopics]);
 
     const toggleMenu = () => {
         setMenuOpen((prev) => !prev);
@@ -40,9 +27,9 @@ export default function Filters({ repos }: Props) {
             <input
                 className={`${styles.filter_select} ${styles.filter_input}`}
                 type="text"
-                placeholder="Buscar topic..."
-                value={searchTopics}
-                onChange={(e) => setSearchTopics(e.target.value)}
+                placeholder="Buscar repositório..."
+                value={searchRepos}
+                onChange={(e) => setSearchRepos(e.target.value)}
             />
 
             <div className={styles.filter_select_button_box}>    
@@ -54,7 +41,7 @@ export default function Filters({ repos }: Props) {
                 </button>
 
                 <ul className={`${styles.select_list} ${menuOpen ? styles.active : ""}`}>
-                    {filteredTopics.map((topic, index) => (
+                    {allTopics.map((topic, index) => (
                         <li  className={styles.select_item} key={index}>
                             <button type='button'>{topic}</button>
                         </li>

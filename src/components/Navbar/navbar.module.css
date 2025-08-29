@@ -182,21 +182,6 @@ button.navbar_link {
         z-index: 1000;
     }
 
-    /* .sticky {
-        position: static;
-        transform: translateX(0);
-    }
-
-    .sticky_desktop {
-        position: fixed;
-        top: 0;
-        width: 900px;
-        z-index: 1000;
-        border-radius: 0;
-        left: 50%;
-        transform: translateX(-33.5%);
-    } */
-
     .navbar_list {
         display: flex;
         justify-content: space-around;

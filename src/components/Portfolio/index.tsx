@@ -14,6 +14,7 @@ export default function Portfolio() {
   const [user, setUser] = useState<UserProps | null>(null);
   const [repos, setRepos] = useState<ReposProps[]>([]);
   const [loading, setLoading] = useState(true);
+  const [searchRepos, setSearchRepos] = useState("");
   const className = "portfolio";
   const { t } = useTranslation();
 
@@ -126,8 +127,8 @@ export default function Portfolio() {
       <div className="separator"></div>
 
       <section className="projects">
-        {repos.length > 0 && <Filters repos={repos} />}
-        {repos.length > 0 && <Repos repos={repos} />}
+        {repos.length > 0 && <Filters repos={repos} searchRepos={searchRepos} setSearchRepos={setSearchRepos}/>}
+        {repos.length > 0 && <Repos repos={repos} searchRepos={searchRepos} />}
       </section>
     </article>
   )

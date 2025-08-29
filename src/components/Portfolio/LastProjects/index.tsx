@@ -36,7 +36,10 @@ export default function LastProjects({ repos }: Props) {
                 </figure>
               </a>
             </div>
-            <span className={styles.updateAt}>{t(className, `${classComponent}_updated`)}: <br />{formatDate(repo.updated_at)}</span>
+            <span>
+              {t(className, `${classComponent}_updated`)}: <br />
+              <span className={styles.updateAt}>{formatDate(repo.updated_at)}</span>
+            </span>
           </li>
         ))}
       </ul>
