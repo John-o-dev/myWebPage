@@ -31,6 +31,8 @@
 
 .info_card_modal_body {
   padding: 20px;
+  /* max-height: 250px;
+  overflow-y: scroll; */
 }
 
 .info_card_modal_body h2 {

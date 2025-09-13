@@ -26,6 +26,21 @@
     flex: 1;
 }
 
+.clear_selection {
+    cursor: pointer;
+    padding: 10px;
+    font-weight: bolder;
+    color: var(--text-color);
+}
+
+.clear_selection:hover,
+.clear_selection:focus {
+    background: #141414;
+    color: var(--hover-color);
+    outline: 2px solid #3b82f6;
+    outline-offset: 3px;
+}
+
 .filter_button {
     position: relative;
     display: flex;
