@@ -3,10 +3,6 @@
   height: max-content;
   text-align: center;
   margin-bottom: 1rem;
-  background-color: var(--secon-bg-color);
-  border: 2px solid var(--jet);
-  overflow-x: auto;
-  -webkit-overflow-scrolling: touch;
 }
 
 .last_projects h2 {
@@ -26,6 +22,8 @@
   margin: 0;
   border: 1px solid var(--text-color);
   border-radius: var(--radius-12);
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
 }
 
 .project_item {
@@ -35,14 +33,16 @@
   text-align: center;
 }
 
-.project_item:hover .project_img::before {
-  background: hsla(0, 0%, 0%, 0.5);
+.project_item:hover .project_img {
+  scale: 1.05;
 }
 
-.project_item:hover .project_item_icon_box {
-  color: var(--text-color);
-  --scale: 1;
-  opacity: 1;
+.project_name_img {
+  max-width: 100%;
+}
+
+.repo_card_content {
+    position: relative;
 }
 
 .projects_item_title {
@@ -54,61 +54,53 @@
   letter-spacing: 1px;
   text-transform: uppercase;
   margin: 0 0 5px 0;
+  height: 50px;
 }
 
 .project_img {
   position: relative;
   width: 100%;
-  height: 150px;
-  border-radius: 16px;
   overflow: hidden;
   margin-bottom: 15px;
-}
-
-.project_img::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: transparent;
-  z-index: 1;
   transition: var(--transition-1);
 }
 
-.project_img img {
+.repo_logo {
   width: 100%;
-  height: 100%;
+  height: 150px;
+  margin-bottom: 10px;
   object-fit: cover;
-  transition: var(--transition-1);
 }
 
-.project_item_icon_box {
-  --scale: 0.8;
-  background: var(--jet);
-  color: var(--orange-yellow-crayola);
+.btn_info_card {
   position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%) scale(var(--scale));
-  font-size: 20px;
-  padding: 18px;
-  border-radius: 12px;
-  opacity: 0;
-  z-index: 1;
-  transition: var(--transition-1);
+  bottom: 30px;
+  right: 5px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px 15px;
+  background-color: rgba(109, 109, 110, 0.7);
+  border: none;
+  border-radius: 4px;
+  color: white;
+  font-weight: 300;
+  font-size: 0.8rem;
+  cursor: pointer;
+  transition: background 0.3s ease;
 }
 
-.project_name_img>a:hover .project_item_icon_box {
-  --scale: 1;
-  opacity: 1;
+.btn_info_card:hover {
+  background-color: rgba(109, 109, 110, 0.9);
 }
 
-.project_item_icon_box ion-icon {
-  --ionicon-stroke-width: 50px;
+.btn_info_card svg {
+  width: 1.5rem;
 }
 
+.updateAt {
+  color: var(--hover-color);
+}
 
 @media (min-width: 450px) {
   .project_img {
@@ -116,15 +108,15 @@
   }
 }
 
-@media (min-width: 580px) {
-  .project_img {
-    border-radius: 16px;
-  }
-}
+@media (min-width: 580px) {}
 
 @media (min-width: 768px) {
   .project_item {
     flex: 0 0 calc(100% / 4);
+  }
+
+  .project_name_img {
+    max-width: 190px;
   }
 }
 

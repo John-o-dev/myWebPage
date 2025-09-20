@@ -1,0 +1,269 @@
+.project_item {
+    display: none;
+    padding-bottom: 20px;
+    border-bottom: 1px solid white;
+}
+
+.project_item.active {
+    display: block;
+    animation: scaleUp 0.25s ease forwards;
+}
+
+@keyframes scaleUp {
+    0% {
+        transform: scale(0.5);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+.repo_card {
+    max-width: 100%;
+    background: #292e33;
+    padding: 20px;
+    border-radius: 18px;
+    box-shadow: 0 4px 12px rgba(6, 229, 236, 0.11);
+    font-family: sans-serif;
+    text-align: center;
+    margin: 20px auto;
+}
+
+.repo_card_content {
+    position: relative;
+}
+
+.repo_logo {
+    width: 100%;
+    height: 250px;
+    margin-bottom: 10px;
+    object-fit: cover;
+}
+
+.repo_logo:hover {
+    transform: scale(1.02);
+    transition: transform 0.3s ease;
+}
+
+.btn_info_card {
+    position: absolute;
+    bottom: 30px;
+    right: 5px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 8px 15px;
+    background-color: rgba(109, 109, 110, 0.7);
+    border: none;
+    border-radius: 4px;
+    color: white;
+    font-weight: 500;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.btn_info_card:hover {
+    background-color: rgba(109, 109, 110, 0.9);
+}
+
+.btn_info_card svg {
+    width: 1.5rem;
+}
+
+.repo_title {
+    color: var(--text-color);
+    font-weight: var(--fw-600);
+    font-size: var(--fs-5);
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin: 0;
+}
+
+.repo_dates {
+    color: var(--light-gray-70);
+    font-size: var(--fs-7);
+    margin: 10px 0;
+}
+
+/* estilo do parágrafo truncado (já existente) */
+.repo_description {
+    position: relative;
+    /* para posicionar a tooltip relativamente a este bloco */
+    color: var(--text-color);
+    font-size: var(--fs-6);
+    margin: 10px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 4px;
+}
+
+/* texto com ellipsis */
+.repo_description p {
+    width: 270px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    margin: 0;
+}
+
+/* botão de informação */
+.btn_info_description {
+    background: none;
+    cursor: pointer;
+    width: 1.5rem;
+}
+
+/* foco visível para acessibilidade */
+.btn_info_description:focus {
+    outline: 2px solid #3b82f6;
+    outline-offset: 3px;
+}
+
+.tooltip {
+    position: absolute;
+    left: 0;
+    /* ajuste para posicionar abaixo do texto */
+    top: calc(100% + 8px);
+    /* fica logo abaixo do parágrafo */
+    z-index: 50;
+    width: 280px;
+    pointer-events: none;
+    visibility: hidden;
+    opacity: 0;
+    background: #141414;
+    transform: translateY(-6px);
+    transition: opacity .18s ease, transform .18s ease, visibility .18s;
+    box-sizing: border-box;
+    padding: 10px;
+    border-radius: var(--radius-12);
+}
+
+.tooltip_inner {
+    color: var(--text-color);
+    font-size: 0.9rem;
+    top: 100%;
+}
+
+.btn_info_description:hover+.tooltip,
+.btn_info_description:focus+.tooltip {
+    visibility: visible;
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
+}
+
+.language_bar {
+    display: flex;
+    height: 8px;
+    border-radius: 5px;
+    overflow: hidden;
+    margin: 10px 0;
+}
+
+.language_bar span {
+    display: inline-block;
+    height: 100%;
+}
+
+.language_legend {
+    color: var(--text-color);
+    text-align: left;
+    font-size: 0.85em;
+    margin-bottom: 10px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.language_legend .language_container {
+    display: flex;
+    align-items: center;
+    padding: 0 5px 5px 0;
+}
+
+.language_legend .dot {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    margin-right: 5px;
+}
+
+.language_legend .language_icon {
+    width: 25px;
+    padding-right: 5px;
+}
+
+.language_legend .language_text {
+    text-wrap-mode: nowrap;
+}
+
+.tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    justify-content: center;
+    margin-bottom: 15px;
+}
+
+.tags .tag {
+    background: #eef;
+    color: #0366d6;
+    padding: 4px 8px;
+    border-radius: 12px;
+    font-size: 0.85em;
+}
+
+.buttons {
+    display: flex;
+    justify-content: space-around;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.btn {
+    padding: 8px 12px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 0.9em;
+    display: inline-block;
+    transition: 0.3s;
+}
+
+.btn.demo {
+    background: linear-gradient(to right, #007cf0, #00dfd8);
+    color: white;
+}
+
+.btn.repo {
+    background: linear-gradient(to right, #00c851, #33b5e5);
+    color: white;
+}
+
+@media (min-width: 768px) {
+    .repo_card {
+        max-width: 340px;
+    }
+
+    .repo_logo {
+        height: 150px;
+    }
+}
+
+@media (min-width: 992px) {
+    .project_item {
+        padding-bottom: 0;
+        border-bottom: none;
+    }
+
+    .repo_card {
+        max-width: 450px;
+    }
+
+    .repo_logo {
+        height: 260px;
+    }
+}

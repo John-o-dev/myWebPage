@@ -1,75 +1,107 @@
 import useTranslation from '@/src/hooks/useTranslation';
+import { useMemo, useState } from 'react';
 import styles from './repos.module.css'
+import Card from './Card';
 
 import { ReposProps } from '@/src/types/repos';
-import { formatDate } from "@/src/utils/format";
+import { filterRepos, filterReposByTopic } from '@/src/utils/portfolioUtils';
 
 type Props = {
-  repos: ReposProps[];
+    repos: ReposProps[];
+    searchByName: string;
+    searchByTopic: string;
 }
 
-export default function Repos({ repos }: Props) {
+export default function Repos({ repos, searchByName, searchByTopic }: Props) {
+    const [openIndex, setOpenIndex] = useState<{ section: string; index: number } | null>(null);
     const className = "portfolio";
     const classComponent = "repos";
     const { t } = useTranslation();
+
+    const filteredRepos = useMemo(() => {
+        return filterRepos(repos, searchByName, searchByTopic);
+    }, [repos, searchByName, searchByTopic]);
+
     return (
-        <div className={styles.repos}>
-            <h2 className={styles.subtitle}>{t(className, `${classComponent}_subtitle`)}: </h2>
-            <ul className={styles.project_list}>
+        <main>
+            <section className={styles.repos}>
+                <h2 className={styles.subtitle}>
+                    {searchByName
+                        ? `Resultados para "${searchByName}"`
+                        : t(className, `${classComponent}_subtitle`)}
+                </h2>
 
-                {repos.map(repo => (
-                    <li className={`${styles.project_item} ${styles.active}`} key={repo.name}>
-                        <div>
-                            <div className={styles.project_name_img}>
-                                <a href="#">
-                                    <h3 className={styles.projects_item_title}>{repo.description}</h3>
-                                    <figure className={styles.project_img}>
-                                        <div className={styles.project_item_icon_box}>
-                                            {/* <ion-icon name="eye-outline"></ion-icon> */}
-                                        </div>
-                                        <img src="https://raw.githubusercontent.com/John-o-dev/webpage-Multi-Language/refs/heads/master/thumbnail.jpeg" alt="thumbnail rep" loading="lazy" />
-                                    </figure>
-                                </a>
-                            </div>
+                <ul className={styles.project_list}>
+                    {filteredRepos.map((repo, index) => (
+                        <Card key={index} index={index} section={'filteredRepos'} repo={repo} openIndex={openIndex} setOpenIndex={setOpenIndex} className={className} classComponent={classComponent} />
+                    ))}
+                </ul>
+            </section>
 
-                            <div className={styles.projects_item_infos}>
-                                <div className={styles.date_container}>
-                                    <span className={styles.createAt}>{t(className, `${classComponent}_createdAt`)}: <br />{formatDate(repo.created_at)}</span>
-                                    <span className={styles.updateAt}>{t(className, `${classComponent}_updatedAt`)}: <br />{formatDate(repo.updated_at)}</span>
-                                </div>
-                                <div className={styles.languages_container}>
-                                    <div className={styles.language_content}>
-                                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg" alt='javascript' />
-                                        <span>Javascrip</span>
-                                    </div>
-                                    <div className={styles.language_content}>
-                                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/css3/css3-original.svg" alt='css3' />
-                                        <span>CSS</span>
-                                    </div>
-                                    <div className={styles.language_content}>
-                                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/html5/html5-original.svg" alt='html5' />
-                                        <span>HTML</span>
-                                    </div>
-                                </div>
-                            </div>
-                            <div className={styles.projects_item_actions}>
-                                <div className={styles.projects_item_btn_box}>
-                                    <a className={styles.projects_item_btn} href={repo.html_url} target="_blank" rel="noopener noreferrer">
-                                        <span className="material-symbols-outlined">open_in_new</span>
-                                        {t(className, `${classComponent}_btn_github_repo`)}
-                                    </a>
-                                </div>
-                                <div className={styles.projects_item_btn_box}>
-                                    <a className={styles.projects_item_btn} href={`https://john-o-dev.github.io/${repo.name}/`} target="_blank" rel="noopener noreferrer">
-                                        <span className="material-symbols-outlined">open_in_new</span>
-                                        {t(className, `${classComponent}_btn_github_page`)}
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    </li>
-                ))}
-            </ul>
-        </div>
+            <div className={styles.separator}></div>
+
+            {filterReposByTopic("angular", repos) &&
+                <section className={styles.repos}>
+                    <h2 className={styles.subtitle}>
+                        Angular
+                    </h2>
+                    {filterReposByTopic("angular", repos).map((repo, index) => (
+                        <Card key={index} section={'angular'} repo={repo} openIndex={openIndex} setOpenIndex={setOpenIndex} className={className} classComponent={classComponent} />
+                    ))}
+                    <div className={styles.separator}></div>
+                </section>
+            }
+
+            {filterReposByTopic("react", repos) &&
+                <section className={styles.repos}>
+                    <h2 className={styles.subtitle}>
+                        React
+                    </h2>
+                    {filterReposByTopic("react", repos).map((repo, index) => (
+                        <Card key={index} section={'react'} repo={repo} openIndex={openIndex} setOpenIndex={setOpenIndex} className={className} classComponent={classComponent} />
+                    ))}
+                    <div className={styles.separator}></div>
+                </section>
+            }
+
+            {filterReposByTopic("python", repos) &&
+                <section className={styles.repos}>
+                    <h2 className={styles.subtitle}>
+                        Python
+                    </h2>
+                    {filterReposByTopic("python", repos).map((repo, index) => (
+                        <Card key={index} section={'python'} repo={repo} openIndex={openIndex} setOpenIndex={setOpenIndex} className={className} classComponent={classComponent} />
+                    ))}
+                    <div className={styles.separator}></div>
+                </section>
+            }
+
+            {filterReposByTopic("ui/ux design", repos) &&
+                <section className={styles.repos}>
+                    <h2 className={styles.subtitle}>
+                        UI/UX Design
+                    </h2>
+                    {filterReposByTopic("ui/ux design", repos).map((repo, index) => (
+                        <Card key={index} section={'ui/ux design'} repo={repo} openIndex={openIndex} setOpenIndex={setOpenIndex} className={className} classComponent={classComponent} />
+                    ))}
+                    <div className={styles.separator}></div>
+                </section>
+            }
+
+            {filterReposByTopic("layout", repos) &&
+                <section className={styles.repos}>
+                    <h2 className={styles.subtitle}>
+                        Parts/Layout
+                    </h2>
+                    {filterReposByTopic("layout", repos).map((repo, index) => (
+                        <Card key={index} section={'layout'} repo={repo} openIndex={openIndex} setOpenIndex={setOpenIndex} className={className} classComponent={classComponent} />
+                    ))}
+                    <div className={styles.separator}></div>
+                </section>
+            }
+        </main>
     )
 }
+// 584
+// 169 - card
+// 104

@@ -5,7 +5,7 @@ Bem-vindo ao repositório do meu portfólio pessoal! Este projeto foi criado par
 ![Preview do Portfólio](./screenshot.png) <!-- Substitua por uma imagem real do seu site -->
 
 ## 🔗 Site em produção
-Link
+[Link](https://johnny-portfolio-khaki.vercel.app/)
 
 ## ✨ Funcionalidades
 
@@ -42,7 +42,7 @@ cd seu-repo
 # Instale as dependências
 npm install
 
-# Crie um arquivo .env.local com suas chaves de API
+# Se quiser ver em prática a funcionalidade do emailJS será necessário criar um arquivo .env.local com suas chaves de API
 cp .env.example .env.local
 
 # Inicie o servidor de desenvolvimento
@@ -69,10 +69,11 @@ NEXT_PUBLIC_GITHUB_USERNAME=johnodev
 Este projeto está licenciado sob a MIT License.
 
 ## 📫 Contato <br/>
-- Facebook
-- LinkedIn
-- Instagram
-- X
+- [Github](https://github.com/John-o-dev)
+- [Facebook](https://www.facebook.com/profile.php?id=100071663284338)
+- [LinkedIn](https://www.linkedin.com/in/antonio-rodrigues-lima-filho/)
+- [Instagram](https://www.instagram.com/john_o_dev)
+- [X](https://x.com/JohnODev4)
 
 ## 📁 Diretórios
 Assim esta a estrutura de diretórios e arquivos do projeto:

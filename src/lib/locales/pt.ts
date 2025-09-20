@@ -61,11 +61,13 @@ export const pt = {
         githubPerfil_following: 'Seguindo',
         lastProjects_title: 'Últimos Projetos',
         lastProjects_updated: 'Última atualização',
-        repos_subtitle: 'Repositórios',
+        lastProjects_createdAt: 'Criado em',
+        lastProjects_updatedAt: 'Última atualização',
+        repos_subtitle: 'Todos Repositórios',
         repos_createdAt: 'Criado em',
         repos_updatedAt: 'Última atualização',
-        repos_btn_github_repo: 'Ver repositório no Github',
-        repos_btn_github_page: 'Ver no Github page',
+        repos_btn_github_repo: 'Ver Repositório',
+        repos_btn_github_page: 'Ver Demo',
     },
     blog: {
         soon: 'Em Breve...\nPostagens sobre web design, programação e tecnologia.'
