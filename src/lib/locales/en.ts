@@ -61,6 +61,8 @@ export const en = {
         githubPerfil_following: 'Following',
         lastProjects_title: 'Last Projects',
         lastProjects_updated: 'Last Updated',
+        lastProjects_createdAt: 'Created at',
+        lastProjects_updatedAt: 'Updated at',
         repos_subtitle: 'All Repositories',
         repos_createdAt: 'Created at',
         repos_updatedAt: 'Updated at',
