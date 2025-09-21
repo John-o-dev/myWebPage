@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from "react";
 import { createPortal } from "react-dom";
-import styles from "./Modal.module.css";
+import styles from "./modal.module.css";
 import { ReposProps } from "@/src/types/repos";
 import useTranslation from "@/src/hooks/useTranslation";
 import { formatDate } from "@/src/utils/format";
