@@ -1,5 +1,5 @@
 import styles from './card.module.css';
-import Modal from '../Modal/Modal';
+import Modal from '../Modal';
 import useTranslation from '@/src/hooks/useTranslation';
 import { formatRepoImg, formatRepoName, linkToGithubPage } from '@/src/utils/portfolioUtils';
 import { formatDate } from '@/src/utils/format';

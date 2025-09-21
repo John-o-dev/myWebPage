@@ -4,7 +4,7 @@ import styles from './lastProjects.module.css'
 import { ReposProps } from '@/src/types/repos';
 import { formatDate } from '@/src/utils/format';
 import { formatRepoImg, formatRepoName } from '@/src/utils/portfolioUtils';
-import Modal from '../Repos/Modal/Modal';
+import Modal from '../Repos/Modal';
 import { useEffect, useState } from 'react';
 
 type Props = {
