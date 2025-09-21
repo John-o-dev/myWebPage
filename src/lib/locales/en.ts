@@ -63,6 +63,8 @@ export const en = {
         lastProjects_updated: 'Last Updated',
         lastProjects_createdAt: 'Created at',
         lastProjects_updatedAt: 'Updated at',
+        lastProjects_btn_github_repo: 'View Repository',
+        lastProjects_btn_github_page: 'View Demo',
         repos_subtitle: 'All Repositories',
         repos_createdAt: 'Created at',
         repos_updatedAt: 'Updated at',

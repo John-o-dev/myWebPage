@@ -75,7 +75,7 @@ export default function Modal({ onClose, repo, className, classComponent }: Moda
                     </div>
 
                     <div className={styles.buttons_modal}>
-                        <a className={`${styles.btn} ${styles.repo}`} href={repo.html_url} target="_blank" rel="noopener noreferrer">
+                        <a href={repo.html_url} className={`${styles.btn} ${styles.repo}`} target="_blank" rel="noopener noreferrer">
                             📦&nbsp;
                             {t(className, `${classComponent}_btn_github_repo`)}
                         </a>

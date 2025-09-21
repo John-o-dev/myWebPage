@@ -3,7 +3,6 @@ import Modal from '../Modal';
 import useTranslation from '@/src/hooks/useTranslation';
 import { formatRepoImg, formatRepoName, linkToGithubPage } from '@/src/utils/portfolioUtils';
 import { formatDate } from '@/src/utils/format';
-import { useEffect } from 'react';
 
 export default function Card({
     index, 
@@ -68,8 +67,7 @@ export default function Card({
 
                 <div className={styles.language_bar}>
                     {repo.linguagens?.map(lang => (
-                        // className={styles[`language_bar_${lang.name}`]} NÂO UTILIZADO
-                        <span key={lang.name} className={styles[`language_bar_${lang.name}`]} style={{ width: `${lang.percent}%`, backgroundColor: lang.color }}></span>
+                        <span key={lang.name} style={{ width: `${lang.percent}%`, backgroundColor: lang.color }}></span>
                     ))}
                 </div>
 
@@ -92,7 +90,7 @@ export default function Card({
                 </div>
 
                 <div className={styles.buttons}>
-                    <a className={`${styles.btn} ${styles.repo}`} href={repo.html_url} target="_blank" rel="noopener noreferrer">
+                    <a href={repo.html_url} className={`${styles.btn} ${styles.repo}`} target="_blank" rel="noopener noreferrer">
                         📦&nbsp;
                         {t(className, `${classComponent}_btn_github_repo`)}
                     </a>
