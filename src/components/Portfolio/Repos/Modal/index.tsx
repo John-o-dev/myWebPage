@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from "react";
 import { createPortal } from "react-dom";
-import styles from "./Modal.module.css";
+import styles from "./modal.module.css";
 import { ReposProps } from "@/src/types/repos";
 import useTranslation from "@/src/hooks/useTranslation";
 import { formatDate } from "@/src/utils/format";
@@ -75,7 +75,7 @@ export default function Modal({ onClose, repo, className, classComponent }: Moda
                     </div>
 
                     <div className={styles.buttons_modal}>
-                        <a className={`${styles.btn} ${styles.repo}`} href={repo.html_url} target="_blank" rel="noopener noreferrer">
+                        <a href={repo.html_url} className={`${styles.btn} ${styles.repo}`} target="_blank" rel="noopener noreferrer">
                             📦&nbsp;
                             {t(className, `${classComponent}_btn_github_repo`)}
                         </a>

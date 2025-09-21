@@ -89,8 +89,7 @@
 
 /* estilo do parágrafo truncado (já existente) */
 .repo_description {
-    position: relative;
-    /* para posicionar a tooltip relativamente a este bloco */
+    position: relative; /* para posicionar a tooltip relativamente a este bloco */
     color: var(--text-color);
     font-size: var(--fs-6);
     margin: 10px 0;
@@ -124,10 +123,8 @@
 
 .tooltip {
     position: absolute;
-    left: 0;
-    /* ajuste para posicionar abaixo do texto */
-    top: calc(100% + 8px);
-    /* fica logo abaixo do parágrafo */
+    left: 0; /* ajuste para posicionar abaixo do texto */
+    top: calc(100% + 8px); /* fica logo abaixo do parágrafo */
     z-index: 50;
     width: 280px;
     pointer-events: none;

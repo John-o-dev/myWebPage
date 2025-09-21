@@ -63,6 +63,8 @@ export const pt = {
         lastProjects_updated: 'Última atualização',
         lastProjects_createdAt: 'Criado em',
         lastProjects_updatedAt: 'Última atualização',
+        lastProjects_btn_github_repo: 'Ver Repositório',
+        lastProjects_btn_github_page: 'Ver Demo',
         repos_subtitle: 'Todos Repositórios',
         repos_createdAt: 'Criado em',
         repos_updatedAt: 'Última atualização',
