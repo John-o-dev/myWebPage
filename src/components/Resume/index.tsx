@@ -2,6 +2,7 @@ import styles from './resume.module.css'
 
 import AboutMe from './AboutMe'
 import Education from './Education'
+import DegreesGallery from '../DegreesGallery'
 
 import programsIcons from '@/src/lib/programsIcons'
 import learningIcons from '@/src/lib/learningIcons'
@@ -19,7 +20,7 @@ export default function Resume() {
                 <h2 className="article_title">{t(className, 'title')}</h2>
             </header>
 
-            <div className={styles.container}>
+            <section className={styles.container}>
                 <div className={styles.left_column}>
                     <AboutMe />
                 </div>
@@ -30,7 +31,11 @@ export default function Resume() {
                     <Stacks icons={programsIcons} symbol="apps" title={t(className, 'Stacks_2')} />
                     <Stacks icons={learningIcons} symbol="auto_stories" title={t(className, 'Stacks_3')} />
                 </div>
-            </div>
+            </section>
+
+            <section className={styles.degrees_gallery}>
+                <DegreesGallery />
+            </section>
 
         </article>
     )
