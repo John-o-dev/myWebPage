@@ -2,7 +2,6 @@ import styles from './resume.module.css'
 
 import AboutMe from './AboutMe'
 import Education from './Education'
-import DegreesGallery from '../DegreesGallery'
 
 import programsIcons from '@/src/lib/programsIcons'
 import learningIcons from '@/src/lib/learningIcons'
@@ -14,7 +13,7 @@ export default function Resume() {
     const className = "resume";
     const { t } = useTranslation();
     return (
-        <article>
+        <section>
 
             <header>
                 <h2 className="article_title">{t(className, 'title')}</h2>
@@ -33,10 +32,6 @@ export default function Resume() {
                 </div>
             </section>
 
-            <section className={styles.degrees_gallery}>
-                <DegreesGallery />
-            </section>
-
-        </article>
+        </section>
     )
 }
