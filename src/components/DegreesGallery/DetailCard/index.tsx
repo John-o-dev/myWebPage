@@ -6,9 +6,13 @@ import MoreInfos from "./MoreInfos";
 import ModalFullScreen from "./ModalFullScreen"
 
 import { LuGithub, LuGlobe, LuMessageSquareDiff } from "react-icons/lu";
+import useTranslation from "@/src/hooks/useTranslation";
 
 export default function DetailCard({ certificate }: { certificate: Certificate }) {
   const [isOpen, setIsOpen] = useState(false);
+  const { t } = useTranslation();
+  const className = "degreesGallery";
+  const classComponent = "detail_card";
 
   return (
     <article className={styles.detailCard}>
@@ -29,14 +33,14 @@ export default function DetailCard({ certificate }: { certificate: Certificate }
           certificate={certificate}
         />
         <div className={styles.overlay}>
-          <span>Expandir</span>
+          <span>{t(className, `${classComponent}_overlay`)}</span>
         </div>
       </div>
 
       <section className={styles.containerTexts}>
         <div className={styles.titleTexts}>
           <h3>
-            Descrição Do Curso
+            {t(className, `sections_title_description`)}
           </h3>
         </div>
         <div className={styles.contentTexts}>
@@ -54,7 +58,7 @@ export default function DetailCard({ certificate }: { certificate: Certificate }
       <section className={styles.containerTexts}>
         <div className={styles.titleTexts}>
           <h3>
-            Objetivos
+            {t(className, `sections_title_goals`)}
           </h3>
         </div>
         <div className={styles.contentTexts}>
@@ -81,7 +85,7 @@ export default function DetailCard({ certificate }: { certificate: Certificate }
         <div className={styles.containerMoreInfoHeader}>
           <LuGlobe className={styles.moreInfoIcons} />
           <h3>
-            Projeto Desenvolvido:
+            {t(className, `sections_title_project`)}
           </h3>
         </div>
 
@@ -99,7 +103,7 @@ export default function DetailCard({ certificate }: { certificate: Certificate }
         <div className={styles.containerMoreInfoHeader}>
           <LuGithub className={styles.moreInfoIcons} />
           <h3>
-            Ver repositório no GitHub:
+            {t(className, `sections_title_github`)}
           </h3>
         </div>
         <a

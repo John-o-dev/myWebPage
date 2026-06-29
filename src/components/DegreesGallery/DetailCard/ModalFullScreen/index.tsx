@@ -5,6 +5,7 @@ import styles from './modalFullScreen.module.css'
 import { getTechIcon } from '../GetTechIcon';
 
 import { LuGithub, LuGlobe, LuX } from "react-icons/lu";
+import useTranslation from '@/src/hooks/useTranslation';
 
 type ModalFullScreenProps = {
   onClose: () => void;
@@ -15,6 +16,9 @@ export default function ModalFullScreen({
   onClose,
   certificate
 }: ModalFullScreenProps) {
+  const { t } = useTranslation();
+  const className = "degreesGallery";
+  const classComponent = "modal_fullscreen";
   
   return (
     <div className={styles.modalOverlay}>
@@ -36,17 +40,17 @@ export default function ModalFullScreen({
           </div>
 
           <div>
-            <h4 className={styles.sectionTitle}>Descrição do curso</h4>
+            <h4 className={styles.sectionTitle}>{t(className, `sections_title_description`)}</h4>
             <p className={styles.text}>{certificate.description}</p>
           </div>
 
           <div>
-            <h4 className={styles.sectionTitle}>Objetivos</h4>
+            <h4 className={styles.sectionTitle}>{t(className, `sections_title_goals`)}</h4>
             <p className={styles.text}>{certificate.goals}</p>
           </div>
 
           <div>
-            <h4 className={styles.sectionTitle}>Atividades Desenvolvidas</h4>
+            <h4 className={styles.sectionTitle}>{t(className, `${classComponent}_activities`)}</h4>
             <ul className={styles.list}>
               {certificate.activitiesDeveloped ? (
                 certificate.activitiesDeveloped.map((item, index) => {
@@ -62,7 +66,7 @@ export default function ModalFullScreen({
           <section className={styles.containerMoreInfo}>
             <div className={styles.containerMoreInfoHeader}>
               <LuGlobe className={styles.moreInfoIcons} />
-              <h2 className={styles.sectionTitle}>Projeto Desenvolvido:</h2>
+              <h2 className={styles.sectionTitle}>{t(className, `sections_title_project`)}</h2>
             </div>
 
             <a
@@ -78,7 +82,7 @@ export default function ModalFullScreen({
           <section className={styles.containerMoreInfo}>
             <div className={styles.containerMoreInfoHeader}>
               <LuGithub className={styles.moreInfoIcons} />
-              <h2 className={styles.sectionTitle}>Ver repositório no GitHub:</h2>
+              <h2 className={styles.sectionTitle}>{t(className, `sections_title_github`)}</h2>
             </div>
             <a
               href={certificate.repoUrl}
@@ -89,7 +93,7 @@ export default function ModalFullScreen({
               {certificate.repoUrl}
             </a>
           </section>
-
+{/* COMPONENTIZAR */}
           <section className={styles.section}>
             <h4 className={styles.sectionTitle}>Habilidades</h4>
 
@@ -103,6 +107,7 @@ export default function ModalFullScreen({
                 </ul>
               </div>
             )}
+
 
             {!Array.isArray(certificate.skills) && certificate.skills.technical.length > 0 && (
               <div className={styles.PaddingTop}>
@@ -130,7 +135,7 @@ export default function ModalFullScreen({
           </section>
 
           <section>
-            <h4 className={styles.sectionTitle}>Conteúdo aprendido</h4>
+            <h4 className={styles.sectionTitle}>{t(className, `${classComponent}_content_learned`)}</h4>
             <ul className={styles.list}>
               {certificate.contentLearned ? (
                 certificate.contentLearned.map((item, index) => {
