@@ -61,6 +61,7 @@
   z-index: 10;
   box-shadow: 0 2px 40px rgba(18, 247, 255, 0.40);
   transition: transform 0.3s ease, opacity 0.3s ease;
+  border-top: 4px solid #12f2f2;
 }
 
 .section {

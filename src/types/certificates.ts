@@ -13,9 +13,8 @@ export type Certificate = {
   contentLearned?: string[];
 };
 
-export type skillType = string[] | { technical?: string[]; technologies?: string[]; behavioral?: string[] };
+export type skillType = { listSkill?: string[]; technical?: string[]; technologies?: string[]; behavioral?: string[] };
 export type certificateInfo = {
-  imageUrl: string;
   docPDF: string;
   duration?: string;
   date?: string;

@@ -10,6 +10,7 @@
   justify-self: stretch;
   border-radius: 1.125rem;
   background: #292E33;
+  overflow: visible;
 }
 
 .detailHeader {

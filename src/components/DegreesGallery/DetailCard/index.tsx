@@ -55,24 +55,27 @@ export default function DetailCard({ certificate }: { certificate: Certificate }
           </div>
         </div>
       </section>
-      <section className={styles.containerTexts}>
-        <div className={styles.titleTexts}>
-          <h3>
-            {t(className, `sections_title_goals`)}
-          </h3>
-        </div>
-        <div className={styles.contentTexts}>
-          <p>
-            {certificate.goals}
-          </p>
-          <div
-            onClick={() => {
-              setIsOpen(true);
-            }}>
-            <LuMessageSquareDiff className={styles.ellipsisTextIcons} />
+
+      {certificate.goals && (
+        <section className={styles.containerTexts}>
+          <div className={styles.titleTexts}>
+            <h3>
+              {t(className, `sections_title_goals`)}
+            </h3>
           </div>
-        </div>
-      </section>
+          <div className={styles.contentTexts}>
+            <p>
+              {certificate.goals}
+            </p>
+            <div
+              onClick={() => {
+                setIsOpen(true);
+              }}>
+              <LuMessageSquareDiff className={styles.ellipsisTextIcons} />
+            </div>
+          </div>
+        </section>
+      )}
 
       {isOpen && (
         <ModalFullScreen
@@ -81,40 +84,44 @@ export default function DetailCard({ certificate }: { certificate: Certificate }
         />
       )}
 
-      <section className={styles.containerMoreInfo}>
-        <div className={styles.containerMoreInfoHeader}>
-          <LuGlobe className={styles.moreInfoIcons} />
-          <h3>
-            {t(className, `sections_title_project`)}
-          </h3>
-        </div>
+      {certificate.projectUrl && (
+        <section className={styles.containerMoreInfo}>
+          <div className={styles.containerMoreInfoHeader}>
+            <LuGlobe className={styles.moreInfoIcons} />
+            <h3>
+              {t(className, `sections_title_project`)}
+            </h3>
+          </div>
 
-        <a
-          href={certificate.projectUrl}
-          rel="noopener noreferrer"
-          target="_blank"
-          className={styles.moreInfoLink}
-        >
-          {certificate.projectUrl}
-        </a>
-      </section>
+          <a
+            href={certificate.projectUrl}
+            rel="noopener noreferrer"
+            target="_blank"
+            className={styles.moreInfoLink}
+          >
+            {certificate.projectUrl}
+          </a>
+        </section>
+      )}
 
-      <section className={styles.containerMoreInfo}>
-        <div className={styles.containerMoreInfoHeader}>
-          <LuGithub className={styles.moreInfoIcons} />
-          <h3>
-            {t(className, `sections_title_github`)}
-          </h3>
-        </div>
-        <a
-          href={certificate.repoUrl}
-          rel="noopener noreferrer"
-          target="_blank"
-          className={styles.moreInfoLink}
-        >
-          {certificate.repoUrl}
-        </a>
-      </section>
+      {certificate.repoUrl && (
+        <section className={styles.containerMoreInfo}>
+          <div className={styles.containerMoreInfoHeader}>
+            <LuGithub className={styles.moreInfoIcons} />
+            <h3>
+              {t(className, `sections_title_github`)}
+            </h3>
+          </div>
+          <a
+            href={certificate.repoUrl}
+            rel="noopener noreferrer"
+            target="_blank"
+            className={styles.moreInfoLink}
+          >
+            {certificate.repoUrl}
+          </a>
+        </section>
+      )}
 
       <MoreInfos certificate={certificate} />
     </article>

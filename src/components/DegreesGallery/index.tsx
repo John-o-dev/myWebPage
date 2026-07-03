@@ -1,27 +1,26 @@
 import React, { useEffect, useMemo, useState } from 'react';
 import styles from './degreesGallery.module.css';
+import Image from "next/image";
 import { skillType } from '@/src/types/certificates';
 
 import mockCertificates from '@/src/lib/certificates';
-import DetailCard from './DetailCard';
 
 import { LuSearch } from "react-icons/lu";
 import { LuEyeOff } from "react-icons/lu";
+import DetailCard from './DetailCard';
 import Pagination from '../Pagination';
 import useTranslation from '@/src/hooks/useTranslation';
 
 export default function DegreesGallery() {
   const certificates = mockCertificates;
   const [search, setSearch] = useState('');
+  const [imageErrors, setImageErrors] = useState<Record<number, boolean>>({});
   const [selectedId, setSelectedId] = useState<string | null>(certificates[0]?.id ?? null);
-
   const [page, setPage] = useState(1);
   const itemsPerPage = 6;
   const start = (page - 1) * itemsPerPage;
-
   const { t } = useTranslation();
   const className = "degreesGallery";
-  const classComponent = "";
 
   const filtered = useMemo(() => {
 
@@ -48,6 +47,7 @@ export default function DegreesGallery() {
     }
 
     return [
+      ...(skills.listSkill ?? []), // "Use skills.listSkill; se ele for null ou undefined, use um array vazio ([])."
       ...(skills.technical ?? []), // "Use skills.technical; se ele for null ou undefined, use um array vazio ([])."
       ...(skills.technologies ?? []), // "Use skills.technologies; se ele for null ou undefined, use um array vazio ([])."
       ...(skills.behavioral ?? []), // "Use skills.behavioral; se ele for null ou undefined, use um array vazio ([])."
@@ -108,6 +108,7 @@ export default function DegreesGallery() {
               <div className={styles.empty}>{t(className, `_div_empty`)}</div>
             ) : (
               currentCertificates.map((certificate) => {
+                const hasImageError = imageErrors[certificate.id];
                 return (
                   <div className={styles.itemCard} key={certificate.id}>
                     <div
@@ -115,9 +116,22 @@ export default function DegreesGallery() {
                       onClick={() => {
                         setSelectedId(certificate.id);
                       }}>
-                      {certificate.imageUrl ? (
-                        <img src={certificate.imageUrl} alt={certificate.title} />
-                      ) : <LuEyeOff />}
+                      {!certificate.imageUrl || hasImageError ? (
+                        <LuEyeOff size={32} />
+                      ) : (
+                        <Image
+                          src={certificate.imageUrl}
+                          alt={certificate.title}
+                          width={400}
+                          height={250}
+                          onError={() =>
+                            setImageErrors(prev => ({
+                              ...prev,
+                              [certificate.id]: true,
+                            }))
+                          }
+                        />
+                      )}
                     </div>
                     <p className={styles.itemTitle}>{certificate.title}</p>
                   </div>

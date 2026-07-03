@@ -19,7 +19,7 @@ export default function ModalFullScreen({
   const { t } = useTranslation();
   const className = "degreesGallery";
   const classComponent = "modal_fullscreen";
-  
+
   return (
     <div className={styles.modalOverlay}>
       <div className={styles.container}>
@@ -44,62 +44,81 @@ export default function ModalFullScreen({
             <p className={styles.text}>{certificate.description}</p>
           </div>
 
-          <div>
-            <h4 className={styles.sectionTitle}>{t(className, `sections_title_goals`)}</h4>
-            <p className={styles.text}>{certificate.goals}</p>
-          </div>
-
-          <div>
-            <h4 className={styles.sectionTitle}>{t(className, `${classComponent}_activities`)}</h4>
-            <ul className={styles.list}>
-              {certificate.activitiesDeveloped ? (
-                certificate.activitiesDeveloped.map((item, index) => {
-                  return (
-                    <li key={index}>{item}</li>
-                  )
-                })
-              ) : ''}
-            </ul>
-          </div>
-
-
-          <section className={styles.containerMoreInfo}>
-            <div className={styles.containerMoreInfoHeader}>
-              <LuGlobe className={styles.moreInfoIcons} />
-              <h2 className={styles.sectionTitle}>{t(className, `sections_title_project`)}</h2>
+          {certificate.goals && (
+            <div>
+              <h4 className={styles.sectionTitle}>{t(className, `sections_title_goals`)}</h4>
+              <p className={styles.text}>{certificate.goals}</p>
             </div>
+          )}
 
-            <a
-              href={certificate.projectUrl}
-              rel="noopener noreferrer"
-              target="_blank"
-              className={styles.moreInfoLink}
-            >
-              {certificate.projectUrl}
-            </a>
-          </section>
-
-          <section className={styles.containerMoreInfo}>
-            <div className={styles.containerMoreInfoHeader}>
-              <LuGithub className={styles.moreInfoIcons} />
-              <h2 className={styles.sectionTitle}>{t(className, `sections_title_github`)}</h2>
+          {certificate.activitiesDeveloped && (
+            <div>
+              <h4 className={styles.sectionTitle}>{t(className, `${classComponent}_activities`)}</h4>
+              <ul className={styles.list}>
+                {certificate.activitiesDeveloped ? (
+                  certificate.activitiesDeveloped.map((item, index) => {
+                    return (
+                      <li key={index}>{item}</li>
+                    )
+                  })
+                ) : ''}
+              </ul>
             </div>
-            <a
-              href={certificate.repoUrl}
-              rel="noopener noreferrer"
-              target="_blank"
-              className={styles.moreInfoLink}
-            >
-              {certificate.repoUrl}
-            </a>
-          </section>
-{/* COMPONENTIZAR */}
+          )}
+
+          {certificate.projectUrl && (
+            <section className={styles.containerMoreInfo}>
+              <div className={styles.containerMoreInfoHeader}>
+                <LuGlobe className={styles.moreInfoIcons} />
+                <h2 className={styles.sectionTitle}>{t(className, `sections_title_project`)}</h2>
+              </div>
+
+              <a
+                href={certificate.projectUrl}
+                rel="noopener noreferrer"
+                target="_blank"
+                className={styles.moreInfoLink}
+              >
+                {certificate.projectUrl}
+              </a>
+            </section>
+          )}
+
+          {certificate.repoUrl && (
+            <section className={styles.containerMoreInfo}>
+              <div className={styles.containerMoreInfoHeader}>
+                <LuGithub className={styles.moreInfoIcons} />
+                <h2 className={styles.sectionTitle}>{t(className, `sections_title_github`)}</h2>
+              </div>
+              <a
+                href={certificate.repoUrl}
+                rel="noopener noreferrer"
+                target="_blank"
+                className={styles.moreInfoLink}
+              >
+                {certificate.repoUrl}
+              </a>
+            </section>
+          )}
+
+          {/* COMPONENTIZAR */}
           <section className={styles.section}>
             <h4 className={styles.sectionTitle}>Habilidades</h4>
 
-            {!Array.isArray(certificate.skills) && certificate.skills.technical.length > 0 && (
+            {certificate.skills.listSkill?.length > 0 && (
               <div className={styles.PaddingTop}>
-                <h3 className={styles.sectionSubtitle}>Técnicas:</h3>
+                <h3 className={styles.sectionSubtitle}>Lista</h3>
+                <ul className={styles.skillsList}>
+                  {certificate.skills.listSkill?.map((item, index) => (
+                    <li key={index} className={styles.item}>{item}</li>
+                  )) ?? []}
+                </ul>
+              </div>
+            )}
+
+            {certificate.skills.technical?.length > 0 && (
+              <div className={styles.PaddingTop}>
+                <h3 className={styles.sectionSubtitle}>Técnicas</h3>
                 <ul className={styles.skillsList}>
                   {certificate.skills.technical.map((item, index) => (
                     <li key={index} className={styles.item}>{item}</li>
@@ -109,9 +128,9 @@ export default function ModalFullScreen({
             )}
 
 
-            {!Array.isArray(certificate.skills) && certificate.skills.technical.length > 0 && (
+            {certificate.skills.technical?.length > 0 && (
               <div className={styles.PaddingTop}>
-                <h3 className={styles.sectionSubtitle}>Tecnologias:</h3>
+                <h3 className={styles.sectionSubtitle}>Tecnologias</h3>
                 <ul className={styles.technologiesList}>
                   {certificate.skills.technologies.map((item) => {
                     const Icon = getTechIcon(item);
@@ -121,9 +140,9 @@ export default function ModalFullScreen({
               </div>
             )}
 
-            {!Array.isArray(certificate.skills) && certificate.skills.behavioral.length > 0 && (
+            {certificate.skills.behavioral?.length > 0 && (
               <div className={styles.PaddingTop}>
-                <h3 className={styles.sectionSubtitle}>Comportamentais:</h3>
+                <h3 className={styles.sectionSubtitle}>Comportamentais</h3>
                 <ul className={styles.behavioralList}>
                   {certificate.skills.behavioral.map((item, index) => (
                     <li key={index}>{item}</li>
@@ -134,18 +153,20 @@ export default function ModalFullScreen({
 
           </section>
 
-          <section>
-            <h4 className={styles.sectionTitle}>{t(className, `${classComponent}_content_learned`)}</h4>
-            <ul className={styles.list}>
-              {certificate.contentLearned ? (
-                certificate.contentLearned.map((item, index) => {
-                  return (
-                    <li key={index}>{item}</li>
-                  )
-                })
-              ) : ''}
-            </ul>
-          </section>
+          {certificate.contentLearned && (
+            <section>
+              <h4 className={styles.sectionTitle}>{t(className, `${classComponent}_content_learned`)}</h4>
+              <ul className={styles.list}>
+                {certificate.contentLearned ? (
+                  certificate.contentLearned.map((item, index) => {
+                    return (
+                      <li key={index}>{item}</li>
+                    )
+                  })
+                ) : ''}
+              </ul>
+            </section>
+          )}
 
         </div>
       </div>
