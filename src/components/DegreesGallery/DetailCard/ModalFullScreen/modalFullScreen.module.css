@@ -77,6 +77,13 @@
   font-weight: 600;
   letter-spacing: 0.125rem;
   padding: 1.5rem 10px;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  overflow-wrap: break-word;
+  word-break: break-word;
 }
 
 .institution {

@@ -148,9 +148,7 @@ export default function DegreesGallery() {
                         </div>
                       </section>
 
-                      <div className={styles.textWhite}>
-                        <SkillList skills={certificate.skills} />
-                      </div>
+                      <SkillList skills={certificate.skills}/>
 
                       <div
                         className={styles.moreInfoTitle}

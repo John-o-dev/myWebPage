@@ -23,13 +23,17 @@
 
 .detailTitle {
   color: #FFF;
-  font-family: Poppins;
   font-size: 1.1rem;
-  font-style: normal;
   font-weight: 700;
-  line-height: normal;
   letter-spacing: 0.125rem;
   text-transform: capitalize;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  overflow-wrap: break-word;
+  word-break: break-word;
 }
 
 .detailInstitution {

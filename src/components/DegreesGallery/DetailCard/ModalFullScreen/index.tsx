@@ -39,7 +39,12 @@ export default function ModalFullScreen({
 
           <div className={styles.panelHeader}>
             <div className={styles.panelHeaderTitle}>
-              <h3 className={styles.title}>{certificate.title}</h3>
+              <h3
+                className={styles.title}
+                title={certificate.title}
+              >
+                {certificate.title}
+              </h3>
               <p className={styles.institution}>{certificate.educationalInstitution}</p>
             </div>
             <DetailsCertificate
@@ -107,9 +112,9 @@ export default function ModalFullScreen({
             </section>
           )}
 
-          {certificate.skills && (            
+          {certificate.skills && (
             <div className={styles.textWhite}>
-              <SkillList skills={certificate.skills}/>
+              <SkillList skills={certificate.skills} />
             </div>
           )}
 

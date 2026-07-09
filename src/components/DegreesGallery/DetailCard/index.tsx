@@ -17,9 +17,12 @@ export default function DetailCard({ certificate }: { certificate: Certificate }
   return (
     <article className={styles.detailCard}>
       <header className={styles.detailHeader}>
-        <h1 className={styles.detailTitle}>
+        <h2
+          className={styles.detailTitle}
+          title={certificate.title}
+        >
           {certificate.title}
-        </h1>
+        </h2>
       </header>
       <div className={styles.detailInstitution}>
         <p className={styles.detailInstitutionName}>
