@@ -29,8 +29,7 @@ const certificates: Certificate[] = [
     title: 'Jornada Python da Hashtag',
     educationalInstitution: 'Hashtag Treinamentos',
     description: 'Um curso iniciante em que desenvolvi 4 projetos voltados a Análise de Dados, Automação, Criação de Sites e Inteligência Artificial. Com objetivo de aprimorar meus conhecimentos e habilidades em resolver desafios, automação de tarefas maçantes e a trabalhar com  dados.',
-    imageUrl: '',
-    // imageUrl: '/img/certificates/Hashtag_jornada_python.jpg',
+    imageUrl: '/img/certificates/Hashtag_jornada_python.jpg',
     skills: { 
       technical: ['Pyautogui', 'RPA', 'Pandas', 'Plotly', 'Análise de Dados', 'Scikit-learn', 'Machine Learning', 'Streamlit', 'OpenAI', 'Chatbot'], 
       technologies: ['python'] },
@@ -52,7 +51,7 @@ const certificates: Certificate[] = [
     title: 'Introdução à Análise de Dados - Microsoft Power BI',
     educationalInstitution: 'Fundação Bradesco',
     description: 'Neste curso introdutório pude aprender as principais atribuições de um analista de dados, suas habilidades, tarefas e processos com os quais trabalha. Tive uma breve explanação teórica sobre a análise de dados com o uso do Microsoft Power BI para contar uma história convincente por meio de relatórios e painéis. Além da transformação de dados não relacionais em informações coerentes, visualmente imersivas e interativas.',
-    imageUrl: '/img/certificates/Fundação_Bradesco_introdução_analise_de_dadosX.jpg',
+    imageUrl: '/img/certificates/Fundação_Bradesco_introdução_analise_de_dados.jpg',
     skills: { 
       listSkill: ['Análise de dados'], 
       technologies: ['powerbi', 'excel'] },
@@ -229,6 +228,106 @@ const certificates: Certificate[] = [
     description:
       'Curso de aprofundamento nos conceitos e funcionalidades do Angular, usando um projeto já existente, o curso aborda conceitos e uso do HttpClient do Angular para fazer requisições do tipo HTTP, utilizando os métodos GET, POST, PUT, DELETE para enviar e obter dados do servidor. Como funcionam os observables (observáveis) e o que é necessário fazer para obter informações deles.',
     imageUrl: '/img/certificates/Angular_comunicandose_com_uma_API_via_requisições_HTTP.jpg',
+    skills: { 
+      technical: ['HttpClient', 'CRUD', 'JSON Server', 'Terminal (CLI)'], 
+      technologies: ['angular', 'typescript'],
+      behavioral: ['Pensamento cógnitivo', 'Análise de dados'] },
+    certificateInfo: {
+      docPDF: '/pdf/certificates/Angular_comunicandose_com_uma_API_via_requisições_HTTP.pdf',
+      duration: '8 horas',
+      date: '2025-01-05',
+      level: 'Básico',
+      technologies: []
+    },
+    goals:
+      'Aprender a utilizar o protocolo HTTP para integrar e comunicar a aplicação Angular a um back-end, utilizar boas práticas e fazer algumas melhorias no final do projeto, como a componentização e a reutilização de componentes em diferentes partes da aplicação.',
+    projectUrl: 'https://project-angular-http-client.netlify.app/',
+    repoUrl: 'https://github.com/repourl',
+    activitiesDeveloped: [],
+    contentLearned: ['Configurar o HttpClient para operações HTTP eficientes;', 'Implementar um CRUD usando métodos HTTP (GET, POST, PUT, DELETE);', 'User Observables para lidar com dados assíncronos;', 'Configurar e utilizar o JSON Server como uma API simulada;', 'Permitir a passagem de parâmetros na rota para facilitar a navegação;', 'Adaptar e integrar componentes para reutilização eficaz;', 'Promover boas práticas de componentização.'],
+  },
+  {
+    id: '012',
+    title: 'CERTIFICADO DE TESTE: Fazendo testes na feature, teste de componente e testes de layout, será que vai quebrar o layout do título ou do componente',
+    educationalInstitution: 'Alura | Escola de Tecnologia Online',
+    description:
+      'Curso de aprofundamento nos conceitos e funcionalidades do Angular, usando um projeto já existente, o curso aborda conceitos e uso do HttpClient do Angular para fazer requisições do tipo HTTP, utilizando os métodos GET, POST, PUT, DELETE para enviar e obter dados do servidor. Como funcionam os observables (observáveis) e o que é necessário fazer para obter informações deles.',
+    imageUrl: '/img/certificates/testes/imagem_teste_1.jpg',
+    skills: { 
+      technical: ['HttpClient', 'CRUD', 'JSON Server', 'Terminal (CLI)'], 
+      technologies: ['angular', 'typescript'],
+      behavioral: ['Pensamento cógnitivo', 'Análise de dados'] },
+    certificateInfo: {
+      docPDF: '/pdf/certificates/Angular_comunicandose_com_uma_API_via_requisições_HTTP.pdf',
+      duration: '8 horas',
+      date: '2025-01-05',
+      level: 'Básico',
+      technologies: []
+    },
+    goals:
+      'Aprender a utilizar o protocolo HTTP para integrar e comunicar a aplicação Angular a um back-end, utilizar boas práticas e fazer algumas melhorias no final do projeto, como a componentização e a reutilização de componentes em diferentes partes da aplicação.',
+    projectUrl: 'https://project-angular-http-client.netlify.app/',
+    repoUrl: 'https://github.com/repourl',
+    activitiesDeveloped: [],
+    contentLearned: ['Configurar o HttpClient para operações HTTP eficientes;', 'Implementar um CRUD usando métodos HTTP (GET, POST, PUT, DELETE);', 'User Observables para lidar com dados assíncronos;', 'Configurar e utilizar o JSON Server como uma API simulada;', 'Permitir a passagem de parâmetros na rota para facilitar a navegação;', 'Adaptar e integrar componentes para reutilização eficaz;', 'Promover boas práticas de componentização.'],
+  },
+  {
+    id: '013',
+    title: 'Imagem jfif teste',
+    educationalInstitution: 'Alura | Escola de Tecnologia Online',
+    description:
+      'Curso de aprofundamento nos conceitos e funcionalidades do Angular, usando um projeto já existente, o curso aborda conceitos e uso do HttpClient do Angular para fazer requisições do tipo HTTP, utilizando os métodos GET, POST, PUT, DELETE para enviar e obter dados do servidor. Como funcionam os observables (observáveis) e o que é necessário fazer para obter informações deles.',
+    imageUrl: '/img/certificates/testes/imagem_teste_1.jfif',
+    skills: { 
+      technical: ['HttpClient', 'CRUD', 'JSON Server', 'Terminal (CLI)'], 
+      technologies: ['angular', 'typescript'],
+      behavioral: ['Pensamento cógnitivo', 'Análise de dados'] },
+    certificateInfo: {
+      docPDF: '/pdf/certificates/Angular_comunicandose_com_uma_API_via_requisições_HTTP.pdf',
+      duration: '8 horas',
+      date: '2025-01-05',
+      level: 'Básico',
+      technologies: []
+    },
+    goals:
+      'Aprender a utilizar o protocolo HTTP para integrar e comunicar a aplicação Angular a um back-end, utilizar boas práticas e fazer algumas melhorias no final do projeto, como a componentização e a reutilização de componentes em diferentes partes da aplicação.',
+    projectUrl: 'https://project-angular-http-client.netlify.app/',
+    repoUrl: 'https://github.com/repourl',
+    activitiesDeveloped: [],
+    contentLearned: ['Configurar o HttpClient para operações HTTP eficientes;', 'Implementar um CRUD usando métodos HTTP (GET, POST, PUT, DELETE);', 'User Observables para lidar com dados assíncronos;', 'Configurar e utilizar o JSON Server como uma API simulada;', 'Permitir a passagem de parâmetros na rota para facilitar a navegação;', 'Adaptar e integrar componentes para reutilização eficaz;', 'Promover boas práticas de componentização.'],
+  },
+  {
+    id: '014',
+    title: 'Teste 3',
+    educationalInstitution: 'Alura | Escola de Tecnologia Online',
+    description:
+      'Curso de aprofundamento nos conceitos e funcionalidades do Angular, usando um projeto já existente, o curso aborda conceitos e uso do HttpClient do Angular para fazer requisições do tipo HTTP, utilizando os métodos GET, POST, PUT, DELETE para enviar e obter dados do servidor. Como funcionam os observables (observáveis) e o que é necessário fazer para obter informações deles.',
+    imageUrl: '/img/certificates/testes/imagem_teste_2.jpg',
+    skills: { 
+      technical: ['HttpClient', 'CRUD', 'JSON Server', 'Terminal (CLI)'], 
+      technologies: ['angular', 'typescript'],
+      behavioral: ['Pensamento cógnitivo', 'Análise de dados'] },
+    certificateInfo: {
+      docPDF: '/pdf/certificates/Angular_comunicandose_com_uma_API_via_requisições_HTTP.pdf',
+      duration: '8 horas',
+      date: '2025-01-05',
+      level: 'Básico',
+      technologies: []
+    },
+    goals:
+      'Aprender a utilizar o protocolo HTTP para integrar e comunicar a aplicação Angular a um back-end, utilizar boas práticas e fazer algumas melhorias no final do projeto, como a componentização e a reutilização de componentes em diferentes partes da aplicação.',
+    projectUrl: 'https://project-angular-http-client.netlify.app/',
+    repoUrl: 'https://github.com/repourl',
+    activitiesDeveloped: [],
+    contentLearned: ['Configurar o HttpClient para operações HTTP eficientes;', 'Implementar um CRUD usando métodos HTTP (GET, POST, PUT, DELETE);', 'User Observables para lidar com dados assíncronos;', 'Configurar e utilizar o JSON Server como uma API simulada;', 'Permitir a passagem de parâmetros na rota para facilitar a navegação;', 'Adaptar e integrar componentes para reutilização eficaz;', 'Promover boas práticas de componentização.'],
+  },
+  {
+    id: '015',
+    title: 'Teste 4',
+    educationalInstitution: 'Alura | Escola de Tecnologia Online',
+    description:
+      'Curso de aprofundamento nos conceitos e funcionalidades do Angular, usando um projeto já existente, o curso aborda conceitos e uso do HttpClient do Angular para fazer requisições do tipo HTTP, utilizando os métodos GET, POST, PUT, DELETE para enviar e obter dados do servidor. Como funcionam os observables (observáveis) e o que é necessário fazer para obter informações deles.',
+    imageUrl: '/img/certificates/testes/imagem_teste_4.jpg',
     skills: { 
       technical: ['HttpClient', 'CRUD', 'JSON Server', 'Terminal (CLI)'], 
       technologies: ['angular', 'typescript'],

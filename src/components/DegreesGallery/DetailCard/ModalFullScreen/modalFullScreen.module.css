@@ -1,25 +1,23 @@
 .modalOverlay {
-  position: absolute;
-  top: 0;
-  right: 0;
+  position: fixed;
+  inset: 0;
   display: flex;
-  width: 100dvw;
-  height: 100vh;
   justify-content: center;
   align-items: center;
-  background: rgba(0, 0, 0, 0.50);
-  z-index: 10;
+  background: rgba(0, 0, 0, .5);
+  z-index: 9999;
 }
 
 .container {
   display: flex;
   flex-direction: column;
-  width: 817px;
-  height: 80vh;
   background: #141414;
   border-radius: 12px;
-  overflow: scroll;
   align-items: flex-start;
+  overflow-y: auto;
+  overflow-x: hidden;
+  width: 95vw;
+  max-height: 85vh;
 }
 
 .closeBtn {
@@ -60,20 +58,23 @@
 .panelHeader {
   display: flex;
   justify-content: space-between;
+  width: 100%;
 }
 
 .panelHeaderTitle {
   display: flex;
   flex-direction: column;
   width: 100%;
-  min-width: 440px;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
 }
 
 .title {
   color: #FFF;
   font-family: Poppins;
-  font-size: 1.25rem;
-  font-weight: 700;
+  font-size: 1.1rem;
+  font-weight: 600;
   letter-spacing: 0.125rem;
   padding: 1.5rem 10px;
 }
@@ -215,4 +216,28 @@
   padding-top: 0.5rem;
   padding-left: 2rem;
   width: 100%;
+}
+
+.textWhite * {
+  color: white;
+}
+
+@media (min-width: 768px) {
+  .container {
+    width: 85vw;
+  }
+
+  .title {
+    font-weight: 700;
+  }
+}
+
+@media (min-width: 1024px) {
+  .container {
+    width: 75vw;
+  }
+
+  .title {
+    font-size: 1.25rem;
+  }
 }

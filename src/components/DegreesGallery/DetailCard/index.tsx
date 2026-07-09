@@ -32,9 +32,9 @@ export default function DetailCard({ certificate }: { certificate: Certificate }
           onClick={() => setIsOpen(true)}
           certificate={certificate}
         />
-        <div className={styles.overlay}>
+        {/* <div className={styles.overlay}>
           <span>{t(className, `${classComponent}_overlay`)}</span>
-        </div>
+        </div> */}
       </div>
 
       <section className={styles.containerTexts}>

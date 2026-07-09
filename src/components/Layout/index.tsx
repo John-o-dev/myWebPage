@@ -25,7 +25,7 @@ export default function Layout({
 	const isMobile = useIsMobile();
 	const isFullDesktop = useIsFullDesktop();
 
-	if (isMobile === null) return null; // ou um loader ou fallback
+	if (isMobile === null) return null; // return null - implementar um loader ou fallback
 
 	return (
 		<main className={styles.main}>

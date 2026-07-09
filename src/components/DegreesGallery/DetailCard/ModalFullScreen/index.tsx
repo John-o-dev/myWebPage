@@ -1,11 +1,12 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { Certificate, skillType } from "@/src/types/certificates";
-import ImageCard from '../DetailsCertificate'
+import DetailsCertificate from '../DetailsCertificate'
 import styles from './modalFullScreen.module.css'
 import { getTechIcon } from '../GetTechIcon';
 
 import { LuGithub, LuGlobe, LuX } from "react-icons/lu";
 import useTranslation from '@/src/hooks/useTranslation';
+import SkillList from '../../SkillList';
 
 type ModalFullScreenProps = {
   onClose: () => void;
@@ -20,6 +21,14 @@ export default function ModalFullScreen({
   const className = "degreesGallery";
   const classComponent = "modal_fullscreen";
 
+  useEffect(() => {
+    document.body.style.overflow = "hidden";
+
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, []);
+
   return (
     <div className={styles.modalOverlay}>
       <div className={styles.container}>
@@ -33,8 +42,7 @@ export default function ModalFullScreen({
               <h3 className={styles.title}>{certificate.title}</h3>
               <p className={styles.institution}>{certificate.educationalInstitution}</p>
             </div>
-            <ImageCard
-              onClick={null}
+            <DetailsCertificate
               certificate={certificate}
             />
           </div>
@@ -70,15 +78,14 @@ export default function ModalFullScreen({
             <section className={styles.containerMoreInfo}>
               <div className={styles.containerMoreInfoHeader}>
                 <LuGlobe className={styles.moreInfoIcons} />
-                <h2 className={styles.sectionTitle}>{t(className, `sections_title_project`)}</h2>
+                <h4 className={styles.sectionTitle}>{t(className, `sections_title_project`)}</h4>
               </div>
 
               <a
                 href={certificate.projectUrl}
                 rel="noopener noreferrer"
                 target="_blank"
-                className={styles.moreInfoLink}
-              >
+                className={styles.moreInfoLink}>
                 {certificate.projectUrl}
               </a>
             </section>
@@ -88,72 +95,25 @@ export default function ModalFullScreen({
             <section className={styles.containerMoreInfo}>
               <div className={styles.containerMoreInfoHeader}>
                 <LuGithub className={styles.moreInfoIcons} />
-                <h2 className={styles.sectionTitle}>{t(className, `sections_title_github`)}</h2>
+                <h4 className={styles.sectionTitle}>{t(className, `sections_title_github`)}</h4>
               </div>
               <a
                 href={certificate.repoUrl}
                 rel="noopener noreferrer"
                 target="_blank"
-                className={styles.moreInfoLink}
-              >
+                className={styles.moreInfoLink}>
                 {certificate.repoUrl}
               </a>
             </section>
           )}
 
-          {/* COMPONENTIZAR */}
-          <section className={styles.section}>
-            <h4 className={styles.sectionTitle}>Habilidades</h4>
+          {certificate.skills && (            
+            <div className={styles.textWhite}>
+              <SkillList skills={certificate.skills}/>
+            </div>
+          )}
 
-            {certificate.skills.listSkill?.length > 0 && (
-              <div className={styles.PaddingTop}>
-                <h3 className={styles.sectionSubtitle}>Lista</h3>
-                <ul className={styles.skillsList}>
-                  {certificate.skills.listSkill?.map((item, index) => (
-                    <li key={index} className={styles.item}>{item}</li>
-                  )) ?? []}
-                </ul>
-              </div>
-            )}
-
-            {certificate.skills.technical?.length > 0 && (
-              <div className={styles.PaddingTop}>
-                <h3 className={styles.sectionSubtitle}>Técnicas</h3>
-                <ul className={styles.skillsList}>
-                  {certificate.skills.technical.map((item, index) => (
-                    <li key={index} className={styles.item}>{item}</li>
-                  ))}
-                </ul>
-              </div>
-            )}
-
-
-            {certificate.skills.technical?.length > 0 && (
-              <div className={styles.PaddingTop}>
-                <h3 className={styles.sectionSubtitle}>Tecnologias</h3>
-                <ul className={styles.technologiesList}>
-                  {certificate.skills.technologies.map((item) => {
-                    const Icon = getTechIcon(item);
-                    return <Icon key={item} size={32} />;
-                  })}
-                </ul>
-              </div>
-            )}
-
-            {certificate.skills.behavioral?.length > 0 && (
-              <div className={styles.PaddingTop}>
-                <h3 className={styles.sectionSubtitle}>Comportamentais</h3>
-                <ul className={styles.behavioralList}>
-                  {certificate.skills.behavioral.map((item, index) => (
-                    <li key={index}>{item}</li>
-                  ))}
-                </ul>
-              </div>
-            )}
-
-          </section>
-
-          {certificate.contentLearned && (
+          {certificate.contentLearned.length > 0 && (
             <section>
               <h4 className={styles.sectionTitle}>{t(className, `${classComponent}_content_learned`)}</h4>
               <ul className={styles.list}>

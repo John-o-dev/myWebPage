@@ -51,7 +51,6 @@
 
 .box {
   position: relative;
-  /* overflow: hidden; */
   width: 100%;
   border-radius: 12px;
   transition: transform 0.5s;
@@ -99,7 +98,8 @@
   gap: 0.5rem;
 }
 
-.titleTexts h3, .containerMoreInfoHeader h3 {
+.titleTexts h3,
+.containerMoreInfoHeader h3 {
   color: #FFF;
   font-family: Poppins;
   font-size: 1rem;
@@ -184,4 +184,10 @@
 
 .ellipsisTextIcons:hover {
   background-color: rgba(18, 247, 255, 0.40);
+}
+
+@media (min-width: 1024px) {
+  .detailInstitutionName {
+    font-size: 1rem;
+  }
 }

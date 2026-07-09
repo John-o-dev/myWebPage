@@ -1,13 +1,13 @@
 import React, { useState } from "react";
-import Image from "next/image";
 import styles from "./detailsCertificate.module.css";
 import { Certificate } from "@/src/types/certificates";
 import { LuArrowUp, LuArrowDown, LuCalendarCheck, LuTimer, LuChartLine, LuCodeXml, LuEyeOff, LuDownload } from "react-icons/lu";
 import ButtonBox from "@/src/components/ButtonBox";
 import useTranslation from "@/src/hooks/useTranslation";
+import ImageComponent from "../../ImageComponent";
 
 type DetailsCertificateProps = {
-	onClick: () => void | null;
+	onClick?: () => void | null;
 	certificate: Certificate;
 }
 
@@ -16,8 +16,6 @@ export default function DetailsCertificate({
 	certificate
 }: DetailsCertificateProps) {
 	const [expanded, setExpanded] = useState(false);
-	const [imageErrors, setImageErrors] = useState<Record<number, boolean>>({});
-	const hasImageError = imageErrors[certificate.id];
 	const { t } = useTranslation();
 	const className = "degreesGallery";
 	const classComponent = "details_certificate";
@@ -25,23 +23,9 @@ export default function DetailsCertificate({
 	return (
 		<div className={styles.wrapper}>
 			<div className={styles.imageArea}>
-				{!certificate.imageUrl || hasImageError ? (
-					<LuEyeOff size={32} />
-				) : (
-					<Image
-						src={certificate.imageUrl}
-						alt={certificate.title}
-						width={320}
-						height={200}
-						onClick={onClick}
-						onError={() =>
-							setImageErrors(prev => ({
-								...prev,
-								[certificate.id]: true,
-							}))
-						}
-					/>
-				)}
+				
+				<ImageComponent onClick={onClick} certificate={certificate} />
+
 				<button
 					className={`${styles.detailButton} ${expanded ? styles.detailButtonExpanded : ""}`}
 					onClick={() => setExpanded(!expanded)}>
@@ -57,8 +41,8 @@ export default function DetailsCertificate({
 						<div className={styles.row}>
 							<LuTimer className={styles.colorGray} />
 							<div className={styles.label}>
-								<strong>{t(className, `${classComponent}_duration`)}</strong>
-								{certificate.certificateInfo.duration}
+								<strong>{t(className, `${classComponent}_duration`)}</strong> 
+								{ certificate.certificateInfo.duration }
 							</div>
 						</div>
 					)}
@@ -67,8 +51,8 @@ export default function DetailsCertificate({
 						<div className={styles.row}>
 							<LuCalendarCheck className={styles.colorGray} />
 							<div className={styles.label}>
-								<strong>{t(className, `${classComponent}_date`)}</strong>
-								{certificate.certificateInfo.date}
+								<strong>{t(className, `${classComponent}_date`)}</strong> 
+								{ certificate.certificateInfo.date }
 							</div>
 						</div>
 					)}
@@ -77,8 +61,8 @@ export default function DetailsCertificate({
 						<div className={styles.row}>
 							<LuChartLine className={styles.colorGray} />
 							<div className={styles.label}>
-								<strong>{t(className, `${classComponent}_level`)}</strong>
-								{certificate.certificateInfo.level}
+								<strong>{t(className, `${classComponent}_level`)}</strong> 
+								{ certificate.certificateInfo.level }
 							</div>
 						</div>
 					)}
@@ -87,9 +71,9 @@ export default function DetailsCertificate({
 						<div className={styles.row}>
 							<LuCodeXml className={styles.colorGray} />
 							<div className={styles.label}>
-								<strong>{t(className, `${classComponent}_tech`)}</strong>
+								<strong>{t(className, `${classComponent}_tech`)}</strong> 
 								<div className={styles.techList}>
-									{certificate.certificateInfo.technologies?.join(", ")}
+									{ certificate.certificateInfo.technologies?.join(", ") }
 								</div>
 							</div>
 						</div>

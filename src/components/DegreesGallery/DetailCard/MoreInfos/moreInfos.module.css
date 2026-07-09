@@ -37,7 +37,6 @@
   font-size: 16px;
   font-weight: 700;
   letter-spacing: 1px;
-  line-height: normal;
   margin-top: -0.5px;
 }
 
@@ -45,6 +44,10 @@
   height: 25px;
   position: relative;
   width: 25px;
+}
+
+.colorGray {
+  color: #292e33;
 }
 
 .containerSkills {
@@ -62,79 +65,4 @@
   box-shadow: 0 2px 40px rgba(18, 247, 255, 0.40);
   transition: transform 0.3s ease, opacity 0.3s ease;
   border-top: 4px solid #12f2f2;
-}
-
-.section {
-  display: flex;
-  width: 100%;
-  padding: 0.625rem 0;
-  height: fit-content;
-  flex-direction: column;
-  align-items: flex-start;
-}
-
-.title {
-  color: #292e33;
-  font-family: Poppins;
-  font-size: 1rem;
-  font-weight: 700;
-  letter-spacing: 0.0625rem;
-  text-transform: capitalize;
-}
-
-.subtitle {
-  color: #292e33;
-  font-family: "Poppins-Bold", Helvetica;
-  font-size: 1rem;
-  font-style: normal;
-  font-weight: 700;
-  line-height: normal;
-  letter-spacing: 0.0625rem;
-}
-
-.skillsList {
-  display: flex;
-  height: fit-content;
-  align-items: flex-start;
-  align-content: flex-start;
-  gap: 0.5rem;
-  padding-top: 0.75rem;
-  flex-shrink: 0;
-  align-self: stretch;
-  flex-wrap: wrap;
-}
-
-.item {
-  background-color: #292e33;
-  border-radius: 12px;
-  padding: 5px 8px;
-  color: #eef;
-  font-family: "Poppins-Light", Helvetica;
-  font-size: 14px;
-}
-
-.technologiesList {
-  display: flex;
-  flex-wrap: wrap;
-  align-self: stretch;
-  align-items: center;
-  gap: 0.75rem;
-  padding-top: 0.75rem;
-}
-
-.behavioralList {
-  color: #292e33;
-  font-family: Poppins;
-  font-size: 0.8rem;
-  letter-spacing: 0.0625rem;
-  text-transform: capitalize;
-  padding-left: 40px;
-}
-
-.behavioralList li {
-  list-style: circle;
-}
-
-.colorGray {
-  color: #292e33;
 }

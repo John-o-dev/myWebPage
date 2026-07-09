@@ -1,26 +1,38 @@
 import React, { useEffect, useMemo, useState } from 'react';
 import styles from './degreesGallery.module.css';
-import Image from "next/image";
 import { skillType } from '@/src/types/certificates';
 
 import mockCertificates from '@/src/lib/certificates';
 
-import { LuSearch } from "react-icons/lu";
-import { LuEyeOff } from "react-icons/lu";
 import DetailCard from './DetailCard';
 import Pagination from '../Pagination';
 import useTranslation from '@/src/hooks/useTranslation';
+import { useIsMobile } from '@/src/utils/isMobile';
+import ImageComponent from './ImageComponent';
+import ModalFullScreen from './DetailCard/ModalFullScreen';
+import { useIsDesktop } from '@/src/utils/isDesktop';
+import { LuSearch } from "react-icons/lu";
+import SkillList from './SkillList';
+import { useIsFullDesktop } from '@/src/utils/isFullDesktop';
+import MoreInfos from './DetailCard/MoreInfos';
+import { LuEyeOff } from "react-icons/lu";
+import { getTechIcon } from './DetailCard/GetTechIcon';
 
 export default function DegreesGallery() {
   const certificates = mockCertificates;
   const [search, setSearch] = useState('');
-  const [imageErrors, setImageErrors] = useState<Record<number, boolean>>({});
+  const [isOpen, setIsOpen] = useState(false);
+  // const [imageErrors, setImageErrors] = useState<Record<number, boolean>>({});
   const [selectedId, setSelectedId] = useState<string | null>(certificates[0]?.id ?? null);
   const [page, setPage] = useState(1);
-  const itemsPerPage = 6;
-  const start = (page - 1) * itemsPerPage;
   const { t } = useTranslation();
   const className = "degreesGallery";
+
+  const isMobile = useIsMobile();
+  const isDesktop = useIsDesktop();
+
+  const itemsPerPage = isMobile || isDesktop ? 3 : 6;
+  const start = (page - 1) * itemsPerPage;
 
   const filtered = useMemo(() => {
 
@@ -59,18 +71,18 @@ export default function DegreesGallery() {
       start,
       start + itemsPerPage
     );
-
   const totalPages = Math.ceil(
     filtered.length / itemsPerPage
   );
-
-  const selected = filtered.find((certificate) => certificate.id === selectedId) ?? filtered[0] ?? null;
-
   useEffect(() => {
     if (page > totalPages) {
       setPage(1);
     }
   }, [page, totalPages]);
+
+  const selected = filtered.find((certificate) => certificate.id === selectedId) ?? filtered[0] ?? null;
+
+  // if (isMobile === null) return null; return null - implementar um loader ou fallback
 
   return (
     <section className={styles.container}>
@@ -107,62 +119,99 @@ export default function DegreesGallery() {
             {filtered.length === 0 ? (
               <div className={styles.empty}>{t(className, `_div_empty`)}</div>
             ) : (
-              currentCertificates.map((certificate) => {
-                const hasImageError = imageErrors[certificate.id];
-                return (
-                  <div className={styles.itemCard} key={certificate.id}>
-                    <div
-                      className={styles.itemImage}
-                      onClick={() => {
-                        setSelectedId(certificate.id);
-                      }}>
-                      {!certificate.imageUrl || hasImageError ? (
-                        <LuEyeOff size={32} />
-                      ) : (
-                        <Image
-                          src={certificate.imageUrl}
-                          alt={certificate.title}
-                          width={400}
-                          height={250}
-                          onError={() =>
-                            setImageErrors(prev => ({
-                              ...prev,
-                              [certificate.id]: true,
-                            }))
-                          }
+              // MOBILE
+              isMobile ? (
+                currentCertificates.map((certificate) => {
+                  return (
+                    <div className={styles.itemCard} key={certificate.id}>
+                      <section>
+                        <h3 className={styles.itemTitle}>
+                          {certificate.title}
+                        </h3>
+                        <p className={styles.detailInstitutionName}>
+                          {certificate.educationalInstitution}
+                        </p>
+                      </section>
+
+                      <section
+                        className={styles.containerImageDescription}
+                        onClick={() => setIsOpen(true)}>
+                        <div
+                          className={styles.itemImage}
+                          onClick={() => {
+                            setSelectedId(certificate.id);
+                          }}>
+                          <ImageComponent certificate={certificate} />
+                        </div>
+                        <div className={styles.contentTexts}>
+                          <p>{certificate.description}</p>
+                        </div>
+                      </section>
+
+                      <div className={styles.textWhite}>
+                        <SkillList skills={certificate.skills} />
+                      </div>
+
+                      <div
+                        className={styles.moreInfoTitle}
+                        onClick={() => setIsOpen(true)}>
+                        <span className={styles.textWrapper}>Abrir Modal</span>
+                      </div>
+
+                      {isOpen && (
+                        <ModalFullScreen
+                          onClose={() => setIsOpen(false)}
+                          certificate={certificate}
                         />
                       )}
                     </div>
-                    <p className={styles.itemTitle}>{certificate.title}</p>
-                  </div>
-                );
-              })
-            )}
+                  );
+                })
+              ) : (
+                // DESKTOP
+                currentCertificates.map((certificate) => {
+                  return (
+                    <div className={styles.itemCard} key={certificate.id}>
+                      <div
+                        className={styles.itemImage}
+                        onClick={() => {
+                          setSelectedId(certificate.id);
+                        }}>
+                        <ImageComponent certificate={certificate} />
+                      </div>
+                      <h3 className={styles.itemTitle}>{certificate.title}</h3>
+                    </div>
+                  );
+                })
+              ))}
           </div>
-
-          {(filtered.length !== 0) ?
-            <Pagination
-              currentPage={page}
-              totalPages={totalPages}
-              onPageChange={setPage}
-            />
-            : ""
-          }
 
         </div>
 
         {/* aside card */}
-        <aside className={styles.detailCard}>
-          {selected ? (
-            <DetailCard certificate={selected} />
-          ) : (
-            <div className={styles.empty}>
-              Nenhum certificado encontrado.
-            </div>
-          )}
-        </aside>
+        {!isMobile && (
+          <aside className={styles.detailCard}>
+            {selected ? (
+              <DetailCard certificate={selected} />
+            ) : (
+              <div className={styles.empty}>
+                Nenhum certificado encontrado.
+              </div>
+            )}
+          </aside>
+        )}
 
       </div>
+
+      {/* Paginação */}
+      {(filtered.length !== 0) ?
+        <Pagination
+          currentPage={page}
+          totalPages={totalPages}
+          onPageChange={setPage}
+        />
+        : ""
+      }
     </section>
   );
 }
