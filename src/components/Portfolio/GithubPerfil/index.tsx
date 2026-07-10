@@ -4,6 +4,7 @@ import styles from './githubPerfil.module.css';
 import { UserProps } from '@/src/types/user';
 
 export default function GithubPerfil({
+    html_url,
     avatar_url,
     login,
     name,
@@ -22,7 +23,7 @@ export default function GithubPerfil({
                 <img className={styles.github_user_img} src={avatar_url} alt={login} />
                 <div className={styles.github_user_container}>
                     <h1>
-                        <a className={styles.github_username} href="#">
+                        <a className={styles.github_username} href={html_url} target="_blank" rel="noopener noreferrer">
                             {name}
                         </a>
                     </h1>

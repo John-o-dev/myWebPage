@@ -8,11 +8,14 @@ import Repos from './Repos'
 import Filters from './Filters'
 import LastProjects from './LastProjects'
 import useTranslation from "@/src/hooks/useTranslation";
+import { responseLinguist } from "@/src/utils/responseLinguist";
 
 export default function Portfolio() {
   const [user, setUser] = useState<UserProps | null>(null);
   const [repos, setRepos] = useState<ReposProps[]>([]);
   const [loading, setLoading] = useState(true);
+  const [searchByName, setSearchByName] = useState("");
+  const [searchByTopic, setSearchByTopic] = useState("");
   const className = "portfolio";
   const { t } = useTranslation();
 
@@ -28,13 +31,13 @@ export default function Portfolio() {
 
         const data = await res.json();
 
-        const { avatar_url, login, name, location, html_url, followers, following, public_repos } = data;
+        const { html_url, avatar_url, login, name, location, followers, following, public_repos } = data;
         const userData: UserProps = {
+          html_url,
           avatar_url,
           login,
           name,
           location,
-          html_url,
           followers,
           following,
           public_repos
@@ -64,33 +67,41 @@ export default function Portfolio() {
           return repo.owner.login === 'John-o-dev';
         });
 
-        console.log("filteredData: ", filteredData)
-        // if (filteredData.length === 0) {
-
         const reposData: ReposProps[] = filteredData.map((repo: any) => {
           const {
             name,
-            created_at,
-            updated_at,
-            pushed_at,
-            languages_url,
-            description,
-            html_url
-          } = repo;
-
-          return {
-            name,
+            full_name,
             created_at,
             updated_at,
             pushed_at,
             languages_url,
             description,
             html_url,
+            topics
+          } = repo;
+
+          return {
+            name,
+            full_name,
+            created_at,
+            updated_at,
+            pushed_at,
+            languages_url,
+            description,
+            html_url,
+            topics
           };
 
         });
 
-        const sortedRepos = reposData.sort((a, b) => {
+        const reposComLinguagens = await Promise.all(
+          filteredData.map(async (repo: any) => {
+            const linguagens = await responseLinguist(repo.languages_url);
+            return { ...repo, linguagens }; // adiciona o campo linguagens
+          })
+        );
+
+        const sortedRepos = reposComLinguagens.sort((a, b) => {
           return new Date(b.updated_at).getTime() - new Date(a.updated_at).getTime();
         });
 
@@ -117,8 +128,16 @@ export default function Portfolio() {
       <div className="separator"></div>
 
       <section className="projects">
-        <Filters />
-        {repos.length > 0 && <Repos repos={repos} />}
+        {repos.length > 0 && <Filters
+          repos={repos}
+          searchByName={searchByName}
+          searchByTopic={searchByTopic}
+          setSearchByName={setSearchByName}
+          setSearchByTopic={setSearchByTopic} />}
+        {repos.length > 0 && <Repos
+          repos={repos}
+          searchByName={searchByName}
+          searchByTopic={searchByTopic} />}
       </section>
     </article>
   )
