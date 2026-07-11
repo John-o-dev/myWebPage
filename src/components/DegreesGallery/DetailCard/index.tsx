@@ -4,6 +4,7 @@ import { Certificate, skillType } from "@/src/types/certificates";
 import DetailsCertificate from "./DetailsCertificate";
 import MoreInfos from "./MoreInfos";
 import ModalFullScreen from "./ModalFullScreen"
+import { useRouter } from 'next/router';
 
 import { LuGithub, LuGlobe, LuMessageSquareDiff } from "react-icons/lu";
 import useTranslation from "@/src/hooks/useTranslation";
@@ -13,6 +14,7 @@ export default function DetailCard({ certificate }: { certificate: Certificate }
   const { t } = useTranslation();
   const className = "degreesGallery";
   const classComponent = "detail_card";
+  const router = useRouter();
 
   return (
     <article className={styles.detailCard}>

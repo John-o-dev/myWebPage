@@ -49,6 +49,23 @@
   font-size: 14px;
 }
 
+.item a {
+  color: #eef;
+}
+
+.item a:visited {
+  color: rgba(18, 247, 255, 0.40);
+}
+
+.item a:hover {
+  color: #12F7FF;
+  text-decoration: underline;
+}
+
+.item a:active {
+  color: #12F7FF;
+}
+
 .technologiesList {
   display: flex;
   flex-wrap: wrap;

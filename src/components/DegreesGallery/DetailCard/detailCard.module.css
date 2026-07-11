@@ -190,6 +190,30 @@
   background-color: rgba(18, 247, 255, 0.40);
 }
 
+/* TESTES */
+.skillsList {
+  display: flex;
+  height: fit-content;
+  align-items: flex-start;
+  align-content: flex-start;
+  gap: 0.5rem;
+  padding-top: 0.75rem;
+  flex-shrink: 0;
+  align-self: stretch;
+  flex-wrap: wrap;
+}
+
+.item {
+  background-color: #000000;
+  border-radius: 12px;
+  border: 2px solid #eef;
+  padding: 5px 8px;
+  color: #eef;
+  font-family: "Poppins-Light", Helvetica;
+  font-size: 14px;
+}
+/* TESTES */
+
 @media (min-width: 1024px) {
   .detailInstitutionName {
     font-size: 1rem;

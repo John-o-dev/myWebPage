@@ -1,6 +1,7 @@
 import { useEffect, useMemo, useRef, useState } from 'react';
 import styles from './filters.module.css'
 import { ReposProps } from '@/src/types/repos';
+import { useRouter } from 'next/router';
 
 type Props = {
     repos: ReposProps[];
@@ -13,6 +14,24 @@ type Props = {
 export default function Filters({ repos, searchByName, searchByTopic, setSearchByName, setSearchByTopic }: Props) {
     const menuRef = useRef(null);
     const [menuOpen, setMenuOpen] = useState(false);
+    const router = useRouter();
+    const topic = router.query.topic;
+
+    const handleTopicChange = (value: string) => {
+        setSearchByTopic(value);
+
+        router.replace(
+            {
+                pathname: router.pathname,
+                query: {
+                    ...router.query,
+                    topic: value || undefined,
+                },
+            },
+            undefined,
+            { shallow: true }
+        );
+    };
 
     const toggleMenu = () => {
         setMenuOpen((prev) => !prev);
@@ -51,7 +70,7 @@ export default function Filters({ repos, searchByName, searchByTopic, setSearchB
                     <div>{searchByTopic ? searchByTopic : "Selecione..."}</div>
                     <div>
                         <span className={styles.clear_selection} onClick={() => {
-                            setSearchByTopic("")
+                            handleTopicChange("")
                         }}>X</span>
                     </div>
                 </button>
@@ -60,8 +79,13 @@ export default function Filters({ repos, searchByName, searchByTopic, setSearchB
                     {allTopics.map((topic, index) => (
                         <li className={styles.select_item} key={index}>
                             <button type='button' onClick={() => {
-                                setSearchByTopic(topic)
+                                handleTopicChange(topic)
+                                // setSearchByTopic(topic)
                             }}>{topic}</button>
+                            {/* <select
+                                value={topic}
+                                onChange={(e) => handleTopicChange(topic)}
+                            ></select> */}
                         </li>
                     ))}
                 </ul>
