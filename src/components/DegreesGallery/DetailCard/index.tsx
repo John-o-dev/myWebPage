@@ -6,7 +6,7 @@ import MoreInfos from "./MoreInfos";
 import ModalFullScreen from "./ModalFullScreen"
 import { useRouter } from 'next/router';
 
-import { LuGithub, LuGlobe, LuMessageSquareDiff } from "react-icons/lu";
+import { LuGithub, LuGlobe, LuMessageSquare } from "react-icons/lu";
 import useTranslation from "@/src/hooks/useTranslation";
 
 export default function DetailCard({ certificate }: { certificate: Certificate }) {
@@ -56,7 +56,7 @@ export default function DetailCard({ certificate }: { certificate: Certificate }
             onClick={() => {
               setIsOpen(true);
             }}>
-            <LuMessageSquareDiff className={styles.ellipsisTextIcons} />
+            <LuMessageSquare className={styles.ellipsisTextIcons} />
           </div>
         </div>
       </section>
@@ -76,7 +76,7 @@ export default function DetailCard({ certificate }: { certificate: Certificate }
               onClick={() => {
                 setIsOpen(true);
               }}>
-              <LuMessageSquareDiff className={styles.ellipsisTextIcons} />
+              <LuMessageSquare className={styles.ellipsisTextIcons} />
             </div>
           </div>
         </section>

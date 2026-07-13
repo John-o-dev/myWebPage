@@ -2,7 +2,6 @@ import React, { useEffect } from 'react'
 import { Certificate, skillType } from "@/src/types/certificates";
 import DetailsCertificate from '../DetailsCertificate'
 import styles from './modalFullScreen.module.css'
-import { getTechIcon } from '../GetTechIcon';
 
 import { LuGithub, LuGlobe, LuX } from "react-icons/lu";
 import useTranslation from '@/src/hooks/useTranslation';

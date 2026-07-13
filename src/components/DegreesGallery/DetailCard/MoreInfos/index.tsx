@@ -5,9 +5,6 @@ import { Certificate } from "@/src/types/certificates";
 import useTranslation from '@/src/hooks/useTranslation';
 import SkillList from '../../SkillList';
 
-import certificates from '@/src/lib/certificates';
-import { getTechIcon } from '../GetTechIcon';
-
 export default function MoreInfos({ certificate }: { certificate: Certificate }) {
   const [expanded, setExpanded] = useState(false);
   const { t } = useTranslation();

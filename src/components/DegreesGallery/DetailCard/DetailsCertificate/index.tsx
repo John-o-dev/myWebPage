@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import styles from "./detailsCertificate.module.css";
 import { Certificate } from "@/src/types/certificates";
-import { LuArrowUp, LuArrowDown, LuCalendarCheck, LuTimer, LuChartLine, LuCodeXml, LuEyeOff, LuDownload } from "react-icons/lu";
+import { LuArrowUp, LuArrowDown, LuCalendarCheck, LuTimer, LuTrendingUp, LuCode } from "react-icons/lu";
 import ButtonBox from "@/src/components/ButtonBox";
 import useTranslation from "@/src/hooks/useTranslation";
 import ImageComponent from "../../ImageComponent";
@@ -59,7 +59,7 @@ export default function DetailsCertificate({
 
 					{certificate.certificateInfo.level && (
 						<div className={styles.row}>
-							<LuChartLine className={styles.colorGray} />
+							<LuTrendingUp className={styles.colorGray} />
 							<div className={styles.label}>
 								<strong>{t(className, `${classComponent}_level`)}</strong> 
 								{ certificate.certificateInfo.level }
@@ -69,7 +69,7 @@ export default function DetailsCertificate({
 
 					{certificate.certificateInfo.technologies?.length > 0 && (
 						<div className={styles.row}>
-							<LuCodeXml className={styles.colorGray} />
+							<LuCode className={styles.colorGray} />
 							<div className={styles.label}>
 								<strong>{t(className, `${classComponent}_tech`)}</strong> 
 								<div className={styles.techList}>
