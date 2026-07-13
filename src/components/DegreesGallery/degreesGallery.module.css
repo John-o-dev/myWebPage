@@ -185,10 +185,6 @@
   margin-top: -0.5px;
 }
 
-.textWhite * {
-  color: white;
-}
-
 @media (min-width: 768px) {
   .header {
     display: grid;

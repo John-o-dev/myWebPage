@@ -1,28 +1,28 @@
 import React, { useEffect, useMemo, useState } from 'react';
+
 import styles from './degreesGallery.module.css';
+
+import DetailCard from './DetailCard';
+import Pagination from '../Pagination';
+import ImageComponent from './ImageComponent';
+import ModalFullScreen from './DetailCard/ModalFullScreen';
+import SkillList from './SkillList';
+
+import useTranslation from '@/src/hooks/useTranslation';
+
+import { useIsMobile } from '@/src/utils/isMobile';
+import { useIsDesktop } from '@/src/utils/isDesktop';
+
 import { skillType } from '@/src/types/certificates';
 
 import mockCertificates from '@/src/lib/certificates';
 
-import DetailCard from './DetailCard';
-import Pagination from '../Pagination';
-import useTranslation from '@/src/hooks/useTranslation';
-import { useIsMobile } from '@/src/utils/isMobile';
-import ImageComponent from './ImageComponent';
-import ModalFullScreen from './DetailCard/ModalFullScreen';
-import { useIsDesktop } from '@/src/utils/isDesktop';
 import { LuSearch } from "react-icons/lu";
-import SkillList from './SkillList';
-import { useIsFullDesktop } from '@/src/utils/isFullDesktop';
-import MoreInfos from './DetailCard/MoreInfos';
-import { LuEyeOff } from "react-icons/lu";
-import { getTechIcon } from './DetailCard/GetTechIcon';
 
 export default function DegreesGallery() {
   const certificates = mockCertificates;
   const [search, setSearch] = useState('');
   const [isOpen, setIsOpen] = useState(false);
-  // const [imageErrors, setImageErrors] = useState<Record<number, boolean>>({});
   const [selectedId, setSelectedId] = useState<string | null>(certificates[0]?.id ?? null);
   const [page, setPage] = useState(1);
   const { t } = useTranslation();
