@@ -1,0 +1,221 @@
+.detailCard {
+  display: flex;
+  width: 100%;
+  padding: 0.75rem 1rem;
+  flex-direction: column;
+  align-items: flex-start;
+  align-self: start;
+  grid-row: span 1;
+  grid-column: span 1;
+  justify-self: stretch;
+  border-radius: 1.125rem;
+  background: #292E33;
+  overflow: visible;
+}
+
+.detailHeader {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+  align-self: stretch;
+}
+
+.detailTitle {
+  color: #FFF;
+  font-size: 1.1rem;
+  font-weight: 700;
+  letter-spacing: 0.125rem;
+  text-transform: capitalize;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  overflow-wrap: break-word;
+  word-break: break-word;
+}
+
+.detailInstitution {
+  display: flex;
+  padding-bottom: 0.75rem;
+  align-items: center;
+  gap: 0.5rem;
+  align-self: stretch;
+}
+
+.detailInstitutionName {
+  color: #FFF;
+  font-family: Poppins;
+  font-size: 0.9rem;
+  font-weight: 400;
+  letter-spacing: 0.0625rem;
+  text-transform: capitalize;
+}
+
+.box {
+  position: relative;
+  width: 100%;
+  border-radius: 12px;
+  transition: transform 0.5s;
+  cursor: pointer;
+  z-index: 9;
+}
+
+.overlay {
+  width: 100%;
+  height: 0;
+  background: linear-gradient(#1c1c1c 68%, transparent);
+  border-radius: 12px;
+  position: absolute;
+  left: 0;
+  top: 0;
+  overflow: hidden;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  flex-direction: column;
+  padding: 0 40px;
+  text-align: center;
+  font-size: 14px;
+  transition: height 0.5s;
+}
+
+.box:hover .overlay {
+  transform: scale(1.1);
+  height: 20%;
+}
+
+.box:hover {
+  transform: scale(1.1);
+}
+
+.containerTexts {
+  width: 100%;
+  height: max-content;
+}
+
+.titleTexts {
+  display: inline-flex;
+  padding-bottom: 0.5rem;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.titleTexts h3,
+.containerMoreInfoHeader h3 {
+  color: #FFF;
+  font-family: Poppins;
+  font-size: 1rem;
+  font-weight: 700;
+  letter-spacing: 0.0625rem;
+  text-transform: capitalize;
+}
+
+.contentTexts {
+  position: relative;
+  color: var(--text-color);
+  font-size: var(--fs-6);
+  margin-bottom: 5px;
+}
+
+.contentTexts p {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  padding-right: 40px;
+}
+
+.detailDescriptionContent p {
+  color: #FFF;
+  font-family: Poppins;
+  font-size: 0.875rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  letter-spacing: 0.0625rem;
+  text-transform: capitalize;
+}
+
+.containerMoreInfo {
+  display: flex;
+  padding-bottom: 0.5rem;
+  flex-direction: column;
+  align-items: flex-start;
+  align-self: stretch;
+}
+
+.containerMoreInfo a {
+  align-self: stretch;
+  color: #12F7FF;
+  font-family: Poppins;
+  letter-spacing: 0.0625rem;
+}
+
+.containerMoreInfoHeader {
+  display: flex;
+  padding-bottom: 0.75rem;
+  align-items: center;
+  gap: 0.5rem;
+  align-self: stretch;
+}
+
+.moreInfoIcons {
+  color: #12F7FF;
+}
+
+.moreInfoLink {
+  color: #12F7FF;
+  font-family: Poppins;
+  font-size: 0.8125rem;
+  font-weight: 400;
+  letter-spacing: 0.0625rem;
+}
+
+.ellipsisTextIcons {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  padding: 5px;
+  border-radius: 8px;
+  background-color: #1E2226;
+  cursor: pointer;
+  color: #12F7FF;
+  font-size: 1.8rem;
+}
+
+.ellipsisTextIcons:hover {
+  background-color: rgba(18, 247, 255, 0.40);
+}
+
+/* TESTES */
+.skillsList {
+  display: flex;
+  height: fit-content;
+  align-items: flex-start;
+  align-content: flex-start;
+  gap: 0.5rem;
+  padding-top: 0.75rem;
+  flex-shrink: 0;
+  align-self: stretch;
+  flex-wrap: wrap;
+}
+
+.item {
+  background-color: #000000;
+  border-radius: 12px;
+  border: 2px solid #eef;
+  padding: 5px 8px;
+  color: #eef;
+  font-family: "Poppins-Light", Helvetica;
+  font-size: 14px;
+}
+/* TESTES */
+
+@media (min-width: 1024px) {
+  .detailInstitutionName {
+    font-size: 1rem;
+  }
+}

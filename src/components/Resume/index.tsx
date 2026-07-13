@@ -13,13 +13,13 @@ export default function Resume() {
     const className = "resume";
     const { t } = useTranslation();
     return (
-        <article>
+        <section>
 
             <header>
                 <h2 className="article_title">{t(className, 'title')}</h2>
             </header>
 
-            <div className={styles.container}>
+            <section className={styles.container}>
                 <div className={styles.left_column}>
                     <AboutMe />
                 </div>
@@ -30,8 +30,8 @@ export default function Resume() {
                     <Stacks icons={programsIcons} symbol="apps" title={t(className, 'Stacks_2')} />
                     <Stacks icons={learningIcons} symbol="auto_stories" title={t(className, 'Stacks_3')} />
                 </div>
-            </div>
+            </section>
 
-        </article>
+        </section>
     )
 }

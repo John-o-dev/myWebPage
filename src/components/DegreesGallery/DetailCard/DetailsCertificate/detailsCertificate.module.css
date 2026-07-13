@@ -1,0 +1,103 @@
+.wrapper {
+  width: 100%;
+  display: flex;
+  position: relative;
+  height: fit-content;
+  flex-direction: column;
+  gap: 8px;
+  align-items: flex-start;
+}
+
+.detailButton {
+  position: absolute;
+  bottom: 12px;
+  right: 12px;
+  display: flex;
+  align-items: center;
+  background: #eef;
+  gap: 6px;
+  padding: 0.25rem 0.625rem;
+  border-radius: 0.5rem;
+  z-index: 1;
+  cursor: pointer;
+}
+
+.detailButtonExpanded {
+  color: #FFF;
+  background-color: rgba(18, 247, 255, 0.40);
+}
+
+.detailButton:hover {
+  background: rgba(18, 247, 255, 0.4);
+}
+
+.detailText {
+  font-family: Poppins, sans-serif;
+  font-size: 16px;
+  letter-spacing: 1px;
+  color: #292e33;
+  text-transform: capitalize;
+}
+
+.detailsCard {
+  display: flex;
+  padding-top: 0.5rem;
+  margin-top: 0.5rem;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.625rem;
+  align-self: stretch;
+  width: 100%;
+  background: #eef;
+  border-radius: 0.5rem;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  z-index: 99;
+  box-shadow: 0 2px 40px rgba(18, 247, 255, 0.40);
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.row {
+  display: flex;
+  padding: 0 1rem;
+  align-items: center;
+  gap: 0.5rem;
+  align-self: stretch;
+  width: 100%;
+}
+
+.icon {
+  width: 1.5625rem;
+  height: 1.5625rem;
+}
+
+.label {
+  color: #000;
+  font-family: Poppins;
+  font-size: 0.875rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  letter-spacing: 0.0625rem;
+  text-transform: capitalize;
+}
+
+.label strong {
+  font-size: 0.875rem;
+  font-weight: 700;
+}
+
+.downloadButton {
+  width: 100%;
+  margin-top: 15px;
+}
+
+.downloadButton:nth-child(1) {
+  width: 100%;
+}
+
+.colorGray {
+  color: #292e33
+}

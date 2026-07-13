@@ -2,6 +2,7 @@ import { UserProps } from "@/src/types/user";
 import { ReposProps } from "@/src/types/repos";
 
 import { useEffect, useState } from "react";
+import { useRouter } from 'next/router';
 
 import GithubPerfil from './GithubPerfil'
 import Repos from './Repos'
@@ -18,6 +19,14 @@ export default function Portfolio() {
   const [searchByTopic, setSearchByTopic] = useState("");
   const className = "portfolio";
   const { t } = useTranslation();
+  const router = useRouter();
+  const topic = router.query.topic;
+
+  useEffect(() => {
+    if (typeof router.query.topic === "string") {
+      setSearchByTopic(router.query.topic);
+    }
+  }, [router.query.topic]);
 
   useEffect(() => {
     const loadUser = async () => {

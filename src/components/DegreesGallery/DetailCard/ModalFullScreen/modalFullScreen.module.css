@@ -1,0 +1,250 @@
+.modalOverlay {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: rgba(0, 0, 0, .5);
+  z-index: 9999;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  background: #141414;
+  border-radius: 12px;
+  align-items: flex-start;
+  overflow-y: auto;
+  overflow-x: hidden;
+  width: 95vw;
+  max-height: 85vh;
+}
+
+.closeBtn {
+  display: flex;
+  justify-content: flex-end;
+  width: 100%;
+  color: #FFFFFF;
+  position: sticky;
+  background-color: transparent;
+  top: 0;
+  z-index: 99;
+}
+
+.iconBtn {
+  background-color: rgba(18, 247, 255, 0.40);
+  padding: 5px;
+  cursor: pointer;
+  width: 35px;
+  height: auto;
+  border-radius: 50%;
+  margin: 15px 15px 0 0;
+  z-index: 10;
+}
+
+.iconBtn:hover {
+  background-color: #12F7FF;
+}
+
+.panel {
+  display: flex;
+  position: relative;
+  top: -50px;
+  flex-direction: column;
+  padding: 10px;
+  gap: 0.5rem
+}
+
+.panelHeader {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.panelHeaderTitle {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.title {
+  color: #FFF;
+  font-family: Poppins;
+  font-size: 1.1rem;
+  font-weight: 600;
+  letter-spacing: 0.125rem;
+  padding: 1.5rem 10px;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  overflow-wrap: break-word;
+  word-break: break-word;
+}
+
+.institution {
+  color: #FFF;
+  font-family: Poppins;
+  font-size: 1rem;
+  font-weight: 400;
+  letter-spacing: 0.0625rem;
+  text-transform: capitalize;
+  padding: 0 30px;
+}
+
+.sectionTitle {
+  color: #FFF;
+  font-family: "Poppins-Bold", Helvetica;
+  font-size: 1rem;
+  font-weight: 700;
+  letter-spacing: 0.0625rem;
+  padding-bottom: 5px;
+}
+
+.sectionSubtitle {
+  color: #FFF;
+  font-family: "Poppins-Bold", Helvetica;
+  font-size: 0.8rem;
+  letter-spacing: 0.0625rem;
+  padding-bottom: 0.8rem;
+}
+
+.text {
+  color: #FFF;
+  font-family: Poppins;
+  font-size: 0.8rem;
+  font-weight: 400;
+  letter-spacing: 0.0625rem;
+  padding-left: 40px;
+}
+
+.list {
+  color: #FFF;
+  font-family: Poppins;
+  font-size: 0.8rem;
+  letter-spacing: 0.0625rem;
+  text-transform: capitalize;
+  padding-left: 40px;
+}
+
+.list li {
+  list-style: circle;
+}
+
+.containerMoreInfo {
+  display: flex;
+  padding-bottom: 0.5rem;
+  flex-direction: column;
+  align-items: flex-start;
+  align-self: stretch;
+}
+
+.containerMoreInfoHeader {
+  display: flex;
+  padding-bottom: 0.75rem;
+  align-items: center;
+  gap: 0.5rem;
+  align-self: stretch;
+}
+
+.containerMoreInfoHeader a {
+  align-self: stretch;
+  color: #12F7FF;
+  font-family: Poppins;
+  font-size: 0.875rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  letter-spacing: 0.0625rem;
+}
+
+.moreInfoIcons {
+  color: #12F7FF;
+  padding-bottom: 5px;
+  font-size: 1.5rem;
+}
+
+.moreInfoLink {
+  color: #12F7FF;
+  font-family: Poppins;
+  font-size: 0.8125rem;
+  font-weight: 400;
+  letter-spacing: 0.0625rem;
+  padding-left: 40px;
+}
+
+.section {
+  display: flex;
+  width: 100%;
+  height: fit-content;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.skillsList {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.5rem;
+  align-self: stretch;
+  flex-wrap: wrap;
+}
+
+.skillsList .item {
+  background-color: #292e33;
+  border-radius: 12px;
+  padding: 5px 8px;
+  color: #eef;
+  font-family: "Poppins-Light", Helvetica;
+  font-size: 14px;
+}
+
+.behavioralList {
+  display: inline-block;
+  margin-left: 1.5rem;
+}
+
+.behavioralList li {
+  list-style: circle;
+}
+
+.technologiesList {
+  display: flex;
+  flex-wrap: wrap;
+  align-self: stretch;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.PaddingTop {
+  padding-top: 0.5rem;
+  padding-left: 2rem;
+  width: 100%;
+}
+
+.textWhite * {
+  color: white;
+}
+
+@media (min-width: 768px) {
+  .container {
+    width: 85vw;
+  }
+
+  .title {
+    font-weight: 700;
+  }
+}
+
+@media (min-width: 1024px) {
+  .container {
+    width: 75vw;
+  }
+
+  .title {
+    font-size: 1.25rem;
+  }
+}
