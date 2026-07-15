@@ -76,35 +76,35 @@ export default function Portfolio() {
           return repo.owner.login === 'John-o-dev';
         });
 
-        const reposData: ReposProps[] = filteredData.map((repo: any) => {
-          const {
-            name,
-            full_name,
-            created_at,
-            updated_at,
-            pushed_at,
-            languages_url,
-            description,
-            html_url,
-            topics
-          } = repo;
+        // const reposData: ReposProps[] = filteredData.map((repo: any) => {
+        //   const {
+        //     name,
+        //     full_name,
+        //     created_at,
+        //     updated_at,
+        //     pushed_at,
+        //     languages_url,
+        //     description,
+        //     html_url,
+        //     topics
+        //   } = repo;
 
-          return {
-            name,
-            full_name,
-            created_at,
-            updated_at,
-            pushed_at,
-            languages_url,
-            description,
-            html_url,
-            topics
-          };
+        //   return {
+        //     name,
+        //     full_name,
+        //     created_at,
+        //     updated_at,
+        //     pushed_at,
+        //     languages_url,
+        //     description,
+        //     html_url,
+        //     topics
+        //   };
 
-        });
+        // });
 
         const reposComLinguagens = await Promise.all(
-          filteredData.map(async (repo: any) => {
+          filteredData.map(async (repo: ReposProps) => {
             const linguagens = await responseLinguist(repo.languages_url);
             return { ...repo, linguagens }; // adiciona o campo linguagens
           })
@@ -114,6 +114,7 @@ export default function Portfolio() {
           return new Date(b.updated_at).getTime() - new Date(a.updated_at).getTime();
         });
 
+        {console.log("sortedRepos: ", sortedRepos)}
         setRepos(sortedRepos);
       } catch (error) {
         console.log("Erro ao buscar repositório do GitHub. error:", error);

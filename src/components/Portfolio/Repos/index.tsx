@@ -33,20 +33,35 @@ export default function Repos({ repos, searchByName, searchByTopic }: Props) {
 
                 <ul className={styles.project_list}>
                     {filteredRepos.map((repo, index) => (
-                        <Card key={index} index={index} section={'filteredRepos'} repo={repo} openIndex={openIndex} setOpenIndex={setOpenIndex} className={className} classComponent={classComponent} />
+                        <Card 
+                        key={index} 
+                        index={index} 
+                        section={'filteredRepos'} 
+                        repo={repo as ReposProps} 
+                        openIndex={openIndex} 
+                        setOpenIndex={setOpenIndex} 
+                        className={className} 
+                        classComponent={classComponent} />
                     ))}
                 </ul>
             </section>
 
             <div className={styles.separator}></div>
-
+{/* 
             {filterReposByTopic("angular", repos) &&
                 <section className={styles.repos}>
                     <h2 className={styles.subtitle}>
                         Angular
                     </h2>
                     {filterReposByTopic("angular", repos).map((repo, index) => (
-                        <Card key={index} section={'angular'} repo={repo} openIndex={openIndex} setOpenIndex={setOpenIndex} className={className} classComponent={classComponent} />
+                        <Card 
+                        key={index} 
+                        section={'angular'} 
+                        repo={repo} 
+                        openIndex={openIndex} 
+                        setOpenIndex={setOpenIndex} 
+                        className={className} 
+                        classComponent={classComponent} />
                     ))}
                     <div className={styles.separator}></div>
                 </section>
@@ -58,7 +73,14 @@ export default function Repos({ repos, searchByName, searchByTopic }: Props) {
                         React
                     </h2>
                     {filterReposByTopic("react", repos).map((repo, index) => (
-                        <Card key={index} section={'react'} repo={repo} openIndex={openIndex} setOpenIndex={setOpenIndex} className={className} classComponent={classComponent} />
+                        <Card 
+                        key={index} 
+                        section={'react'} 
+                        repo={repo} 
+                        openIndex={openIndex} 
+                        setOpenIndex={setOpenIndex} 
+                        className={className} 
+                        classComponent={classComponent} />
                     ))}
                     <div className={styles.separator}></div>
                 </section>
@@ -70,7 +92,14 @@ export default function Repos({ repos, searchByName, searchByTopic }: Props) {
                         Python
                     </h2>
                     {filterReposByTopic("python", repos).map((repo, index) => (
-                        <Card key={index} section={'python'} repo={repo} openIndex={openIndex} setOpenIndex={setOpenIndex} className={className} classComponent={classComponent} />
+                        <Card 
+                        key={index} 
+                        section={'python'} 
+                        repo={repo} 
+                        openIndex={openIndex} 
+                        setOpenIndex={setOpenIndex} 
+                        className={className} 
+                        classComponent={classComponent} />
                     ))}
                     <div className={styles.separator}></div>
                 </section>
@@ -82,7 +111,14 @@ export default function Repos({ repos, searchByName, searchByTopic }: Props) {
                         UI/UX Design
                     </h2>
                     {filterReposByTopic("ui/ux design", repos).map((repo, index) => (
-                        <Card key={index} section={'ui/ux design'} repo={repo} openIndex={openIndex} setOpenIndex={setOpenIndex} className={className} classComponent={classComponent} />
+                        <Card 
+                        key={index} 
+                        section={'ui/ux design'} 
+                        repo={repo} 
+                        openIndex={openIndex} 
+                        setOpenIndex={setOpenIndex} 
+                        className={className} 
+                        classComponent={classComponent} />
                     ))}
                     <div className={styles.separator}></div>
                 </section>
@@ -94,11 +130,19 @@ export default function Repos({ repos, searchByName, searchByTopic }: Props) {
                         Parts/Layout
                     </h2>
                     {filterReposByTopic("layout", repos).map((repo, index) => (
-                        <Card key={index} section={'layout'} repo={repo} openIndex={openIndex} setOpenIndex={setOpenIndex} className={className} classComponent={classComponent} />
+                        <Card 
+                        key={index} 
+                        section={'layout'} 
+                        repo={repo} 
+                        openIndex={openIndex} 
+                        setOpenIndex={setOpenIndex} 
+                        className={className} 
+                        classComponent={classComponent} />
                     ))}
                     <div className={styles.separator}></div>
                 </section>
-            }
+            } 
+*/}
         </main>
     )
 }

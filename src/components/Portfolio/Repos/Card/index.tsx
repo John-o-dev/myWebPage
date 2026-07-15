@@ -3,18 +3,20 @@ import Modal from '../Modal';
 import useTranslation from '@/src/hooks/useTranslation';
 import { formatRepoImg, formatRepoName, linkToGithubPage } from '@/src/utils/portfolioUtils';
 import { formatDate } from '@/src/utils/format';
+import ImageComponent from '@/src/components/ImageComponent';
+import { CardProps } from '@/src/types/card';
 
 export default function Card({
-    index, 
+    index,
     section,
-    repo, 
-    openIndex, 
-    setOpenIndex, 
-    className, 
-    classComponent}: any
-) {
+    repo,
+    openIndex,
+    setOpenIndex,
+    className,
+    classComponent }: CardProps ) 
+{
     const { t } = useTranslation();
-        
+
     return (
         <li className={`${styles.project_item} ${styles.active}`} key={index}>
 
@@ -23,7 +25,11 @@ export default function Card({
                     className={styles.repo_card_content}
                     onClick={() => { setOpenIndex({ section: section, index: index }) }}>
                     <figure>
-                        <img className={styles.repo_logo} src={formatRepoImg(repo.full_name)} alt={repo.full_name} loading="lazy" />
+                        <ImageComponent
+                            index={repo.id}
+                            imageUrl={formatRepoImg(repo.full_name, repo.default_branch)}
+                            alt={repo.full_name}
+                            className={styles.repo_logo}/>
                     </figure>
                     <button
                         type="button"

@@ -7,6 +7,7 @@ export interface LanguageMeta {
 }
 
 export type ReposProps = {
+    id: number;
     name: string;
     full_name: string;
     created_at: string;
@@ -16,6 +17,7 @@ export type ReposProps = {
     description: string;
     html_url: string;
     topics: string[];
+    default_branch: string;
     linguagens?: LanguageMeta[];
 }
 

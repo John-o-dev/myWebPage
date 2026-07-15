@@ -7,6 +7,7 @@ import { ReposProps } from "@/src/types/repos";
 import useTranslation from "@/src/hooks/useTranslation";
 import { formatDate } from "@/src/utils/format";
 import { formatRepoImg, formatRepoName, linkToGithubPage } from "@/src/utils/portfolioUtils";
+import ImageComponent from "@/src/components/ImageComponent";
 
 type ModalProps = {
     onClose: () => void;
@@ -31,7 +32,11 @@ export default function Modal({ onClose, repo, className, classComponent }: Moda
                 </button>
 
                 <div className={styles.info_card_modal_header}>
-                    <img className={styles.info_card_modal_logo} src={formatRepoImg(repo.full_name)} alt={repo.full_name} loading="lazy" />
+                    <ImageComponent
+                        index={repo.id}
+                        imageUrl={formatRepoImg(repo.full_name, repo.default_branch)}
+                        alt={repo.full_name}
+                        className={styles.info_card_modal_logo} />
                 </div>
 
                 <div className={styles.info_card_modal_body}>
