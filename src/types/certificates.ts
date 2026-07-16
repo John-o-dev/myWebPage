@@ -1,5 +1,5 @@
 export type Certificate = {
-  id: string;
+  id: number;
   title: string;
   educationalInstitution: string;
   description: string;

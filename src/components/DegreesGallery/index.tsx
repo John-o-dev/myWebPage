@@ -4,7 +4,7 @@ import styles from './degreesGallery.module.css';
 
 import DetailCard from './DetailCard';
 import Pagination from '../Pagination';
-import ImageComponent from './ImageComponent';
+import ImageComponent from '../ImageComponent';
 import ModalFullScreen from './DetailCard/ModalFullScreen';
 import SkillList from './SkillList';
 
@@ -23,7 +23,7 @@ export default function DegreesGallery() {
   const certificates = mockCertificates;
   const [search, setSearch] = useState('');
   const [isOpen, setIsOpen] = useState(false);
-  const [selectedId, setSelectedId] = useState<string | null>(certificates[0]?.id ?? null);
+  const [selectedId, setSelectedId] = useState<number | null>(certificates[0]?.id ?? null);
   const [page, setPage] = useState(1);
   const { t } = useTranslation();
   const className = "degreesGallery";
@@ -141,14 +141,18 @@ export default function DegreesGallery() {
                           onClick={() => {
                             setSelectedId(certificate.id);
                           }}>
-                          <ImageComponent certificate={certificate} />
+                          <ImageComponent
+                            index={certificate.id}
+                            imageUrl={certificate.imageUrl}
+                            alt={certificate.title}
+                            typeDefaultImage="component" />
                         </div>
                         <div className={styles.contentTexts}>
                           <p>{certificate.description}</p>
                         </div>
                       </section>
 
-                      <SkillList skills={certificate.skills}/>
+                      <SkillList skills={certificate.skills} />
 
                       <div
                         className={styles.moreInfoTitle}
@@ -175,7 +179,11 @@ export default function DegreesGallery() {
                         onClick={() => {
                           setSelectedId(certificate.id);
                         }}>
-                        <ImageComponent certificate={certificate} />
+                        <ImageComponent
+                          index={certificate.id}
+                          imageUrl={certificate.imageUrl}
+                          alt={certificate.title}
+                          typeDefaultImage="component" />
                       </div>
                       <h3 className={styles.itemTitle}>{certificate.title}</h3>
                     </div>

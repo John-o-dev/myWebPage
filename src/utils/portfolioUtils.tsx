@@ -1,8 +1,12 @@
 import { ReposProps } from "../types/repos";
 
 // Formata a URL da imagem do repositório
-export function formatRepoImg(urlImg: string) {
-    return `https://raw.githubusercontent.com/${urlImg}/refs/heads/master/thumbnail.jpg`
+export function formatRepoImg(
+    fullName: string,
+    default_branch: string
+) {
+    // https://raw.githubusercontent.com/USUARIO/REPOSITORIO/BRANCH/ARQUIVO
+    return `https://raw.githubusercontent.com/${fullName}/refs/heads/${default_branch}/thumbnail.jpg`;
 }
 
 // Abre o link do GitHub Page em uma nova aba, se existir

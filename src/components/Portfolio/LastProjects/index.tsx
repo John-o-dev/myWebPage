@@ -6,6 +6,7 @@ import { formatDate } from '@/src/utils/format';
 import { formatRepoImg, formatRepoName } from '@/src/utils/portfolioUtils';
 import Modal from '../Repos/Modal';
 import { useEffect, useState } from 'react';
+import ImageComponent from '../../ImageComponent';
 
 type Props = {
   repos: ReposProps[];
@@ -20,7 +21,7 @@ export default function LastProjects({ repos }: Props) {
   useEffect(() => {
     console.log("Estado atualizado:", openIndex);
   }, [openIndex]); // roda sempre que `openIndex` mudar
-  
+
   return (
     <div className={styles.last_projects}>
       <h2>{t(className, `${classComponent}_title`)}</h2>
@@ -33,7 +34,11 @@ export default function LastProjects({ repos }: Props) {
                 onClick={() => { setOpenIndex({ section: "lastProjects", index }) }}>
                 <h3 className={styles.projects_item_title}>{formatRepoName(repo.name)}</h3>
                 <figure className={styles.project_img}>
-                  <img className={styles.repo_logo} src={formatRepoImg(repo.full_name)} alt={repo.full_name} loading="lazy" />
+                  <ImageComponent
+                    index={repo.id}
+                    imageUrl={formatRepoImg(repo.full_name, repo.default_branch)}
+                    alt={repo.full_name}
+                    className={styles.repo_logo} />
                 </figure>
                 <button
                   type="button"
@@ -45,7 +50,11 @@ export default function LastProjects({ repos }: Props) {
                 </button>
 
                 {openIndex?.section === "lastProjects" && openIndex.index === index && (
-                  <Modal onClose={() => setOpenIndex(null)} repo={repo} className={className} classComponent={classComponent} />
+                  <Modal 
+                  onClose={() => setOpenIndex(null)} 
+                  repo={repo} 
+                  className={className} 
+                  classComponent={classComponent} />
                 )}
               </div>
             </div>

@@ -2,7 +2,7 @@ import { Certificate } from '@/src/types/certificates';
 
 const certificates: Certificate[] = [
   {
-    id: '001',
+    id: 1,
     title: 'SEO para Iniciantes',
     educationalInstitution: 'Mirago',
     description: 'Um curso iniciante que me introduziu os fundamentos e conceitos básicos do SEO (Search Engine Optimization) pude aprender técnicas para melhorar o ranking do site no Google e aumentar o tráfego orgânico.',
@@ -25,11 +25,11 @@ const certificates: Certificate[] = [
     contentLearned: ['Termos e conceitos relacionados ao SEO', 'Como funciona a indexação e o ranqueamento do Google', 'Entender quais as regras do jogo no universo do SEO', 'Entender as etapas num projeto de SEO', 'Como fazer uma pesquisa de palavras-chave na prática', 'Criar um planejamento de SEO', 'Criar um planejamento da estrutura de um site', 'Como fazer um benchmarking em SEO'],
   },
   {
-    id: '002',
+    id: 2,
     title: 'Jornada Python da Hashtag',
     educationalInstitution: 'Hashtag Treinamentos',
     description: 'Um curso iniciante em que desenvolvi 4 projetos voltados a Análise de Dados, Automação, Criação de Sites e Inteligência Artificial. Com objetivo de aprimorar meus conhecimentos e habilidades em resolver desafios, automação de tarefas maçantes e a trabalhar com  dados.',
-    imageUrl: '/img/certificates/Hashtag_jornada_python.jpg',
+    imageUrl: '/img/certificates/Hashtag_jornada_xpython.jpg',
     skills: { 
       technical: ['Pyautogui', 'RPA', 'Pandas', 'Plotly', 'Análise de Dados', 'Scikit-learn', 'Machine Learning', 'Streamlit', 'OpenAI', 'Chatbot'], 
       technologies: ['python'] },
@@ -47,7 +47,7 @@ const certificates: Certificate[] = [
     contentLearned: ['Automação de tarefas', 'Criação de gráficos e dashboards em Python', 'Treinamento e avaliação de modelos de ML'],
   },
   {
-    id: '003',
+    id: 3,
     title: 'Introdução à Análise de Dados - Microsoft Power BI',
     educationalInstitution: 'Fundação Bradesco',
     description: 'Neste curso introdutório pude aprender as principais atribuições de um analista de dados, suas habilidades, tarefas e processos com os quais trabalha. Tive uma breve explanação teórica sobre a análise de dados com o uso do Microsoft Power BI para contar uma história convincente por meio de relatórios e painéis. Além da transformação de dados não relacionais em informações coerentes, visualmente imersivas e interativas.',
@@ -69,7 +69,7 @@ const certificates: Certificate[] = [
     contentLearned: [],
   },
   {
-    id: '004',
+    id: 4,
     title: 'Formação Github Certification',
     educationalInstitution: 'DIO | Codifique o seu futuro',
     description: 'Uma formação completa sobre Git e GitHub no qual pude aprender sobre como aplicar práticas de desenvolvimento modernas, controle de versão para gerenciar projetos com eficiência, colaboração e administração de projetos e do ecossistema Git e GitHub.',
@@ -91,7 +91,7 @@ const certificates: Certificate[] = [
     contentLearned: ['Desafio de Código: Colocar em prática todo o conhecimento adquirido e testar o conhecimento na resolução de desafios.', 'Desafio de Projeto: Portfólio construído com meus projetos pessoais.'],
   },
   {
-    id: '005',
+    id: 5,
     title: 'TypeScript na prática: implemente um projeto completo com TypeScript e módulos',
     educationalInstitution: 'Alura | Escola de Tecnologia Online',
     description: 'Curso de introdução aos fundamentos da linguagem Typescript em que foi desenvolvido uma aplicação para aprofundar e exemplificar estudos. A aplicação desenvolvida faz registro de transações em uma conta do Bytebank (Banco Fictício). Utilizando o formulário de novas transações, a pessoa usuária pode registrar transferências, fazer depósitos e fazer pagamentos de boleto.',
@@ -112,7 +112,7 @@ const certificates: Certificate[] = [
     contentLearned: ['Compreender os fundamentos e conceitos do TypeScript', 'Aprender a refatorar e melhorar o projeto usando TypeScript', 'Entender a configuração e compilação do código TypeScript', 'Explorar recursos como tipos primitivos, arrays, Type Alias e Enums', 'Organizar e dividir o projeto em módulos eficientes'],
   },
   {
-    id: '006',
+    id: 6,
     title: 'TypeScript: aplicando orientação a objetos no Front-end',
     educationalInstitution: 'Alura | Escola de Tecnologia Online',
     description: 'Continuando o projeto do Bytebank (Banco Fictício). Este curso tem como foco a  aplicação e aprendizagem da orientação a objeto. No qual pude aprender sobre: Classes, Atributos, Métodos, Heranças e Decorators.',
@@ -134,7 +134,7 @@ const certificates: Certificate[] = [
     contentLearned: ['Compreender as características do paradigma funcional e de orientação a objetos com Typescript', 'Aprender a construir classes e métodos', 'Aprender como utilizar modificadores de acesso para melhorar a segurança do seu projeto', 'Aprender o conceito de herança para construir novas classes sem repetir código', 'Realizar a implementação de validações a partir de decorators'],
   },
   {
-    id: '007',
+    id: 7,
     title: 'Contribuindo em um Projeto Open Source no GitHub',
     educationalInstitution: 'DIO | Codifique o seu futuro',
     description: 'Introdução ao fascinante universo da colaboração em código aberto. Projeto prático para treinar e desenvolver habilidades no trabalho colaborativo e da inovação contínua que o Open Source proporciona.',
@@ -155,7 +155,7 @@ const certificates: Certificate[] = [
     contentLearned: ['Formas de contribuir num Projeto Open Source', 'Desenvolvendo uma contribuição', 'Enviando uma contribuição'],
   },
   {
-    id: '008',
+    id: 8,
     title: 'Princípios de Desenvolvimento de Software Colaborativo',
     educationalInstitution: 'DIO | Codifique o seu futuro',
     description: 'Curso focado nas práticas fundamentais de colaboração no desenvolvimento de software moderno. Abrange conceitos essenciais como controle de versão, fluxo de trabalho em equipe, revisão de código, integração contínua e documentação. O curso enfatiza boas práticas de colaboração entre desenvolvedores utilizando ferramentas amplamente adotadas no mercado.',
@@ -178,7 +178,7 @@ const certificates: Certificate[] = [
     contentLearned: ['Trabalho com Git e GitHub para versionamento e colaboração em repositórios', 'Participação em code reviews e resolução de conflitos de merge', 'Criação e gerenciamento de branches e pull requests seguindo boas práticas', 'Implementação de workflows de CI/CD para automação de builds e testes', 'Escrita de documentação técnica colaborativa (READMEs, padrões, issues)', 'Desenvolvimento de projetos em equipe utilizando metodologias ágeis', 'Discussões técnicas e resolução de problemas via Issues e GitHub Projects', 'Documentação técnica colaborativa', 'Organização de repositórios e versionamento semântico'],
   },
   {
-    id: '009',
+    id: 9,
     title: 'Angular: construa uma aplicação web com componentes, linguagem de template e CLI',
     educationalInstitution: 'Alura | Escola de Tecnologia Online',
     description: 'Curso introdutório que apresenta os fundamentos e como funciona o framework. Utilizando um modelo de site no Figma para construir o site Indexa, uma aplicação que lista e lida com contatos de uma agenda Introdução de como os componentes funcionam, pegar valores de inputs, evitar a repetição de código e a sintaxes de template para automatizar as tarefas do front-end.',
@@ -200,7 +200,7 @@ const certificates: Certificate[] = [
     contentLearned: ['Aprender a lidar com o terminal', 'geração de componentes', 'Escrever componentes reutilizáveis', 'Utilizar a linguagem de template do Angular para controlar o fluxo dos dados com @for', 'Explorar o uso do Angular CLI para criar aplicações e componentes', 'Ler arquivos JSON em Angular e ajustar configurações no arquivo tsconfig.json para atender às necessidades do seu projeto.'],
   },
   {
-    id: '010',
+    id: 10,
     title: 'Angular: evoluindo com formulários e roteamento',
     educationalInstitution: 'Alura | Escola de Tecnologia Online',
     description: 'Curso de aprofundamento nos conceitos e funcionalidades do Angular, para isso, é utilizado o site do projeto Indexa - aplicação de agenda de contatos, e implementar o formulário para inserir novos contato.',
@@ -222,7 +222,7 @@ const certificates: Certificate[] = [
     contentLearned: ['Formulários Reativos (FormGroup e FormControl;)', 'Validators Angular', 'Services Angular', 'Navegação com routerLink, router e navigateByUrl'],
   },
   {
-    id: '011',
+    id: 11,
     title: 'Angular: comunicando-se com uma API via requisições HTTP',
     educationalInstitution: 'Alura | Escola de Tecnologia Online',
     description:
