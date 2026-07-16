@@ -14,7 +14,6 @@ type Props = {
 
 export default function LastProjects({ repos }: Props) {
   const [openIndex, setOpenIndex] = useState<{ section: string; index: number } | null>(null);
-  const [imageErrors, setImageErrors] = useState<Record<number, boolean>>({});
   const className = "portfolio";
   const classComponent = "lastProjects";
   const { t } = useTranslation();
@@ -37,7 +36,7 @@ export default function LastProjects({ repos }: Props) {
                 <figure className={styles.project_img}>
                   <ImageComponent
                     index={repo.id}
-                    imageUrl={formatRepoImg(repo.full_name)}
+                    imageUrl={formatRepoImg(repo.full_name, repo.default_branch)}
                     alt={repo.full_name}
                     className={styles.repo_logo} />
                 </figure>
@@ -51,7 +50,11 @@ export default function LastProjects({ repos }: Props) {
                 </button>
 
                 {openIndex?.section === "lastProjects" && openIndex.index === index && (
-                  <Modal onClose={() => setOpenIndex(null)} repo={repo} className={className} classComponent={classComponent} />
+                  <Modal 
+                  onClose={() => setOpenIndex(null)} 
+                  repo={repo} 
+                  className={className} 
+                  classComponent={classComponent} />
                 )}
               </div>
             </div>
