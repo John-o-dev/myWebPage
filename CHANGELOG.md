@@ -14,7 +14,18 @@ Categorias:
 ---
 ## [Unreleased]
 
-### Fixed
+
+---
+
+## [1.2.0] - 2026-07-17
+### Added
+- Nova feature: Galeria de certificados
+- Novo componente: Paginação
+
+---
+
+## [1.1.1] - 2026-07-15
+### Fixed 
 - Corrigido bug no componente Card na seção Portfólio - repositórios (#11);
 - Corrigido falta de componentização do mesmo;
 - Corrigido falta de tipagem do mesmo.
