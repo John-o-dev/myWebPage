@@ -4,7 +4,6 @@ import { Certificate } from "@/src/types/certificates";
 import DetailsCertificate from "./DetailsCertificate";
 import MoreInfos from "./MoreInfos";
 import ModalFullScreen from "./ModalFullScreen"
-import { useRouter } from 'next/router';
 
 import { LuGithub, LuGlobe, LuMessageSquare } from "react-icons/lu";
 import useTranslation from "@/src/hooks/useTranslation";

@@ -31,7 +31,6 @@ export default function Modal({ onClose, repo, className, classComponent }: Moda
                 <main className={styles.panel}>
                     <div className={styles.info_card_modal_header}>
                         <ImageComponent
-                            index={repo.id}
                             imageUrl={formatRepoImg(repo.full_name, repo.default_branch)}
                             alt={repo.full_name}
                             className={styles.info_card_modal_logo}

@@ -142,7 +142,6 @@ export default function DegreesGallery() {
                         }}>
                         <div className={styles.itemImage}>
                           <ImageComponent
-                            index={certificate.id}
                             imageUrl={certificate.imageUrl}
                             alt={certificate.title}
                             className={styles.itemImageComponent}
@@ -185,7 +184,6 @@ export default function DegreesGallery() {
                           setSelectedId(certificate.id);
                         }}>
                         <ImageComponent
-                          index={certificate.id}
                           imageUrl={certificate.imageUrl}
                           alt={certificate.title}
                           className={styles.itemImageComponent}

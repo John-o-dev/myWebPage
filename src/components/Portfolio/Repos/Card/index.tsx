@@ -25,7 +25,6 @@ export default function Card({
                     onClick={() => { setOpenIndex({ section: section, index: index }) }}>
                     <figure>
                         <ImageComponent
-                            index={repo.id}
                             imageUrl={formatRepoImg(repo.full_name, repo.default_branch)}
                             alt={repo.full_name} 
                             className={styles.repo_logo}

@@ -31,7 +31,6 @@ export default function LastProjects({ repos }: Props) {
                 <h3 className={styles.projects_item_title}>{formatRepoName(repo.name)}</h3>
                 <figure className={styles.project_img}>
                   <ImageComponent
-                    index={repo.id}
                     imageUrl={formatRepoImg(repo.full_name, repo.default_branch)}
                     alt={repo.full_name}
                     className={styles.repo_logo}
