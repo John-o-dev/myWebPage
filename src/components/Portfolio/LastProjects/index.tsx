@@ -5,7 +5,7 @@ import { ReposProps } from '@/src/types/repos';
 import { formatDate } from '@/src/utils/format';
 import { formatRepoImg, formatRepoName } from '@/src/utils/portfolioUtils';
 import Modal from '../Repos/Modal';
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import ImageComponent from '../../ImageComponent';
 
 type Props = {
@@ -17,10 +17,6 @@ export default function LastProjects({ repos }: Props) {
   const className = "portfolio";
   const classComponent = "lastProjects";
   const { t } = useTranslation();
-
-  useEffect(() => {
-    console.log("Estado atualizado:", openIndex);
-  }, [openIndex]); // roda sempre que `openIndex` mudar
 
   return (
     <div className={styles.last_projects}>
@@ -38,7 +34,9 @@ export default function LastProjects({ repos }: Props) {
                     index={repo.id}
                     imageUrl={formatRepoImg(repo.full_name, repo.default_branch)}
                     alt={repo.full_name}
-                    className={styles.repo_logo} />
+                    className={styles.repo_logo}
+                    classNameError={styles.repo_logo_error}
+                    />
                 </figure>
                 <button
                   type="button"

@@ -1,10 +1,10 @@
 import useTranslation from '@/src/hooks/useTranslation';
-import { useMemo, useState } from 'react';
+import { Fragment, useMemo, useState } from 'react';
 import styles from './repos.module.css'
-import Card from './Card';
 
 import { ReposProps } from '@/src/types/repos';
 import { filterRepos, filterReposByTopic } from '@/src/utils/portfolioUtils';
+import ReposSection from './ReposSection';
 
 type Props = {
     repos: ReposProps[];
@@ -22,130 +22,73 @@ export default function Repos({ repos, searchByName, searchByTopic }: Props) {
         return filterRepos(repos, searchByName, searchByTopic);
     }, [repos, searchByName, searchByTopic]);
 
+    const topics = [
+        {
+            title: "Angular",
+            topic: "angular"
+        },
+
+        {
+            title: "C#",
+            topic: "csharp"
+        },
+
+        {
+            title: "Python",
+            topic: "python"
+        },
+
+        {
+            title: "DB",
+            topic: "db"
+        }
+    ];
+
     return (
         <main>
-            <section className={styles.repos}>
-                <h2 className={styles.subtitle}>
-                    {searchByName
+            <ReposSection
+                title={
+                    searchByName
                         ? `Resultados para "${searchByName}"`
-                        : t(className, `${classComponent}_subtitle`)}
-                </h2>
-
-                <ul className={styles.project_list}>
-                    {filteredRepos.map((repo, index) => (
-                        <Card 
-                        key={index} 
-                        index={index} 
-                        section={'filteredRepos'} 
-                        repo={repo as ReposProps} 
-                        openIndex={openIndex} 
-                        setOpenIndex={setOpenIndex} 
-                        className={className} 
-                        classComponent={classComponent} />
-                    ))}
-                </ul>
-            </section>
+                        : t(className, `${classComponent}_subtitle`)
+                }
+                section="filteredRepos"
+                repos={filteredRepos as ReposProps[]}
+                itemsPerPage={6}
+                openIndex={openIndex}
+                setOpenIndex={setOpenIndex}
+                className={className}
+                classComponent={classComponent}
+            />
 
             <div className={styles.separator}></div>
-{/* 
-            {filterReposByTopic("angular", repos) &&
-                <section className={styles.repos}>
-                    <h2 className={styles.subtitle}>
-                        Angular
-                    </h2>
-                    {filterReposByTopic("angular", repos).map((repo, index) => (
-                        <Card 
-                        key={index} 
-                        section={'angular'} 
-                        repo={repo} 
-                        openIndex={openIndex} 
-                        setOpenIndex={setOpenIndex} 
-                        className={className} 
-                        classComponent={classComponent} />
-                    ))}
-                    <div className={styles.separator}></div>
-                </section>
-            }
 
-            {filterReposByTopic("react", repos) &&
-                <section className={styles.repos}>
-                    <h2 className={styles.subtitle}>
-                        React
-                    </h2>
-                    {filterReposByTopic("react", repos).map((repo, index) => (
-                        <Card 
-                        key={index} 
-                        section={'react'} 
-                        repo={repo} 
-                        openIndex={openIndex} 
-                        setOpenIndex={setOpenIndex} 
-                        className={className} 
-                        classComponent={classComponent} />
-                    ))}
-                    <div className={styles.separator}></div>
-                </section>
-            }
+            {topics.map(({ title, topic }) => {
+                const reposByTopic = filterReposByTopic(
+                    topic,
+                    repos
+                );
 
-            {filterReposByTopic("python", repos) &&
-                <section className={styles.repos}>
-                    <h2 className={styles.subtitle}>
-                        Python
-                    </h2>
-                    {filterReposByTopic("python", repos).map((repo, index) => (
-                        <Card 
-                        key={index} 
-                        section={'python'} 
-                        repo={repo} 
-                        openIndex={openIndex} 
-                        setOpenIndex={setOpenIndex} 
-                        className={className} 
-                        classComponent={classComponent} />
-                    ))}
-                    <div className={styles.separator}></div>
-                </section>
-            }
+                if (!reposByTopic?.length)
+                    return null;
 
-            {filterReposByTopic("ui/ux design", repos) &&
-                <section className={styles.repos}>
-                    <h2 className={styles.subtitle}>
-                        UI/UX Design
-                    </h2>
-                    {filterReposByTopic("ui/ux design", repos).map((repo, index) => (
-                        <Card 
-                        key={index} 
-                        section={'ui/ux design'} 
-                        repo={repo} 
-                        openIndex={openIndex} 
-                        setOpenIndex={setOpenIndex} 
-                        className={className} 
-                        classComponent={classComponent} />
-                    ))}
-                    <div className={styles.separator}></div>
-                </section>
-            }
+                return (
+                    <Fragment key={topic}>
+                        <ReposSection
+                            title={title}
+                            section={topic}
+                            repos={reposByTopic}
+                            itemsPerPage={4}
+                            openIndex={openIndex}
+                            setOpenIndex={setOpenIndex}
+                            className={className}
+                            classComponent={classComponent}
+                        />
+                        <div className={styles.separator}></div>
+                    </Fragment>
+                );
+            })}
 
-            {filterReposByTopic("layout", repos) &&
-                <section className={styles.repos}>
-                    <h2 className={styles.subtitle}>
-                        Parts/Layout
-                    </h2>
-                    {filterReposByTopic("layout", repos).map((repo, index) => (
-                        <Card 
-                        key={index} 
-                        section={'layout'} 
-                        repo={repo} 
-                        openIndex={openIndex} 
-                        setOpenIndex={setOpenIndex} 
-                        className={className} 
-                        classComponent={classComponent} />
-                    ))}
-                    <div className={styles.separator}></div>
-                </section>
-            } 
-*/}
         </main>
     )
 }
-// 584
-// 169 - card
-// 104

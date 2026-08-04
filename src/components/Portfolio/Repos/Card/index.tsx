@@ -13,8 +13,7 @@ export default function Card({
     openIndex,
     setOpenIndex,
     className,
-    classComponent }: CardProps ) 
-{
+    classComponent }: CardProps) {
     const { t } = useTranslation();
 
     return (
@@ -28,8 +27,10 @@ export default function Card({
                         <ImageComponent
                             index={repo.id}
                             imageUrl={formatRepoImg(repo.full_name, repo.default_branch)}
-                            alt={repo.full_name}
-                            className={styles.repo_logo}/>
+                            alt={repo.full_name} 
+                            className={styles.repo_logo}
+                            classNameError={styles.repo_logo_error}
+                            />
                     </figure>
                     <button
                         type="button"
@@ -41,7 +42,11 @@ export default function Card({
                     </button>
 
                     {openIndex?.section === section && openIndex.index === index && (
-                        <Modal onClose={() => setOpenIndex(null)} repo={repo} className={className} classComponent={classComponent} />
+                        <Modal
+                            onClose={() => setOpenIndex(null)}
+                            repo={repo}
+                            className={className}
+                            classComponent={classComponent} />
                     )}
 
                     <h2 className={styles.repo_title}>{formatRepoName(repo.name)}</h2>

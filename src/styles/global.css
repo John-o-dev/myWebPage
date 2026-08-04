@@ -29,7 +29,7 @@
   --fs-3: 1.5rem;
   --fs-4: 1.2rem;
   --fs-5: 1rem;
-  --fs-6: 0.8rem;
+  --fs-6: 0.9rem;
   --fs-7: 0.75rem;
   --fs-8: 0.60rem;
 
@@ -160,7 +160,7 @@ article {
   padding-bottom: 7px;
   color: var(--text-color);
   font-weight: var(--fw-700);
-  font-size: var(--fs-2);
+  font-size: var(--fs-3);
   letter-spacing: 2px;
   text-transform: uppercase;
 }

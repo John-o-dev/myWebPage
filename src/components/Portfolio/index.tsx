@@ -128,7 +128,7 @@ export default function Portfolio() {
     <article>
 
       <header>
-        <h2 className="article_title">{t(className, 'title_header')}</h2>
+        <h3 className="article_title">{t(className, 'title_header')}</h3>
       </header>
 
       {user && <GithubPerfil {...user} />}

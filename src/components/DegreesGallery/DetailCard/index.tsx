@@ -1,6 +1,6 @@
 import { useState } from "react";
 import styles from "./detailCard.module.css";
-import { Certificate, skillType } from "@/src/types/certificates";
+import { Certificate } from "@/src/types/certificates";
 import DetailsCertificate from "./DetailsCertificate";
 import MoreInfos from "./MoreInfos";
 import ModalFullScreen from "./ModalFullScreen"
@@ -13,8 +13,6 @@ export default function DetailCard({ certificate }: { certificate: Certificate }
   const [isOpen, setIsOpen] = useState(false);
   const { t } = useTranslation();
   const className = "degreesGallery";
-  const classComponent = "detail_card";
-  const router = useRouter();
 
   return (
     <article className={styles.detailCard}>
@@ -37,9 +35,6 @@ export default function DetailCard({ certificate }: { certificate: Certificate }
           onClick={() => setIsOpen(true)}
           certificate={certificate}
         />
-        {/* <div className={styles.overlay}>
-          <span>{t(className, `${classComponent}_overlay`)}</span>
-        </div> */}
       </div>
 
       <section className={styles.containerTexts}>

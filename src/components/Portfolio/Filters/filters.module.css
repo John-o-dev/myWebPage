@@ -26,9 +26,13 @@
     flex: 1;
 }
 
+.filter_text {
+    font-size: 0.9rem;
+}
+
 .clear_selection {
     cursor: pointer;
-    padding: 10px;
+    padding: 0 10px;
     font-weight: bolder;
     color: var(--text-color);
 }

@@ -5,15 +5,28 @@
   height: fit-content;
   flex-direction: column;
   gap: 8px;
-  align-items: flex-start;
+  align-self: center;
 }
 
+.imageArea {
+  display: flex;
+  flex-direction: column;
+}
+
+.imageAreaComponent {
+  height: fit-content !important;
+  max-height: fit-content !important;
+}
+
+.imageAreaComponentError {
+    height: 200px !important;
+    max-height: 200px !important;
+  }
+
 .detailButton {
-  position: absolute;
-  bottom: 12px;
-  right: 12px;
   display: flex;
   align-items: center;
+  justify-content: center;
   background: #eef;
   gap: 6px;
   padding: 0.25rem 0.625rem;
@@ -82,6 +95,8 @@
   line-height: normal;
   letter-spacing: 0.0625rem;
   text-transform: capitalize;
+  display: flex;
+  flex-direction: column;
 }
 
 .label strong {
@@ -100,4 +115,18 @@
 
 .colorGray {
   color: #292e33
+}
+
+@media (min-width: 450px) {
+  .imageAreaComponentError {
+    height: 200px;
+  }
+}
+
+@media (min-width: 768px) {
+  .detailButton {
+    position: absolute;
+    bottom: 12px;
+    right: 12px;
+  }
 }

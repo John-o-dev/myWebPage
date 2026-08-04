@@ -79,6 +79,7 @@ export const en = {
         details_certificate_tech: 'Technologies Covered:'
     },
     portfolio: {
+        title: 'Portfolio',
         title_header: 'Github Profile',
         githubPerfil_location: 'Location',
         githubPerfil_repositories: 'Repositories',

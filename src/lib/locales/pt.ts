@@ -79,8 +79,9 @@ export const pt = {
         details_certificate_tech: 'Tecnologias abordadas:'
     },
     portfolio: {
+        title: 'Portfólio',
         title_header: 'Perfil Github',
-        githubPerfil_location: 'Localidade',
+        githubPerfil_location: 'Local',
         githubPerfil_repositories: 'Repositórios',
         githubPerfil_followers: 'Seguidores',
         githubPerfil_following: 'Seguindo',
