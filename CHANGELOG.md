@@ -14,6 +14,18 @@ Categorias:
 ---
 ## [Unreleased]
 
+## [1.3.0]
+
+### Changed
+- Barra de scroll em last projects
+- Todas categorias importantes visíveis
+
+### Added
+- Paginação em Todos Repositórios
+
+### Fixed 
+- Modal (mobile) espremido
+- Modais sem botão fechar
 
 ---
 
