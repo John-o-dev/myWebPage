@@ -18,7 +18,7 @@ export default function useTranslation() {
 
 	function t(component: string, key: string) {
 		if (!translations[locale]?.[component]?.[key]) {
-			console.warn(`No string '${key}' for locale '${locale}'`);
+			console.warn(`No string ${key} for locale ${locale} in component:${component}. TESTE: ${locale}.${component}.${key}`);
 		}
 		return translations[locale]?.[component]?.[key] || translations[defaultLocale]?.[component]?.[key] || ''
 

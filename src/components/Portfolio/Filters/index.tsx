@@ -67,7 +67,7 @@ export default function Filters({ repos, searchByName, searchByTopic, setSearchB
 
             <div ref={menuRef} className={styles.filter_select_button_box}>
                 <button className={`${styles.filter_select} ${styles.filter_button}`} onClick={toggleMenu}>
-                    <div>{searchByTopic ? searchByTopic : "Selecione..."}</div>
+                    <div className={styles.filter_text}>{searchByTopic ? searchByTopic : "Filtrar por tecnologia:"}</div>
                     <div>
                         <span className={styles.clear_selection} onClick={() => {
                             handleTopicChange("")

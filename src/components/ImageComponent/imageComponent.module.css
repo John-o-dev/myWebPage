@@ -4,13 +4,14 @@
   place-items: center;
   width: 100%;
   height: fit-content;
-  max-height: 255px;
+  max-height: 115px;
   overflow: hidden;
   border-radius: 0.5rem;
   background: #A29E9E;
   color: #000000;
   text-align: center;
   align-content: center;
+  justify-content: center;
   margin-bottom: 1rem;
 }
 

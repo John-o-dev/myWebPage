@@ -25,10 +25,12 @@ export default function DetailsCertificate({
 			<div className={styles.imageArea}>
 
 				<ImageComponent
-					index={certificate.id}
+					key={certificate.id}
 					imageUrl={certificate.imageUrl}
 					alt={certificate.title}
 					onClick={onClick}
+					className={styles.imageAreaComponent}
+					classNameError={styles.imageAreaComponentError}
 					typeDefaultImage="component" />
 
 				<button

@@ -23,6 +23,7 @@ export default function DegreesGallery() {
   const certificates = mockCertificates;
   const [search, setSearch] = useState('');
   const [isOpen, setIsOpen] = useState(false);
+  const [openIndex, setOpenIndex] = useState<number | null>(null);
   const [selectedId, setSelectedId] = useState<number | null>(certificates[0]?.id ?? null);
   const [page, setPage] = useState(1);
   const { t } = useTranslation();
@@ -135,16 +136,16 @@ export default function DegreesGallery() {
 
                       <section
                         className={styles.containerImageDescription}
-                        onClick={() => setIsOpen(true)}>
-                        <div
-                          className={styles.itemImage}
-                          onClick={() => {
-                            setSelectedId(certificate.id);
-                          }}>
+                        onClick={() => {
+                          setIsOpen(true)
+                          setOpenIndex(certificate.id)
+                        }}>
+                        <div className={styles.itemImage}>
                           <ImageComponent
-                            index={certificate.id}
                             imageUrl={certificate.imageUrl}
                             alt={certificate.title}
+                            className={styles.itemImageComponent}
+                            classNameError={styles.itemImageComponentError}
                             typeDefaultImage="component" />
                         </div>
                         <div className={styles.contentTexts}>
@@ -156,11 +157,14 @@ export default function DegreesGallery() {
 
                       <div
                         className={styles.moreInfoTitle}
-                        onClick={() => setIsOpen(true)}>
+                        onClick={() => {
+                          setIsOpen(true);
+                          setOpenIndex(certificate.id);
+                        }}>
                         <span className={styles.textWrapper}>Abrir Modal</span>
                       </div>
 
-                      {isOpen && (
+                      {isOpen && openIndex === certificate.id && (
                         <ModalFullScreen
                           onClose={() => setIsOpen(false)}
                           certificate={certificate}
@@ -180,9 +184,10 @@ export default function DegreesGallery() {
                           setSelectedId(certificate.id);
                         }}>
                         <ImageComponent
-                          index={certificate.id}
                           imageUrl={certificate.imageUrl}
                           alt={certificate.title}
+                          className={styles.itemImageComponent}
+                          classNameError={styles.itemImageComponentError}
                           typeDefaultImage="component" />
                       </div>
                       <h3 className={styles.itemTitle}>{certificate.title}</h3>

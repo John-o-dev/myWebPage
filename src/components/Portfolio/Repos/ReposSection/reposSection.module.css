@@ -1,0 +1,29 @@
+.project_list {
+    margin-bottom: 10px;
+}
+
+@media (min-width: 768px) {
+    .project_list {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 1rem;
+    }
+}
+
+@media (min-width: 992px) {
+    .project_list {
+        column-gap: 30px;
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media (min-width: 1024px) {
+    .project_list {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .createAt,
+    .updateAt {
+        font-size: var(--fs-5);
+    }
+}
