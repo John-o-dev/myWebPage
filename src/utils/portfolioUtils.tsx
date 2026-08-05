@@ -33,7 +33,7 @@ export function removerAcentos(text: string): string {
 
 // Remove traços
 export function formatRepoName(name: string): string {
-    const repoRegex = /-/g;
+    const repoRegex = /-|_/g;
     return name.replace(repoRegex, ' ');
 }
 
