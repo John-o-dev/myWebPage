@@ -14,8 +14,9 @@ Categorias:
 ---
 ## [Unreleased]
 
-## [1.3.0]
+---
 
+## [1.3.0] - 2026-08-06
 ### Changed
 - Barra de scroll em last projects
 - Todas categorias importantes visíveis
