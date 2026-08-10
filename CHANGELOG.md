@@ -14,6 +14,9 @@ Categorias:
 ---
 ## [Unreleased]
 
+## [1.3.1] - 2026-08-10
+### Fixed 
+- Modificar a função que formata títulos para melhor visualização e edição de títulos
 ---
 
 ## [1.3.0] - 2026-08-06
