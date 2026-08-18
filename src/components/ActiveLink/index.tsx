@@ -3,7 +3,7 @@ import { useRouter } from 'next/router';
 import Link, { LinkProps } from 'next/link';
 
 type ActiveLinkProps = LinkProps & {
-  children: ReactElement;
+  children: ReactElement<{ className?: string }>;
   activeClassName: string;
 };
 
