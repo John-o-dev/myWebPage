@@ -10,11 +10,11 @@ export default function Sidebar() {
             <div className={styles.sidebar_info}>
                 <div className={styles.sidebar_container}>
                     <figure className={styles.avatar_box}>
-                        <img src="/img/Photo.jpg" alt="Imegem de John O'Dev" />
+                        <img src="/img/Photo.png" alt="Imegem de John O'Dev" />
                     </figure>
             
                     <div className={styles.info_content}>
-                        <h1 className={styles.name}>Antonio Rodrigues<br/>Lima Filho</h1>
+                        <h1 className={styles.name}>Antonio (Tony) Filho</h1>
                         <p>{t(className, 'occupation')}</p>
                         <p className={styles.title}>{t(className, 'youtube_presentation')} <span>John'Odev</span></p>
                     </div>

@@ -14,7 +14,15 @@ export default function HomePage() {
 
 					{/* <h1 className={styles.article_title} data-text={t(className, 'fullName')}>{t(className, 'fullName')}</h1> */}
 
-					<h2 className={styles.article_career}>{t(className, 'carer')}</h2>
+					{/* <h2 className={styles.article_career}>{t(className, 'carer')}</h2> */}
+
+					<p>
+						Desenvolvedor Full Stack | Analista de Sistemas | Projetos no GitHub | Criador de Conteúdo de Tecnologia| @john_o_dev
+					</p>
+
+					<span>
+						Guarulhos, São Paulo, Brasil
+					</span>
 
 					<p className={styles.article_description}>
 						{t(className, 'description_1')}
@@ -26,8 +34,9 @@ export default function HomePage() {
 						<div className={styles.change_text}>
 							<h4>
 								<span className={styles.word}>Web&nbsp;Designer</span>
-								<span className={styles.word}>Web&nbsp;Developer</span>
+								<span className={styles.word}>Dev&nbsp;Fullstack</span>
 								<span className={styles.word}>Motion&nbsp;Designer</span>
+								<span className={styles.word}>Criador&nbsp;De&nbsp;Conteúdo</span>
 								<span className={styles.word}>Youtuber</span>
 							</h4>
 						</div>
@@ -38,11 +47,11 @@ export default function HomePage() {
 					</div>
 
 					<div className={styles.btn_box}>
-						<ButtonBox href="/pdf/Currículo_Profissional_Antonio.pdf" target="_blank" rel="noopener noreferrer">
+						<ButtonBox href="/pdf/CV_Antonio.pdf" target="_blank" rel="noopener noreferrer">
 							{t(className, 'btn_look_cv')}
 						</ButtonBox>
 
-						<ButtonBox href="/pdf/Currículo_Profissional_Antonio.pdf" download>
+						<ButtonBox href="/pdf/CV_Antonio.pdf" download>
 							{t(className, 'btn_download_cv')}
 						</ButtonBox>
 					</div>

@@ -11,10 +11,10 @@ export const pt = {
         contact: 'Contato',
     },
     sidebar: {
-        occupation: 'Desenvolvedor Web',
+        occupation: 'Desenvolvedor Fullstack',
         youtube_presentation: 'Criador de conteúdo como',
         contacts: 'Contatos',
-        phone: 'Telefone',
+        phone: 'Whatsapp',
         location: 'Localidade',
     },
     homePage: {

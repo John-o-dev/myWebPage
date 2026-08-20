@@ -11,10 +11,10 @@ export const en = {
         contact: 'Contact',
     },
     sidebar: {
-        occupation: 'Web Developer',
+        occupation: 'Fullstack Developer',
         youtube_presentation: 'Content creator as ',
         contacts: 'Contacts',
-        phone: 'Phone',
+        phone: 'Whatsapp',
         location: 'Location',
     },
     homePage: {

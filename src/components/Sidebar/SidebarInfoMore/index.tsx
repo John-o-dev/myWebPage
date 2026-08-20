@@ -43,7 +43,7 @@ export default function SidebarInfoMore() {
                             <span className="material-symbols-outlined">mail</span>
                         </div>
                         <div>
-                            <p className={styles.contact_title}>Email</p>
+                            <p className={styles.contact_title}>Email Contato</p>
                             <span className={styles.contact_description}>john_o_dev@gmail.com</span>
                         </div>
                     </a>
@@ -56,7 +56,7 @@ export default function SidebarInfoMore() {
                         </div>
                         <div>
                             <p className={styles.contact_title}>{t(className, 'phone')}</p>
-                            <span className={styles.contact_description}>+55 (11) 91062-2590</span>
+                            <span className={styles.contact_description}>+55 (11) 91596-7787</span>
                         </div>
                     </a>
                 </li>
