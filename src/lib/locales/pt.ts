@@ -1,4 +1,7 @@
 export const pt = {
+    about: {
+        title: 'Sobre',
+    },
     layout: {
         title: "Portfólio de John O'Dev",
     },
@@ -20,6 +23,7 @@ export const pt = {
     homePage: {
         fullName: 'Antonio Rodrigues Lima Filho',
         carer: 'Desenvolvedor Web | Web Designer | Criador de Conteúdo',
+        click_here: 'Clicando aqui',
         description_1:  "Olá! Eu sou Antonio Rodrigues e trabalho como Desenvolvedor Web, Web Design e Motion Design, apaixonado por criar experiências digitais incríveis. No entanto, você pode me conhecer também como John O'dev, o pseudônimo que uso para meu trabalho no YouTube onde compartilho minhas ideias e projetos e em projetos paralelos.\nJohn O'dev é o pseudônimo que uso para explorar e compartilhar minha criatividade em Web Design, e você pode conferir mais sobre isso.",
         description_2: "Com a missão de tornar problemas complexos em simples, bonitos e com design intuitivo. Explore meu portfólio para ver alguns dos meus trabalhos mais recentes e descobrir como posso ajudar a transformar suas ideias em realidade.",
         btn_look_cv: 'Visualizar Currículo Online',
@@ -98,9 +102,11 @@ export const pt = {
         repos_btn_github_page: 'Ver Demo',
     },
     blog: {
+        title: 'Blog',
         soon: 'Em Breve...\nPostagens sobre web design, programação e tecnologia.'
     },
     contact: {
+        title: 'Contato',
         section_title: 'Algum projeto em mente? Deixe sua mensagem e nos conte!',
         section_subtitle: 'Contato',
         section_description: "Preencha o formulário abaixo e nos conte quais são suas dúvidas ou ideais, retornaremos assim que possível.",

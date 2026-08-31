@@ -77,7 +77,9 @@ export default function Card({
 
                 <div className={styles.language_bar}>
                     {repo.linguagens?.map(lang => (
-                        <span key={lang.name} style={{ width: `${lang.percent}%`, backgroundColor: lang.color }}></span>
+                        <span 
+                        key={lang.name} 
+                        style={{ width: `${lang.percent}%`, backgroundColor: lang.color }}></span>
                     ))}
                 </div>
 
@@ -85,7 +87,8 @@ export default function Card({
                     {repo.linguagens?.map(lang => (
                         <div key={lang.name} className={styles.language_container}>
                             <span className={`${styles.dot} ${styles.js}`}></span>
-                            <img className={styles.language_icon} src={lang.icon} alt={lang.name} />
+                            {/* <img className={styles.language_icon} src={lang.icon} alt={lang.name} /> */}
+                            <lang.Icon />
                             <span className={styles.language_text}>{lang.name}: {lang.percent}%</span>
                         </div>
                     ))}

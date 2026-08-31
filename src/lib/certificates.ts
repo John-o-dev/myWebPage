@@ -29,7 +29,7 @@ const certificates: Certificate[] = [
     title: 'Jornada Python da Hashtag',
     educationalInstitution: 'Hashtag Treinamentos',
     description: 'Um curso iniciante em que desenvolvi 4 projetos voltados a Análise de Dados, Automação, Criação de Sites e Inteligência Artificial. Com objetivo de aprimorar meus conhecimentos e habilidades em resolver desafios, automação de tarefas maçantes e a trabalhar com  dados.',
-    imageUrl: '/img/certificates/Hashtag_jornada_xpython.jpg',
+    imageUrl: '/img/certificates/Hashtag_jornada_python.jpg',
     skills: { 
       technical: ['Pyautogui', 'RPA', 'Pandas', 'Plotly', 'Análise de Dados', 'Scikit-learn', 'Machine Learning', 'Streamlit', 'OpenAI', 'Chatbot'], 
       technologies: ['python'] },

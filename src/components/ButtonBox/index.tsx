@@ -1,25 +1,28 @@
 import styles from './buttonBox.module.css'
 
 type ButtonBoxProps = React.AnchorHTMLAttributes<HTMLAnchorElement> & {
-    children: React.ReactNode;
     href?: string;
+    classNameComponent?: string;
+    children: React.ReactNode;
 }
 
-export default function ButtonBox({ 
-    href, 
-    className,
+export default function ButtonBox({
+    href,
+    classNameComponent,
     children,
-    ...props 
+    ...props
 }: ButtonBoxProps) {
+    const newClass = `${styles.btn_box} ${classNameComponent ?? ''}`;
+    const className = newClass.trim();
     return (
-        <button 
-        type="submit" 
-        value="Send"
-        className={`${styles.btn_box} ${className}`}>
-            <a 
-            href={href} 
-            {...props} 
-            className={styles.btn}>
+        <button
+            type="submit"
+            value="Send"
+            className={className}>
+            <a
+                href={href}
+                {...props}
+                className={styles.btn}>
                 {children}
             </a>
         </button>

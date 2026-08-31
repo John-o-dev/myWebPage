@@ -8,7 +8,7 @@ export async function responseLinguist(url: string) {
     const data: LangStats = await response.json();
     return getLanguagesUrl(data); // retorna o array processado
   } catch (error) {
-    console.error(error);
+    console.error(`Erro ao tentar buscar Linguagem em responseLinguist: ${error}`);
     return [];
   }
 }

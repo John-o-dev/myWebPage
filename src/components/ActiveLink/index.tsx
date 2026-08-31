@@ -1,21 +1,23 @@
-import { cloneElement, ReactElement } from 'react';
 import { useRouter } from 'next/router';
-import Link, { LinkProps } from 'next/link';
+import Link from 'next/link';
 
-type ActiveLinkProps = LinkProps & {
-  children: ReactElement<{ className?: string }>;
+type ActiveLinkProps = {
+  href: string;
   activeClassName: string;
+  classNameComponent: string;
+  title: string;
 };
 
 export function ActiveLink({
-  children,
+  href,
   activeClassName,
-  ...rest
+  classNameComponent,
+  title
 }: ActiveLinkProps) {
   const { asPath } = useRouter();
-  const childClassName = children.props.className ?? '';
+  const childClassName = classNameComponent ?? '';
   const newClassName = `${childClassName} ${activeClassName ?? ''}`;
-  const className = asPath === rest.href ? newClassName.trim() : childClassName;
+  const className = asPath === href ? newClassName.trim() : childClassName;
 
-  return <Link {...rest}>{cloneElement(children, { className })}</Link>;
+  return <Link href={href} className={className}>{title}</Link>;
 }

@@ -1,9 +1,11 @@
+import type { ComponentType, SVGProps } from "react";
+
 export interface LanguageMeta {
   name: string;
   bytes: number;
   percent: number;
   color: string | null;
-  icon: string | null;
+  Icon: any;
 }
 
 export type ReposProps = {
