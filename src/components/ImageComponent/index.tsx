@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import styles from "./imageComponent.module.css";
-import { Certificate } from "@/src/types/certificates";
+import Image from 'next/image'
 import { LuEyeOff } from "react-icons/lu";
 
 type ImageComponentProps = {
@@ -28,24 +28,26 @@ export default function ImageComponent({
   }, [imageUrl]);
 
   return (
-    <div 
-    className={`
+    <div
+      className={`
       ${showFallback ? classNameError ?? "" : className ?? ""}
       ${styles.imageArea}`}
-    onClick={onClick}>
+      onClick={onClick}>
       {showFallback ? (
         typeDefaultImage === "component" ? (
           <LuEyeOff size={32} />
         ) : (
-          <img
+          <Image
             src="/img/default-image-broke.png"
             alt="Error Image"
             loading="lazy"
           />
         )
       ) : (
-        <img
+        <Image
           src={imageUrl}
+          width={500}
+          height={500}
           alt={alt}
           loading="lazy"
           onError={() =>

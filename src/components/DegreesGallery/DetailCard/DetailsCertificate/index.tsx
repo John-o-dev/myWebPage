@@ -87,7 +87,10 @@ export default function DetailsCertificate({
 					)}
 
 					<div className={styles.row}>
-						<ButtonBox href={certificate.certificateInfo.docPDF} className={styles.downloadButton} download>
+						<ButtonBox
+							href={certificate.certificateInfo.docPDF}
+							classNameComponent={styles.downloadButton}
+							download>
 							Download PDF
 						</ButtonBox>
 					</div>

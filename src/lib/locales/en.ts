@@ -1,4 +1,7 @@
 export const en = {
+    about: {
+        title: 'About',
+    },
     layout: {
         title: "John O'Dev Portfolio",
     },
@@ -20,6 +23,7 @@ export const en = {
     homePage: {
         fullName: 'Antonio Rodrigues Lima Filho',
         carer: 'Web Developer | Web Designer | Content Creator',
+        click_here: 'Clicking here',
         description_1:  "Hello! I'm Antonio Rodrigues, a Web Developer passionate about creating incredible digital experiences. However, you may also know me as John'Odev, the pseudonym I use for my work on YouTube and various creative projects. John O'dev is my creative outlet for exploring and sharing my passion for Web Design, and you can check out more about it ",
         description_2: "With the mission of making complex problems simple, beautiful and with intuitive design. Explore my portfolio to see some of my latest work and discover how I can help turn your ideas into reality.",
         btn_look_cv: 'View Resume Online',
@@ -98,9 +102,11 @@ export const en = {
         repos_btn_github_page: 'View Demo',
     },
     blog: {
+        title: 'Blog',
         soon: 'Coming Soon...\nPosts about web design, programming and technology.'
     },
     contact: {
+        title: 'Contact',
         section_title: 'Have You Any Project? Please Drop a Message',
         section_subtitle: 'Contact',
         section_description: "Get in touch and let me know how i can help. Fill out the form and i’ll be in touch as soon as possible.",

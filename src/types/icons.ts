@@ -1,5 +1,5 @@
 export type iconsProps = {
-    src: string;
+    iconName: string;
     alt: string;
     label: string;
 }

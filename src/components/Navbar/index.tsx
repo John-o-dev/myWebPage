@@ -15,7 +15,7 @@ export default function Navbar() {
     const { t, locale, locales } = useTranslation();
     const handleLocaleChange = useHandleLocaleChange();
     const isMobile = useIsMobile();
-    
+
     const menuRef = useRef(null);
     const [menuOpen, setMenuOpen] = useState(false);
 
@@ -25,9 +25,9 @@ export default function Navbar() {
 
     useEffect(() => {
         const handleClickOutside = (event: MouseEvent) => {
-        if (menuRef.current && !menuRef.current.contains(event.target as Node)) {
-            setMenuOpen(false);
-        }
+            if (menuRef.current && !menuRef.current.contains(event.target as Node)) {
+                setMenuOpen(false);
+            }
         };
 
         document.addEventListener('mousedown', handleClickOutside);
@@ -54,44 +54,54 @@ export default function Navbar() {
             {/* <nav className={`${isScrolled ? styles.navbar_scrolled : styles.navbar}`}> */}
             {isMobile && <Logo />}
             <nav className={`${isMobile ? '' : styles.navbar}`}>
-                <ul className={`${isMobile ? styles.nav_list_mobile : styles.navbar_list} ${ menuOpen ? styles.open : "" }`} >
+                <ul className={`${isMobile ? styles.nav_list_mobile : styles.navbar_list} ${menuOpen ? styles.open : ""}`} >
                     <li>
                         <ActiveLink
                             href={`/`}
-                            activeClassName="active">
-                            <a className={styles.navbar_link}>{t(className, 'home')}</a>
+                            activeClassName={styles.active}
+                            classNameComponent={styles.navbar_link}
+                            title={t(className, 'home')}
+                        >
                         </ActiveLink>
                     </li>
 
                     <li>
                         <ActiveLink
                             href={`/${locale}/summary`}
-                            activeClassName="active">
-                            <a className={styles.navbar_link}>{t(className, 'summary')}</a>
+                            activeClassName={styles.active}
+                            classNameComponent={styles.navbar_link}
+                            title={t(className, 'summary')}
+                            >
                         </ActiveLink>
                     </li>
 
                     <li>
                         <ActiveLink
                             href={`/${locale}/portfolio`}
-                            activeClassName="active">
-                            <a className={styles.navbar_link}>{t(className, 'portfolio')}</a>
+                            activeClassName={styles.active}
+                            classNameComponent={styles.navbar_link}
+                            title={t(className, 'portfolio')}
+                            >
                         </ActiveLink>
                     </li>
 
                     <li>
                         <ActiveLink
                             href={`/${locale}/blog`}
-                            activeClassName="active">
-                            <a className={styles.navbar_link}>{t(className, 'blog')}</a>
+                            activeClassName={styles.active}
+                            classNameComponent={styles.navbar_link}
+                            title={t(className, 'blog')}
+                            >
                         </ActiveLink>
                     </li>
 
                     <li>
                         <ActiveLink
                             href={`/${locale}/contact`}
-                            activeClassName="active">
-                            <a className={styles.navbar_link}>{t(className, 'contact')}</a>
+                            activeClassName={styles.active}
+                            classNameComponent={styles.navbar_link}
+                            title={t(className, 'contact')}
+                            >
                         </ActiveLink>
                     </li>
 
@@ -106,9 +116,9 @@ export default function Navbar() {
                                 }
                                 return (
                                     <button
-                                    className={styles.navbar_link}
-                                    key={locale}
-                                    onClick={() => handleLocaleChange(locale)}>
+                                        className={styles.navbar_link}
+                                        key={locale}
+                                        onClick={() => handleLocaleChange(locale)}>
                                         {flag}
                                         <span>{locale}</span>
                                     </button>
@@ -119,14 +129,14 @@ export default function Navbar() {
                     </li>
 
                 </ul>
-                {isMobile && 
-                <div 
-                id="menu-icon" 
-                className={`${menuOpen ? styles.bx : ""}`} 
-                onClick={toggleMenu}
-                >
-                    <span className="material-symbols-outlined">menu</span>
-                </div>
+                {isMobile &&
+                    <div
+                        id="menu-icon"
+                        className={`${menuOpen ? styles.bx : ""}`}
+                        onClick={toggleMenu}
+                    >
+                        <span className="material-symbols-outlined">menu</span>
+                    </div>
                 }
             </nav>
         </header>

@@ -1,6 +1,6 @@
 import langColors from "@/src/lib/language-colors.json"
-import langIcons from "@/src/lib/language-icons.json";
 import { LanguageMeta } from "../types/repos";
+import { getTechIcon } from "../components/DegreesGallery/DetailCard/GetTechIcon";
 
 type LangStats = Record<string, number>;
 
@@ -11,8 +11,9 @@ export function getLanguagesUrl(data: LangStats): LanguageMeta[] {
     .map(([name, bytes]) => {
       const percent = total > 0 ? (bytes / total) * 100 : 0;
       const color = langColors[name] || "#cccccc";
-      const icon = langIcons[name] || null;
-      return { name, bytes, percent: +percent.toFixed(0), color, icon };
+      // const icon = langIcons[name] || null;
+      const { Icon, found } = getTechIcon(name);
+      return { name, bytes, percent: +percent.toFixed(0), color, Icon };
     })
     .sort((a, b) => b.percent - a.percent);
 }

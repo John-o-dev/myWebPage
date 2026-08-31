@@ -1,6 +1,7 @@
 import styles from './home.module.css'
 import useTranslation from '@/src/hooks/useTranslation';
 import ButtonBox from '../ButtonBox';
+import Link from "next/link";
 
 export default function HomePage() {
 	const className = "homePage";
@@ -18,7 +19,12 @@ export default function HomePage() {
 
 					<p className={styles.article_description}>
 						{t(className, 'description_1')}
-						<a href={`/${locale}/portfolio`} className={styles.link_description}> (Clicando aqui)</a>
+						<Link
+							href={`/${locale}/portfolio`}
+							className={styles.link_description}
+						>
+							{t(className, 'click_here')}
+						</Link>
 					</p>
 
 					<div className={styles.center_name}>
