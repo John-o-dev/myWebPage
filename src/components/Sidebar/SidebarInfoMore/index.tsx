@@ -2,7 +2,7 @@ import useTranslation from '@/src/hooks/useTranslation';
 import styles from './sidebarInfoMore.module.css'
 import { useEffect, useRef, useState } from 'react';
 import { useIsFullDesktop } from '@/src/utils/isFullDesktop';
-
+import WhatsAppButton from '../../WhatsAppButton';
 
 export default function SidebarInfoMore() {
     const menuRef = useRef(null);
@@ -50,15 +50,15 @@ export default function SidebarInfoMore() {
                 </li>
 
                 <li className={styles.contact_item}>
-                    <a href="#" className={styles.contact_link}>
+                    <div className={styles.contact_link}>
                         <div className={styles.sidebar_icon_box}>
-                            <span className="material-symbols-outlined">contact_phone</span>
+                            <WhatsAppButton />
                         </div>
                         <div>
                             <p className={styles.contact_title}>{t(className, 'phone')}</p>
-                            <span className={styles.contact_description}>+55 (11) 91062-2590</span>
+                            <span className={styles.contact_description}>+55 (11) 91596-7787</span>
                         </div>
-                    </a>
+                    </div>
                 </li>
 
                 <li className={styles.contact_item}>
@@ -75,6 +75,13 @@ export default function SidebarInfoMore() {
 
                 <ul className={styles.social_list}>
                     <li className={styles.social_item}>
+                        <div className={styles.social_link}>
+                            <WhatsAppButton />
+                            <div className={styles.tooltip}>WhatsApp</div>
+                        </div>
+                    </li>
+
+                    <li className={styles.social_item}>
                         <a href="https://www.linkedin.com/in/antonio-rodrigues-lima-filho/" className={styles.social_link}>
                             <img src="/img/linkedin.png" className='social-icons' alt="linkedin icon" />
                             <div className={styles.tooltip}>LinkedIn</div>
@@ -85,13 +92,6 @@ export default function SidebarInfoMore() {
                         <a href="https://www.facebook.com/people/John-ODev/100071663284338/" className={styles.social_link}>
                             <img src="/img/facebook-icon.png" className='social-icons' alt="facebook icon" />
                             <div className={styles.tooltip}>Facebook</div>
-                        </a>
-                    </li>
-
-                    <li className={styles.social_item}>
-                        <a href="https://twitter.com/JohnODev4" className={styles.social_link}>
-                            <img src="/img/twitter-icon.png" className='social-icons' alt="twitter icon" />
-                            <div className={styles.tooltip}>Twitter</div>
                         </a>
                     </li>
 

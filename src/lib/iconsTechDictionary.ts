@@ -13,6 +13,7 @@ import {
   Git,
   Github,
   GithubCopilot,
+  WhatsappIcon
 } from "@dev.icons/react";
 
 import { Html5 } from "@dev.icons/react/mono";
@@ -33,5 +34,6 @@ export const iconsTechMap: Record<string, React.ElementType> = {
   excel: MicrosoftWindows,
   git: Git,
   github: Github,
-  githubCopilot: GithubCopilot
+  githubCopilot: GithubCopilot,
+  whatsapp: WhatsappIcon
 };
