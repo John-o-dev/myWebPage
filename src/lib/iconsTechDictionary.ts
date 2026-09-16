@@ -1,7 +1,6 @@
 import { 
   Css3, 
   TypescriptIcon,
-  Html5, 
   Javascript, 
   Python, 
   Jupyter, 
@@ -13,20 +12,19 @@ import {
   MicrosoftWindows,
   Git,
   Github,
-  GithubCopilot
+  GithubCopilot,
 } from "@dev.icons/react";
 
-// JSX
-// PowerBI
+import { Html5 } from "@dev.icons/react/mono";
 
 export const iconsTechMap: Record<string, React.ElementType> = {
-  css3: Css3,
+  css: Css3,
   typescript: TypescriptIcon,
-  html5: Html5,
+  html: Html5,
   javascript: Javascript,
   python: Python,
-  jupyter: Jupyter,
-  _React: _React,
+  "jupyter notebook": Jupyter,
+  react: _React,
   nextjs: Nextjs,
   angular: AngularIcon,
   postgresql: Postgresql,
