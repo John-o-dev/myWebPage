@@ -5,11 +5,11 @@ export interface LanguageMeta {
   bytes: number;
   percent: number;
   color: string | null;
-  Icon: any;
 }
 
 export type ReposProps = {
     id: number;
+    owner: { login: string };
     name: string;
     full_name: string;
     created_at: string;

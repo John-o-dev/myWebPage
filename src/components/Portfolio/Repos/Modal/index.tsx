@@ -8,6 +8,7 @@ import { formatDate } from "@/src/utils/format";
 import { formatRepoImg, formatRepoName, linkToGithubPage } from "@/src/utils/portfolioUtils";
 import ImageComponent from "@/src/components/ImageComponent";
 import { LuX } from "react-icons/lu";
+import { getTechIcon } from "@/src/components/DegreesGallery/DetailCard/GetTechIcon";
 
 type ModalProps = {
     onClose: () => void;
@@ -35,7 +36,7 @@ export default function Modal({ onClose, repo, className, classComponent }: Moda
                             alt={repo.full_name}
                             className={styles.info_card_modal_logo}
                             classNameError={styles.info_card_modal_logo_error}
-                            />
+                        />
                     </div>
 
                     <div className={styles.info_card_modal_body}>
@@ -60,14 +61,18 @@ export default function Modal({ onClose, repo, className, classComponent }: Moda
                             ))}
                         </div>
 
-                        <div className={styles.language_legend_modal}>
-                            {repo.linguagens?.map(lang => (
-                                <div key={lang.name} className={styles.language_container}>
-                                    <span className={`${styles.dot} ${styles.js}`}></span>
-                                    <img className={styles.language_icon} src={lang.Icon} alt={lang.name} />
-                                    <span className={styles.language_text}>{lang.name}: {lang.percent}%</span>
-                                </div>
-                            ))}
+                        <div className={styles.language_legend}>
+                            {repo.linguagens?.map(lang => {
+                                const { Icon, found } = getTechIcon(lang.name);
+                                { !found && console.warn(`Ícone não encontrado para: ${lang.name}`) }
+                                return (
+                                    <div key={lang.name} className={styles.language_container}>
+                                        <span className={`${styles.dot} ${styles.js}`}></span>
+                                        <Icon size={25} />
+                                        <span className={styles.language_text}>{lang.name}: {lang.percent}%</span>
+                                    </div>
+                                );
+                            })}
                         </div>
 
                         <div className={styles.tags}>

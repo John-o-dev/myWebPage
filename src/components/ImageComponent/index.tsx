@@ -39,6 +39,8 @@ export default function ImageComponent({
         ) : (
           <Image
             src="/img/default-image-broke.png"
+            width={500}
+            height={500}
             alt="Error Image"
             loading="lazy"
           />
