@@ -1,0 +1,40 @@
+/* decorative constellation */
+
+.deco {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  overflow: hidden;
+  z-index: 0;
+  opacity: .55;
+}
+
+.deco svg {
+  position: absolute;
+  top: -10%;
+  right: -10%;
+  width: 70%;
+  height: auto;
+}
+
+.glow_a {
+  position: absolute;
+  top: -120px;
+  right: 0;
+  width: 420px;
+  height: 420px;
+  background: radial-gradient(circle, var(--accent-soft), transparent 70%);
+  filter: blur(10px);
+  pointer-events: none;
+}
+
+.glow_b {
+  position: absolute;
+  bottom: 0;
+  left: -120px;
+  width: 420px;
+  height: 420px;
+  background: radial-gradient(circle, var(--violet-soft), transparent 70%);
+  filter: blur(10px);
+  pointer-events: none;
+}

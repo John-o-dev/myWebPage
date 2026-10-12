@@ -1,0 +1,74 @@
+/* ---------- page wrapper ---------- */
+.page {
+  composes: page from '../../styles/shared/typography.module.css';
+}
+
+.headline {
+  composes: headline from '../../styles/shared/typography.module.css';
+}
+
+.headlineSmall {
+  composes: headline small from '../../styles/shared/typography.module.css';
+  margin: 0 auto 14px;
+}
+
+.lede {
+  composes: lede from '../../styles/shared/typography.module.css';
+}
+
+.btn {
+  composes: btn from '../../styles/shared/typography.module.css';
+}
+
+.btn_primary {
+  composes: btn_primary from '../../styles/shared/typography.module.css';
+}
+
+/* ---------- blog ---------- */
+.blog_hero {
+  text-align: center;
+  padding: 70px 20px 30px;
+  position: relative;
+}
+
+.blog_icon_wrap {
+  width: 88px;
+  height: 88px;
+  border-radius: 50%;
+  background: var(--accent-soft);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--accent);
+  margin: 0 auto 26px;
+  box-shadow: 0 0 60px var(--accent-soft);
+}
+
+.blog_icon_wrap svg {
+  width: 34px;
+  height: 34px;
+}
+
+.notify_row {
+  display: flex;
+  gap: 8px;
+  margin-top: 22px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.notify_row input {
+  flex: 1;
+  min-width: 200px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  padding: 13px 18px;
+  color: var(--text);
+  font-family: 'Inter', sans-serif;
+  font-size: 13px;
+}
+
+.notify_row input::placeholder {
+  color: var(--muted-2);
+}
