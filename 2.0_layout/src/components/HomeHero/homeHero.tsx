@@ -36,7 +36,6 @@ export default function HomeHero() {
         </div>
         <div className={styles.home_visual}>
           <div className={styles.avatar_ring}>
-            <div className={styles.avatar_circle}>AR</div>
             <div className={`${styles.float_chip} ${styles.chip_1}`}>
               <strong>68</strong><span>Repositórios</span>
             </div>

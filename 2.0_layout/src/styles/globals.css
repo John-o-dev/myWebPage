@@ -11,18 +11,23 @@
   --muted: #a89fb0;
   --muted-2: #75697f;
   --border: rgba(255, 255, 255, .09);
-  --wa:#25D366; 
-  --wa-soft:rgba(37,211,102,.14);
+  --wa: #25D366;
+  --wa-soft: rgba(37, 211, 102, .14);
+  --a: var(--accent, #ff6a2b);
+  --v: var(--violet, #a78bfa);
+  
+  /* container-type: inline-size;
+  container-name: cert;
+  overflow: clip; */
 }
 
-* {
-  box-sizing: border-box;
-}
+* { box-sizing: border-box; }
 
 html,
 body {
   margin: 0;
   padding: 0;
+  background: var(--bg);
 }
 
 body {
@@ -38,6 +43,16 @@ h3,
 .headline,
 .eyebrow,
 .block-title,
-.logo-mark {
-  font-family: var(--font-sora), sans-serif;
-}
+.logo-mark { font-family: var(--font-sora), sans-serif; }
+
+/*******************************************/
+
+/* .ic {
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.8;
+  stroke-linecap: round;
+  stroke-linejoin: round
+} */
+
+/*******************************************/

@@ -4,6 +4,7 @@ import { useRouter } from "next/router";
 import { Inter, Sora } from 'next/font/google'
 import Loader from '@/components/Loader/loader';
 import NavSpinner from '@/components/NavSpinner/navSpinner';
+import Layout from "@/components/Layout/layout";
 import "../styles/globals.css";
 
 const inter = Inter({
@@ -49,7 +50,9 @@ export default function App({ Component, pageProps }: AppProps) {
       <main className={`${inter.variable} ${sora.variable}`}>
         <Loader runId={bootRunId} />
         <NavSpinner show={navigating} />
-        <Component {...pageProps} />
+        <Layout>
+          <Component {...pageProps} />
+        </Layout>
       </main>
     </>
   )

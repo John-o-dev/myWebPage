@@ -1,0 +1,236 @@
+.tl {
+  margin-top: 28px;
+  padding: 18px 24px 26px;
+  border-radius: 22px;
+  background: rgba(255, 255, 255, .03);
+  border: 1px solid rgba(255, 255, 255, .08);
+  animation: rise .8s cubic-bezier(.2, .8, .2, 1) .3s backwards
+}
+
+.tl_head {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+  color: #d9d5e3
+}
+
+.tl_hint {
+  font-weight: 500;
+  letter-spacing: 0;
+  text-transform: none;
+  color: #a39fb3
+}
+
+.tl_track {
+  position: relative;
+  height: 74px;
+  margin: 0 14px
+}
+
+.tl_line {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 34px;
+  height: 2px;
+  border-radius: 2px;
+  background: linear-gradient(90deg, var(--a), var(--v));
+  transform-origin: left;
+  animation: draw 1.4s cubic-bezier(.2, .8, .2, 1) .5s backwards
+}
+
+@keyframes draw {
+  from {
+    transform: scaleX(0)
+  }
+
+  to {
+    transform: none
+  }
+}
+
+.tick {
+  position: absolute;
+  top: 50px;
+  transform: translateX(-50%);
+  font-size: 11px;
+  font-weight: 600;
+  color: #7d788d
+}
+
+.tick i {
+  position: absolute;
+  left: 50%;
+  top: -14px;
+  width: 1px;
+  height: 8px;
+  background: rgba(255, 255, 255, .25)
+}
+
+.dot {
+  position: absolute;
+  top: 26px;
+  width: 18px;
+  height: 18px;
+  margin-left: -9px;
+  padding: 0;
+  border-radius: 50%;
+  border: 3px solid #0a090d;
+  background: var(--lv);
+  cursor: pointer;
+  transition: transform .3s cubic-bezier(.34, 1.56, .64, 1), opacity .3s ease, box-shadow .3s ease;
+  animation: pop .6s cubic-bezier(.34, 1.56, .64, 1) .9s backwards
+}
+
+@keyframes pop {
+  from {
+    transform: scale(0)
+  }
+
+  to {
+    transform: none
+  }
+}
+
+.dot:hover,
+.dot.hl {
+  transform: scale(1.5);
+  box-shadow: 0 0 0 6px rgba(255, 255, 255, .1), 0 0 18px var(--lv);
+  z-index: 3
+}
+
+.dot.off {
+  opacity: .25
+}
+
+.dot:focus-visible {
+  outline: 2px solid #fff;
+  outline-offset: 3px
+}
+
+.dot_tip {
+  position: absolute;
+  bottom: calc(100% + 14px);
+  left: 50%;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  width: max-content;
+  /* max-width: 200px; */
+  max-width: min(200px, calc(100vw - 32px));
+  padding: 8px 12px;
+  box-sizing: border-box;
+  border-radius: 12px;
+  background: rgba(18, 16, 25, .96);
+  border: 1px solid rgba(255, 255, 255, .14);
+  text-align: center;
+  opacity: 0;
+  pointer-events: none;
+  transform: translate(-50%, 6px);
+  transition: opacity .25s ease, transform .25s ease;
+}
+
+
+.dot_tip b {
+  font-size: 12px;
+  font-weight: 700
+}
+
+.dot_tip em {
+  font-style: normal;
+  font-size: 11px;
+  color: #a39fb3
+}
+
+.dot:hover .dot_tip,
+.dot.hl .dot_tip,
+.dot:focus-visible .dot_tip {
+  opacity: 1;
+  transform: translate(-50%, 0);
+}
+
+@container cert (max-width: 640px) {
+  .tl {
+    padding: 16px 16px 22px
+  }
+
+  .tl_hint {
+    display: none
+  }
+
+  .tl_track {
+    margin: 0 10px
+  }
+
+  .ctrl {
+    margin-top: 36px
+  }
+
+  .seg {
+    width: 100%;
+    grid-template-columns: repeat(4, minmax(0, 1fr))
+  }
+
+  .seg_b {
+    padding: 0 4px;
+    font-size: 12px
+  }
+
+  .seg_b em {
+    display: none
+  }
+}
+
+/* @media (hover: hover) and (pointer: fine) {
+  .dot:hover .dot_tip {
+    opacity: 1;
+    transform: translate(-50%, 0);
+  }
+} */
+
+/* @media (max-width: 768px) {
+  .dot:first-child .dot_tip {
+    left: 0;
+    transform: translate(0, 6px);
+  }
+
+  .dot:last-child .dot_tip {
+    left: auto;
+    right: 0;
+    transform: translate(0, 6px);
+  }
+
+  .dot:first-child:hover .dot_tip,
+  .dot:first-child.hl .dot_tip,
+  .dot:first-child:focus-visible .dot_tip,
+  .dot:last-child:hover .dot_tip,
+  .dot:last-child.hl .dot_tip,
+  .dot:last-child:focus-visible .dot_tip {
+    transform: translate(0, 0);
+  }
+} */
+
+@media (max-width: 768px) {
+  .dot:first-of-type .dot_tip {
+    left: 0;
+    right: auto;
+    transform: translateY(6px);
+  }
+
+  .dot:last-of-type .dot_tip {
+    left: auto;
+    right: 0;
+    transform: translateY(6px);
+  }
+
+  .dot:first-of-type.hl .dot_tip,
+  .dot:last-of-type.hl .dot_tip,
+  .dot:first-of-type:focus-visible .dot_tip,
+  .dot:last-of-type:focus-visible .dot_tip {
+    transform: translateY(0);
+  }
+}

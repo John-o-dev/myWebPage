@@ -1,0 +1,330 @@
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 24px;
+  margin-top: 22px
+}
+
+.card {
+  position: relative;
+  animation-duration: .7s;
+  animation-timing-function: cubic-bezier(.2, .8, .2, 1);
+  animation-fill-mode: backwards;
+  animation-delay: calc(var(--i) * 70ms)
+}
+
+.ea {
+  animation-name: cardA
+}
+
+.eb {
+  animation-name: cardB
+}
+
+@keyframes cardA {
+  from {
+    opacity: 0;
+    transform: translateY(34px) scale(.95)
+  }
+
+  to {
+    opacity: 1;
+    transform: none
+  }
+}
+
+@keyframes cardB {
+  from {
+    opacity: 0;
+    transform: translateY(34px) scale(.95)
+  }
+
+  to {
+    opacity: 1;
+    transform: none
+  }
+}
+
+.tilt {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  border-radius: 26px;
+  background: linear-gradient(180deg, rgba(255, 255, 255, .06), rgba(255, 255, 255, .025));
+  border: 1px solid rgba(255, 255, 255, .1);
+  overflow: hidden;
+  cursor: pointer;
+  transform: perspective(1000px) rotateX(var(--rx, 0deg)) rotateY(var(--ry, 0deg));
+  transition: transform .35s cubic-bezier(.2, .8, .2, 1), border-color .3s ease, box-shadow .3s ease
+}
+
+.art {
+  position: relative;
+  padding: 18px 18px 0
+}
+
+.tilt:hover,
+.card.hl .tilt {
+  border-color: var(--lv);
+  box-shadow: 0 30px 60px -28px var(--lv)
+}
+
+.glare {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: radial-gradient(260px circle at var(--mx, 50%) var(--my, 0%), rgba(255, 255, 255, .14), transparent 60%);
+  opacity: 0;
+  transition: opacity .3s ease
+}
+
+.tilt:hover .glare {
+  opacity: 1
+}
+
+.lvl {
+  position: absolute;
+  right: 30px;
+  top: 30px;
+  z-index: 2;
+  padding: 5px 11px;
+  border-radius: 999px;
+  background: var(--lv);
+  color: #170805;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: .02em;
+  box-shadow: 0 8px 18px -8px var(--lv)
+}
+
+.peek {
+  position: absolute;
+  left: 50%;
+  bottom: 16px;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 14px;
+  border-radius: 999px;
+  background: rgba(10, 9, 13, .88);
+  backdrop-filter: blur(8px);
+  font-size: 12px;
+  font-weight: 700;
+  opacity: 0;
+  transform: translate(-50%, 10px);
+  transition: opacity .3s ease, transform .35s cubic-bezier(.34, 1.56, .64, 1)
+}
+
+.tilt:hover .peek {
+  opacity: 1;
+  transform: translate(-50%, 0)
+}
+
+.peek:hover {
+  background: var(--lv);
+}
+
+.tilt:hover .img_wrap {
+  transform: translateY(-4px) scale(1.02)
+}
+
+.body {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 18px 20px 6px;
+  flex: 1
+}
+
+.inst {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: .04em;
+  text-transform: uppercase;
+  color: #a39fb3
+}
+
+.mono {
+  display: grid;
+  place-items: center;
+  width: 22px;
+  height: 22px;
+  border-radius: 7px;
+  background: rgba(255, 255, 255, .08);
+  font-size: 9.5px;
+  font-weight: 800;
+  color: var(--lv);
+  letter-spacing: 0
+}
+
+.ctitle {
+  margin: 0;
+  font-size: 19px;
+  line-height: 1.25;
+  font-weight: 700;
+  letter-spacing: -.015em
+}
+
+.meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  font-size: 12.5px;
+  color: #a39fb3
+}
+
+.meta span {
+  display: flex;
+  align-items: center;
+  gap: 6px
+}
+
+.meta svg {
+  width: 15px;
+  height: 15px
+}
+
+.chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 2px
+}
+
+.chips span {
+  padding: 4px 10px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, .06);
+  border: 1px solid rgba(255, 255, 255, .08);
+  font-size: 11.5px;
+  font-weight: 600;
+  color: #e0dcea
+}
+
+.chips span.n {
+  background: transparent;
+  border-style: dashed;
+  color: #a39fb3
+}
+
+.foot {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  padding: 14px 20px 20px
+}
+
+.pdf {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  height: 38px;
+  padding: 0 14px;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, .14);
+  font-size: 12.5px;
+  font-weight: 700;
+  transition: background .25s ease, transform .25s ease, border-color .25s ease
+}
+
+.pdf svg {
+  width: 16px;
+  height: 16px
+}
+
+.pdf:hover {
+  background: var(--lv);
+  border-color: var(--lv);
+  color: #170805;
+  transform: translateY(-2px)
+}
+
+.more {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  height: 38px;
+  padding: 0 4px 0 6px;
+  border: 0;
+  background: transparent;
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--lv);
+  cursor: pointer
+}
+
+.more svg {
+  width: 16px;
+  height: 16px;
+  transition: transform .3s cubic-bezier(.34, 1.56, .64, 1)
+}
+
+.tilt:hover .more svg {
+  transform: translateX(5px)
+}
+
+.more:focus-visible,
+.pdf:focus-visible {
+  outline: 2px solid #fff;
+  outline-offset: 2px
+}
+
+.stretch {
+  padding: 0;
+  border: 0;
+  background: transparent;
+  font: inherit;
+  color: inherit;
+  text-align: left;
+  letter-spacing: inherit;
+  cursor: pointer
+}
+
+.stretch::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  border-radius: 26px
+}
+
+.stretch:focus-visible {
+  outline: none
+}
+
+.stretch:focus-visible::after {
+  outline: 2px solid #fff;
+  outline-offset: -2px
+}
+
+.pdf {
+  position: relative;
+  z-index: 2
+}
+
+.more_txt {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  height: 38px;
+  padding: 0 4px 0 6px;
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--lv)
+}
+
+.more_txt svg {
+  width: 16px;
+  height: 16px;
+  transition: transform .3s cubic-bezier(.34, 1.56, .64, 1)
+}
+
+.tilt:hover .more_txt svg {
+  transform: translateX(5px)
+}

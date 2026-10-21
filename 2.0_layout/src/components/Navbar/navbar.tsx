@@ -1,47 +1,37 @@
 import Link from "next/link";
 import { useRouter } from "next/router";
-import styles from "./Navbar.module.css";
+import type { Ref } from "react";
+import styles from "./navbar.module.css";
 import { routes, buildHref, isActive } from "@/lib/routes";
-import { useEffect, useState } from "react";
+import { author } from "@/lib/site";
+import { LANGS, useLang } from "@/lib/useLang";
 
-export default function Navbar() {
+type Props = {
+  menuOpen: boolean;
+  onMenuToggle: () => void;
+  burgerRef?: Ref<HTMLButtonElement>;
+};
+
+export default function Navbar({ menuOpen, onMenuToggle, burgerRef }: Props) {
   const router = useRouter();
-  const lang = (router.query.lang as string) ?? "pt";
-  const [open, setOpen] = useState(false);
-
-  useEffect(() => {
-    const close = () => setOpen(false);
-    router.events.on("routeChangeStart", close);
-    return () => router.events.off("routeChangeStart", close);
-  }, [router.events]);
-
-  useEffect(() => {
-    if (!open) return;
-    const onKey = (e: KeyboardEvent) => e.key === "Escape" && setOpen(false);
-    document.body.style.overflow = "hidden";
-    window.addEventListener("keydown", onKey);
-    return () => {
-      document.body.style.overflow = "";
-      window.removeEventListener("keydown", onKey);
-    };
-  }, [open]);
+  const { lang, langHref } = useLang();
 
   return (
     <header className={styles.header}>
       <nav className={styles.navbar} aria-label="Principal">
+        <Link href={buildHref(lang, "")} className={styles.logo_mark}>
+          {author.initials}
+        </Link>
 
-        <Link href={buildHref(lang, "")} className={styles.logo_mark}>JD</Link>
-
-        <div
-          id="menu-principal"
-          className={`${styles.nav_center} ${open ? styles.nav_center_open : ""}`}
-        >
+        {/* Desktop: links no centro (no mobile, quem assume é o SideMenu) */}
+        <div className={styles.nav_center}>
           {routes.map((r) => (
             <Link
               key={r.slug}
               href={buildHref(lang, r.slug)}
-              className={`${styles.nav_link} ${isActive(router.asPath, lang, r.slug) ? styles.active : ""
-                }`}
+              className={`${styles.nav_link} ${
+                isActive(router.asPath, lang, r.slug) ? styles.active : ""
+              }`}
             >
               {r.label}
             </Link>
@@ -49,25 +39,38 @@ export default function Navbar() {
         </div>
 
         <div className={styles.nav_right}>
-          <div className={styles.lang_toggle}>
-            <button className={`${styles.lang} ${styles.active}`}>PT</button>
-            <button className={styles.lang}>EN</button>
+          <div className={styles.lang_toggle} role="group" aria-label="Idioma">
+            {LANGS.map((l) => (
+              <button
+                key={l}
+                type="button"
+                aria-pressed={lang === l}
+                className={`${styles.lang} ${lang === l ? styles.active : ""}`}
+                onClick={() => lang !== l && router.push(langHref(l))}
+              >
+                {l.toUpperCase()}
+              </button>
+            ))}
           </div>
-          <button className={styles.cta_pill}>Fale comigo</button>
 
+          <Link href={buildHref(lang, "contato")} className={styles.cta_pill}>
+            Fale comigo
+          </Link>
+
+          {/* Mobile: hambúrguer. Barras = ::before (topo), <span> (meio) e ::after (base) */}
           <button
+            ref={burgerRef}
             type="button"
-            className={`${styles.burger} ${open ? styles.burger_open : ""}`}
-            aria-label={open ? "Fechar menu" : "Abrir menu"}
-            aria-expanded={open}
-            aria-controls="menu-principal"
-            onClick={() => setOpen((v) => !v)}
+            className={`${styles.burger} ${menuOpen ? styles.burger_open : ""}`}
+            aria-label={menuOpen ? "Fechar menu" : "Abrir menu"}
+            aria-expanded={menuOpen}
+            aria-controls="side-menu"
+            onClick={onMenuToggle}
           >
-            {/* O <span> é a barra do meio; as barras de cima e de baixo são ::before e ::after */}
             <span className={styles.burger_bar} />
           </button>
         </div>
       </nav>
     </header>
-  )
+  );
 }

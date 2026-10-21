@@ -1,8 +1,6 @@
 import Head from "next/head";
 import { Geist, Geist_Mono } from "next/font/google";
-
 import Dock from "@/components/Dock/dock";
-import Navbar from "@/components/Navbar/navbar";
 import HomeHero from "@/components/HomeHero/homeHero";
 import FooterSection from "@/components/Footer/footerSection";
 
@@ -25,7 +23,6 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <Navbar />
       <Dock />
       <HomeHero />
       <FooterSection />

@@ -1,3 +1,4 @@
+import CertificadosPage from './CertificadosPage/certificadosPage'
 import styles from './perfilSection.module.css'
 
 export default function PerfilSection() {
@@ -55,10 +56,12 @@ export default function PerfilSection() {
         </div>
       </div>
       <div className={styles.section}>
-        <div className={styles.section_head}>
+
+        {/* <div className={styles.section_head}>
           <h3 className={styles.block_title}>Certificados</h3>
           <input className={styles.search_input} placeholder="Pesquisar..." type='search' />
         </div>
+        
         <div className={styles.cert_grid}>
           <div className={styles.cert_card}>
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 2l3 6 6 1-4.5 4.5L17 20l-5-3-5 3 1.5-6.5L4 9l6-1z" /></svg>
@@ -69,7 +72,10 @@ export default function PerfilSection() {
           <div className={styles.cert_card}>
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 2l3 6 6 1-4.5 4.5L17 20l-5-3-5 3 1.5-6.5L4 9l6-1z" /></svg>
           </div>
-        </div>
+        </div> */}
+
+        <CertificadosPage />
+
       </div>
     </section>
   )

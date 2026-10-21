@@ -1,0 +1,111 @@
+/* O wrapper do site. No desktop não faz nada. */
+.page {
+  position: relative;
+  z-index: 1;
+  background: var(--bg, #0a090d);
+  min-height: 100vh;
+}
+
+.ghost,
+.hit {
+  display: none;
+}
+
+@media (max-width: 820px) {
+  .page {
+    /* Origem = centro da área visível (considera o scroll de quando abriu) */
+    transform-origin: 0 calc(var(--sy, 0px) + 50dvh);
+    /* Estado "fechado" do clip-path: permite animar até o estado aberto */
+    clip-path: inset(0px 0px 0px 0px round 0px);
+    transition:
+      transform 0.85s cubic-bezier(0.2, 0.8, 0.2, 1),
+      clip-path 0.85s cubic-bezier(0.2, 0.8, 0.2, 1);
+  }
+
+  .page_open {
+    transform: perspective(1400px) translateX(262px) scale(0.66) rotateY(-14deg);
+    /* Recorta só a área que estava visível na tela, com cantos arredondados */
+    clip-path: inset(
+      var(--sy, 0px) 0px calc(100% - var(--sy, 0px) - 100dvh) 0px round 44px
+    );
+  }
+
+  /* Escurece a página minimizada em direção à borda */
+  .page::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: 1000;
+    pointer-events: none;
+    opacity: 0;
+    background: linear-gradient(90deg, rgba(10, 9, 13, 0), rgba(10, 9, 13, 0.55));
+    transition: opacity 0.8s ease;
+  }
+
+  .page_open::after {
+    opacity: 1;
+  }
+
+  /* "Folha" por trás */
+  .ghost {
+    display: block;
+    position: fixed;
+    inset: 0;
+    z-index: 0;
+    background: #1a1722;
+    transform-origin: 0 50%;
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transition:
+      transform 0.9s cubic-bezier(0.2, 0.8, 0.2, 1) 0.05s,
+      opacity 0.6s ease,
+      visibility 0s linear 0.9s;
+  }
+
+  .ghost_open {
+    opacity: 0.55;
+    visibility: visible;
+    transform: perspective(1400px) translateX(300px) scale(0.56) rotateY(-14deg);
+    border-radius: 44px;
+    transition-delay: 0.05s, 0s, 0s;
+  }
+
+  /* Botão invisível que cobre a faixa da página minimizada */
+  .hit {
+    display: block;
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 262px; /* deixa o menu lateral clicável */
+    z-index: 5;
+    padding: 0;
+    border: 0;
+    background: transparent;
+    cursor: pointer;
+    visibility: hidden;
+    pointer-events: none;
+  }
+
+  .hit_open {
+    visibility: visible;
+    pointer-events: auto;
+  }
+
+  /* Pequeno "avanço" da página ao passar o mouse, indicando que é clicável */
+  @media (hover: hover) {
+    .hit:hover + .page.page_open {
+      transform: perspective(1400px) translateX(276px) scale(0.67) rotateY(-14deg);
+    }
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .page,
+  .page::after,
+  .ghost {
+    transition-duration: 0.01ms !important;
+    transition-delay: 0s !important;
+  }
+}
